@@ -3,20 +3,23 @@ import { rimraf } from 'rimraf'
 import stylePlugin from 'esbuild-style-plugin'
 import autoprefixer from 'autoprefixer'
 import tailwindcss from 'tailwindcss'
+import { copyFileSync, mkdirSync, existsSync } from 'fs'
 
 const args = process.argv.slice(2)
-const isProd = args[0] === '--production'
+const isProd = args.includes('--production')
 
 await rimraf('dist')
+mkdirSync('dist', { recursive: true })
 
 /**
  * @type {esbuild.BuildOptions}
  */
 const esbuildOpts = {
   color: true,
-  entryPoints: ['src/main.tsx', 'index.html'],
+  entryPoints: ['src/main.tsx'],
   outdir: 'dist',
-  entryNames: '[name]',
+  entryNames: 'main',
+  assetNames: 'assets/[name]-[hash]',
   write: true,
   bundle: true,
   format: 'iife',
@@ -25,8 +28,16 @@ const esbuildOpts = {
   treeShaking: true,
   jsx: 'automatic',
   loader: {
-    '.html': 'copy',
     '.png': 'file',
+    '.jpg': 'file',
+    '.jpeg': 'file',
+    '.svg': 'file',
+    '.webp': 'file',
+    '.gif': 'file',
+    '.woff': 'file',
+    '.woff2': 'file',
+    '.ttf': 'file',
+    '.eot': 'file',
   },
   plugins: [
     stylePlugin({
@@ -37,12 +48,24 @@ const esbuildOpts = {
   ],
 }
 
+const copyStaticFiles = () => {
+  if (existsSync('index.html')) {
+    copyFileSync('index.html', 'dist/index.html')
+  } else {
+    throw new Error('No se encontró index.html en la raíz del proyecto')
+  }
+}
+
 if (isProd) {
   await esbuild.build(esbuildOpts)
+  copyStaticFiles()
 } else {
   const ctx = await esbuild.context(esbuildOpts)
   await ctx.watch()
-  const { hosts, port } = await ctx.serve()
+  const { hosts, port } = await ctx.serve({
+    servedir: 'dist',
+  })
+  copyStaticFiles()
   console.log(`Running on:`)
   hosts.forEach((host) => {
     console.log(`http://${host}:${port}`)
