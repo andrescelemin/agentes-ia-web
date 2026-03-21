@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://agentes-inteligencia-artificial.online/sitemap.xml
