@@ -8,7 +8,7 @@
  */
 
 import React, { useState } from 'react'
-import { Link } from 'react-router'
+import { Link } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
 import { LogoWithWordmark } from './brand/Logo'
 import { Button } from './ui/button'

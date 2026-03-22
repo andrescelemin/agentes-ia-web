@@ -8,7 +8,7 @@
 
 import { Star, Users, TrendingUp, Clock } from 'lucide-react'
 import { Card, CardContent } from '../../components/ui/card'
-import { Link } from 'react-router'
+import { Link } from 'react-router-dom'
 import { trackEvent } from '../../utils/analytics'
 import { WHATSAPP_LINK } from '../../config/contact'
 

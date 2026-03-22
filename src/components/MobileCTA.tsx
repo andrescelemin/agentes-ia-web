@@ -9,7 +9,7 @@
  */
 
 import { useEffect, useRef, useState } from 'react'
-import { Link } from 'react-router'
+import { Link } from 'react-router-dom'
 import { MessageCircle, Calculator } from 'lucide-react'
 import { trackEvent } from '../utils/analytics'
 import { WHATSAPP_LINK } from '../config/contact'

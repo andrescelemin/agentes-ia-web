@@ -2,7 +2,7 @@
  * Página de Detalle de Caso - SmartPrompt Solutions
  * Muestra un caso de estudio completo con resultados y proceso
  */
-import { useParams, Link } from 'react-router'
+import { useParams, Link } from 'react-router-dom'
 import { ArrowLeft, Users, TrendingUp, CheckCircle, BarChart } from 'lucide-react'
 import { Button } from '../components/ui/button'
 import { Card, CardContent } from '../components/ui/card'

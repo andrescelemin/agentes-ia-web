@@ -7,7 +7,7 @@
  */
 
 import React from 'react'
-import { Link } from 'react-router'
+import { Link } from 'react-router-dom'
 import { Brain, Mail, MapPin, Linkedin } from 'lucide-react'
 import { trackEvent } from '../utils/analytics'
 import UpworkIcon from './icons/UpworkIcon'

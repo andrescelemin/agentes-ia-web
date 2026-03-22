@@ -3,7 +3,7 @@
  * Muestra artículos destacados y lista de posts con filtros
  */
 import { useState } from 'react'
-import { Link } from 'react-router'
+import { Link } from 'react-router-dom'
 import { Search, Calendar, User, Clock, ArrowRight, Star } from 'lucide-react'
 import { Button } from '../components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card'

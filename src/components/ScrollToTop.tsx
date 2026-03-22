@@ -3,7 +3,7 @@
  * Soporta hashes (#id) desplazando al elemento indicado si existe
  */
 import { useEffect } from 'react'
-import { useLocation } from 'react-router'
+import { useLocation } from 'react-router-dom'
 
 /**
  * ScrollToTop

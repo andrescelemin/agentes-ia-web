@@ -2,7 +2,7 @@
  * Página de Detalle de Blog - SmartPrompt Solutions
  * Muestra un artículo completo del blog
  */
-import { useParams, Link } from 'react-router'
+import { useParams, Link } from 'react-router-dom'
 import { Calendar, User, Clock, ArrowLeft, Share2, BookOpen } from 'lucide-react'
 import { Button } from '../components/ui/button'
 import { Card, CardContent } from '../components/ui/card'

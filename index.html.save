@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+<<<<<<< HEAD
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Agentes de Inteligencia Artificial | Smart Prompt Consulting</title>
+    <meta
+      name="description"
+      content="Automatización, agentes de IA y workflows inteligentes para empresas. Diseñamos soluciones que capturan leads, agendan citas y responden clientes 24/7."
+    />
+    <meta
+      name="keywords"
+      content="agentes de inteligencia artificial, automatización empresarial, workflows, IA para empresas, chatbots, smart prompt consulting"
+    />
+    <meta name="author" content="Smart Prompt Consulting" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#020617" />
+
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Agentes de Inteligencia Artificial | Smart Prompt Consulting"
+    />
+    <meta
+      property="og:description"
+      content="Automatización, agentes de IA y workflows inteligentes para empresas."
+    />
+    <meta property="og:locale" content="es_ES" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Agentes de Inteligencia Artificial | Smart Prompt Consulting"
+    />
+    <meta
+      name="twitter:description"
+      content="Automatización, agentes de IA y workflows inteligentes para empresas."
+    />
+
+    <link rel="stylesheet" href="/main.css" />
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="/main.js"></script>
+=======
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO Primario -->
+    <title>Agentes de IA para Empresas | Smart Prompt Consulting</title>
+    <meta
+      name="description"
+      content="Implementamos agentes de IA y automatización para negocios en USA y México. Captura leads, agenda citas y atiende 24/7 con flujos profesionales."
+    />
+    <link rel="canonical" href="https://agentes-inteligencia-artificial.online/" />
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://pub-cdn.sider.ai/u/U04XH6E0RRN/web-coder/69455a2570d0214b990115a0/resource/289ce0f9-3d0f-4eb3-b867-2e455d84e519.jpg"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="https://pub-cdn.sider.ai/u/U04XH6E0RRN/web-coder/69455a2570d0214b990115a0/resource/289ce0f9-3d0f-4eb3-b867-2e455d84e519.jpg"
+    />
+
+    <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://agentes-inteligencia-artificial.online/"
+    />
+    <meta
+      property="og:title"
+      content="Agentes de IA para Empresas | Smart Prompt Consulting"
+    />
+    <meta
+      property="og:description"
+      content="Automatiza tu negocio con flujos de IA personalizados. Captación de leads y atención 24/7."
+    />
+    <meta
+      property="og:image"
+      content="https://pub-cdn.sider.ai/u/U04XH6E0RRN/web-coder/69455a2570d0214b990115a0/resource/289ce0f9-3d0f-4eb3-b867-2e455d84e519.jpg"
+    />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:url"
+      content="https://agentes-inteligencia-artificial.online/"
+    />
+    <meta
+      name="twitter:title"
+      content="Agentes de IA para Empresas | Smart Prompt Consul

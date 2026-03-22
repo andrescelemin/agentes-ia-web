@@ -5,7 +5,7 @@
  * - Imagen ilustrativa (placeholder inteligente)
  */
 
-import { Link } from 'react-router'
+import { Link } from 'react-router-dom'
 import { Button } from '../ui/button'
 import { WHATSAPP_LINK } from '../../config/contact'
 
