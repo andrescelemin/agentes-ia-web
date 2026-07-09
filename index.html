@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agentes IA — Soluciones Digitales con Inteligencia Artificial</title>
+<meta name="description" content="Webs modernas, auditorías digitales, automatizaciones, dashboards, prospección y soluciones personalizadas con IA para negocios que quieren crecer con tecnología.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#06060c;
+    --bg-alt:#0a0a14;
+    --surface:#12121f;
+    --surface-2:#181829;
+    --border:rgba(255,255,255,.08);
+    --border-2:rgba(255,255,255,.14);
+    --text:#f3f3f8;
+    --text-muted:#9c9cb0;
+    --text-dim:#6c6c82;
+    --violet:#a855f7;
+    --violet-2:#7c3aed;
+    --cyan:#22d3ee;
+    --gradient:linear-gradient(135deg,var(--violet) 0%,var(--cyan) 100%);
+    --gradient-soft:linear-gradient(135deg,rgba(168,85,247,.15),rgba(34,211,238,.10));
+    --shadow-glow:0 0 60px rgba(168,85,247,.25);
+    --ease:cubic-bezier(.16,1,.3,1);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter',sans-serif;
+    line-height:1.6;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{font-family:'Sora',sans-serif;line-height:1.15;letter-spacing:-.02em;}
+  a{color:inherit;text-decoration:none;}
+  ul{list-style:none;}
+  img,video{max-width:100%;display:block;}
+  ::selection{background:var(--violet);color:#fff;}
+  ::-webkit-scrollbar{width:10px;}
+  ::-webkit-scrollbar-track{background:var(--bg);}
+  ::-webkit-scrollbar-thumb{background:var(--surface-2);border-radius:10px;}
+  ::-webkit-scrollbar-thumb:hover{background:var(--violet-2);}
+
+  .container{max-width:1200px;margin:0 auto;padding:0 24px;}
+  section{position:relative;}
+
+  /* background decorative glow */
+  .bg-glow{position:absolute;border-radius:50%;filter:blur(120px);opacity:.35;pointer-events:none;z-index:0;}
+  .bg-glow.violet{background:var(--violet);}
+  .bg-glow.cyan{background:var(--cyan);}
+
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:.78rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--cyan);margin-bottom:16px;
+  }
+  .eyebrow::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--gradient);}
+
+  .gradient-text{
+    background:var(--gradient);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+
+  /* ---------- NAV ---------- */
+  .navbar{
+    position:fixed;top:0;left:0;width:100%;z-index:1000;
+    padding:20px 0;transition:all .4s var(--ease);
+    border-bottom:1px solid transparent;
+  }
+  .navbar.scrolled{
+    background:rgba(6,6,12,.75);backdrop-filter:blur(16px) saturate(140%);
+    -webkit-backdrop-filter:blur(16px) saturate(140%);
+    border-bottom:1px solid var(--border);padding:14px 0;
+  }
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;}
+  .logo{font-family:'Sora',sans-serif;font-weight:700;font-size:1.3rem;display:flex;align-items:center;gap:8px;}
+  .logo-dot{width:10px;height:10px;border-radius:3px;background:var(--gradient);display:inline-block;transform:rotate(45deg);}
+  .logo span{background:var(--gradient);-webkit-background-clip:text;background-clip:text;color:transparent;}
+  .nav-links{display:flex;align-items:center;gap:36px;}
+  .nav-links a{font-size:.92rem;font-weight:500;color:var(--text-muted);transition:color .25s;}
+  .nav-links a:hover{color:var(--text);}
+  .nav-cta{
+    display:inline-flex;align-items:center;gap:6px;
+    background:var(--gradient);color:#fff !important;font-weight:600;font-size:.88rem;
+    padding:10px 20px;border-radius:100px;transition:transform .25s var(--ease),box-shadow .25s;
+  }
+  .nav-cta:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(168,85,247,.4);}
+  .nav-toggle{display:none;background:none;border:none;color:var(--text);font-size:1.6rem;cursor:pointer;}
+
+  @media (max-width:860px){
+    .nav-links{
+      position:fixed;inset:0 0 0 auto;width:78%;max-width:340px;height:100vh;
+      background:var(--bg-alt);border-left:1px solid var(--border);
+      flex-direction:column;justify-content:center;align-items:flex-start;
+      gap:28px;padding:40px;transform:translateX(100%);transition:transform .4s var(--ease);
+    }
+    .nav-links.open{transform:translateX(0);}
+    .nav-links a{font-size:1.1rem;}
+    .nav-toggle{display:block;z-index:1001;}
+  }
+
+  /* ---------- BUTTONS ---------- */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    padding:15px 30px;border-radius:100px;font-weight:600;font-size:.95rem;
+    cursor:pointer;transition:transform .3s var(--ease),box-shadow .3s,background .3s,border-color .3s;
+    border:1px solid transparent;white-space:nowrap;
+  }
+  .btn-primary{background:var(--gradient);color:#fff;}
+  .btn-primary:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(168,85,247,.4);}
+  .btn-outline{border-color:var(--border-2);color:var(--text);background:rgba(255,255,255,.02);}
+  .btn-outline:hover{border-color:var(--cyan);color:var(--cyan);transform:translateY(-3px);}
+  .btn-block{width:100%;}
+
+  /* ---------- HERO / SCROLL VIDEO ---------- */
+  .scroll-video-hero{height:500vh;position:relative;background:var(--bg);}
+  .scroll-video-sticky{
+    position:sticky;top:0;height:100vh;width:100%;overflow:hidden;
+    display:flex;align-items:center;justify-content:center;
+    background:radial-gradient(circle at 30% 20%,rgba(124,58,237,.35),transparent 55%),
+               radial-gradient(circle at 75% 75%,rgba(34,211,238,.22),transparent 55%),var(--bg);
+  }
+  .scroll-video-sticky video{
+    position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:.55;
+  }
+  .hero-content{
+    position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;
+    text-align:center;padding:0 20px;max-width:900px;
+  }
+  .hero-content .eyebrow{justify-content:center;}
+  .hero-content h1{
+    font-size:clamp(2.4rem,6vw,4.6rem);font-weight:800;margin-bottom:22px;
+  }
+  .hero-content p.subtitle{
+    font-size:clamp(1.05rem,2vw,1.35rem);color:var(--text-muted);max-width:680px;margin:0 auto 40px;
+  }
+  .hero-btns{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;}
+  .scroll-cue{
+    position:absolute;bottom:36px;left:50%;transform:translateX(-50%);z-index:2;
+    display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--text-dim);font-size:.75rem;
+    letter-spacing:.1em;text-transform:uppercase;
+  }
+  .scroll-cue .mouse{
+    width:22px;height:36px;border:2px solid var(--border-2);border-radius:14px;position:relative;
+  }
+  .scroll-cue .mouse::before{
+    content:"";position:absolute;top:6px;left:50%;transform:translateX(-50%);
+    width:4px;height:8px;border-radius:2px;background:var(--cyan);animation:scrollcue 1.6s infinite;
+  }
+  @keyframes scrollcue{0%{opacity:1;top:6px;}100%{opacity:0;top:18px;}}
+  .scroll-progress-bar{position:absolute;bottom:0;left:0;width:100%;height:3px;background:rgba(255,255,255,.08);z-index:3;}
+  .scroll-progress-fill{height:100%;width:0%;background:var(--gradient);transition:width .05s linear;}
+
+  @media (max-width:768px){
+    .scroll-video-hero{height:100vh;}
+    .scroll-video-sticky{position:relative;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .scroll-video-hero{height:100vh;}
+  }
+
+  /* ---------- REVEAL ---------- */
+  .reveal{opacity:0;transform:translateY(36px);transition:opacity .8s var(--ease),transform .8s var(--ease);}
+  .reveal.is-visible{opacity:1;transform:translateY(0);}
+  .reveal-scale{opacity:0;transform:scale(.94);transition:opacity .7s var(--ease),transform .7s var(--ease);}
+  .reveal-scale.is-visible{opacity:1;transform:scale(1);}
+  .stagger > *{transition-delay:calc(var(--i,0) * 80ms);}
+
+  /* ---------- ABOUT ---------- */
+  .about{padding:160px 0 120px;background:var(--bg-alt);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+  .about-lead{max-width:820px;margin-bottom:70px;}
+  .about-lead h2{font-size:clamp(1.9rem,4vw,2.8rem);margin-bottom:26px;}
+  .about-lead p{font-size:1.08rem;color:var(--text-muted);margin-bottom:18px;max-width:760px;}
+  .problem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .problem-card{
+    background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:32px 28px;
+    transition:transform .35s var(--ease),border-color .35s;
+  }
+  .problem-card:hover{transform:translateY(-6px);border-color:var(--border-2);}
+  .problem-card .num{font-family:'Sora',sans-serif;font-weight:800;font-size:1.6rem;color:transparent;-webkit-text-stroke:1.5px var(--violet);margin-bottom:16px;display:block;}
+  .problem-card p{color:var(--text-muted);font-size:.98rem;}
+  .problem-card.highlight{background:var(--gradient-soft);border-color:rgba(168,85,247,.3);}
+  @media (max-width:900px){.problem-grid{grid-template-columns:1fr;}}
+
+  /* ---------- SERVICES ---------- */
+  .services{padding:150px 0 100px;}
+  .section-head{max-width:720px;margin:0 auto 90px;text-align:center;}
+  .section-head h2{font-size:clamp(2rem,4.5vw,3.2rem);margin-bottom:18px;}
+  .section-head p{color:var(--text-muted);font-size:1.08rem;}
+
+  .service-block{
+    position:relative;padding:64px 0;border-top:1px solid var(--border);
+    display:grid;grid-template-columns:.75fr 1.25fr;gap:60px;
+  }
+  .service-block:first-of-type{border-top:none;}
+  .service-left{position:sticky;top:120px;align-self:start;height:max-content;}
+  .service-num{
+    font-family:'Sora',sans-serif;font-weight:800;font-size:1rem;color:var(--cyan);
+    letter-spacing:.08em;margin-bottom:18px;display:block;
+  }
+  .service-left h3{font-size:clamp(1.5rem,2.6vw,2rem);margin-bottom:14px;}
+  .service-left .tagline{color:var(--text-muted);font-size:1.02rem;margin-bottom:20px;}
+  .price-badge{
+    display:inline-flex;align-items:center;gap:8px;background:var(--surface-2);
+    border:1px solid var(--border-2);padding:9px 18px;border-radius:100px;
+    font-size:.85rem;font-weight:600;color:var(--cyan);
+  }
+  .service-right p{color:var(--text-muted);margin-bottom:18px;font-size:1rem;}
+  .service-lists{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin:30px 0;}
+  .service-lists.single{grid-template-columns:1fr;}
+  .list-block h4{
+    font-size:.82rem;text-transform:uppercase;letter-spacing:.08em;color:var(--text);
+    margin-bottom:16px;font-family:'Sora',sans-serif;font-weight:700;
+  }
+  .list-check li{
+    position:relative;padding-left:26px;margin-bottom:11px;color:var(--text-muted);font-size:.94rem;
+  }
+  .list-check li::before{
+    content:"";position:absolute;left:0;top:7px;width:9px;height:9px;border-radius:3px;
+    background:var(--gradient);transform:rotate(45deg);
+  }
+  .example-cards{display:grid;grid-template-columns:1fr;gap:14px;margin:24px 0;}
+  .example-card{
+    background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--violet);
+    border-radius:12px;padding:18px 22px;color:var(--text-muted);font-size:.94rem;
+  }
+  .highlight-box{
+    background:var(--surface);border:1px solid var(--border);border-radius:16px;
+    padding:24px 28px;margin:22px 0;
+  }
+  .highlight-box .label{
+    font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;color:var(--cyan);
+    font-weight:700;margin-bottom:10px;display:block;
+  }
+  .highlight-box p{margin-bottom:0;color:var(--text-muted);}
+  .result-box{
+    background:var(--gradient-soft);border:1px solid rgba(168,85,247,.3);border-radius:16px;
+    padding:26px 30px;margin-top:8px;
+  }
+  .result-box .label{font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;color:var(--violet);font-weight:700;margin-bottom:10px;display:block;}
+  .result-box p{color:var(--text);font-size:1rem;margin:0;font-weight:500;}
+  .note-inline{font-size:.85rem;color:var(--text-dim);font-style:italic;margin-top:14px;}
+
+  @media (max-width:900px){
+    .service-block{grid-template-columns:1fr;gap:26px;}
+    .service-left{position:static;}
+    .service-lists{grid-template-columns:1fr;}
+  }
+
+  /* ---------- AUDIENCE ---------- */
+  .audience{padding:110px 0;background:var(--bg-alt);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+  .audience-inner{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:center;}
+  .audience h2{font-size:clamp(1.8rem,3.6vw,2.5rem);margin-bottom:20px;}
+  .audience p{color:var(--text-muted);font-size:1.02rem;}
+  .tag-grid{display:flex;flex-wrap:wrap;gap:12px;}
+  .tag-pill{
+    background:var(--surface);border:1px solid var(--border);padding:11px 20px;border-radius:100px;
+    font-size:.9rem;color:var(--text-muted);transition:border-color .3s,color .3s,transform .3s;
+  }
+  .tag-pill:hover{border-color:var(--cyan);color:var(--text);transform:translateY(-3px);}
+  @media (max-width:860px){.audience-inner{grid-template-columns:1fr;}}
+
+  /* ---------- PROCESS ---------- */
+  .process{padding:150px 0;}
+  .timeline{display:flex;flex-direction:column;gap:0;}
+  .timeline-item{
+    display:grid;grid-template-columns:100px 1fr;gap:32px;padding:40px 0;border-top:1px solid var(--border);
+  }
+  .timeline-item:last-child{border-bottom:1px solid var(--border);}
+  .timeline-num{
+    font-family:'Sora',sans-serif;font-weight:800;font-size:2.4rem;
+    background:var(--gradient);-webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .timeline-item h3{font-size:1.35rem;margin-bottom:10px;}
+  .timeline-item p{color:var(--text-muted);max-width:640px;}
+  @media (max-width:700px){.timeline-item{grid-template-columns:1fr;gap:10px;}}
+
+  /* ---------- DIFFERENCE ---------- */
+  .difference{padding:130px 0;text-align:center;position:relative;background:var(--bg-alt);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+  .difference h2{font-size:clamp(2rem,4.4vw,3rem);max-width:820px;margin:0 auto 30px;}
+  .difference p{color:var(--text-muted);font-size:1.08rem;max-width:720px;margin:0 auto 16px;}
+  .difference .emphasis{color:var(--text);font-weight:600;font-size:1.2rem;margin-top:26px;}
+
+  /* ---------- FINAL CTA ---------- */
+  .final-cta{padding:150px 0 60px;text-align:center;position:relative;overflow:hidden;}
+  .final-cta h2{font-size:clamp(2.1rem,5vw,3.4rem);margin-bottom:22px;}
+  .final-cta > .container > p{color:var(--text-muted);font-size:1.08rem;max-width:640px;margin:0 auto 44px;}
+  .cta-buttons{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin-bottom:110px;}
+  .closing{text-align:center;max-width:700px;margin:0 auto 90px;}
+  .closing h3{font-size:clamp(1.5rem,3vw,2rem);margin-bottom:16px;}
+  .closing p{color:var(--text-muted);}
+
+  /* ---------- FOOTER ---------- */
+  footer{border-top:1px solid var(--border);padding:70px 0 34px;}
+  .footer-inner{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:50px;margin-bottom:60px;}
+  .footer-brand p{color:var(--text-muted);margin-top:14px;max-width:320px;font-size:.94rem;}
+  .footer-col h4{font-size:.85rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:18px;font-family:'Sora',sans-serif;}
+  .footer-col a, .footer-col p{display:block;color:var(--text-muted);font-size:.94rem;margin-bottom:12px;transition:color .25s;}
+  .footer-col a:hover{color:var(--cyan);}
+  .footer-bottom{
+    border-top:1px solid var(--border);padding-top:26px;display:flex;justify-content:space-between;
+    flex-wrap:wrap;gap:12px;color:var(--text-dim);font-size:.85rem;
+  }
+  @media (max-width:800px){.footer-inner{grid-template-columns:1fr;gap:36px;}}
+</style>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="container nav-inner">
+    <a href="#scroll-hero" class="logo"><span class="logo-dot"></span>Agentes<span>IA</span></a>
+    <div class="nav-links" id="navLinks">
+      <a href="#sobre">Sobre nosotros</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#proceso">Cómo trabajamos</a>
+      <a href="#contacto">Contacto</a>
+      <a href="https://wa.me/51976828556?text=Hola%2C%20quiero%20hablar%20sobre%20soluciones%20digitales%20con%20IA%20para%20mi%20negocio" class="nav-cta">Hablemos</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">☰</button>
+  </div>
+</nav>
+
+<!-- HERO CON VIDEO SCROLL-DRIVEN -->
+<section class="scroll-video-hero" id="scroll-hero">
+  <div class="scroll-video-sticky">
+    <video id="heroVideo" src="assets/hero.mp4" playsinline muted preload="auto"></video>
+    <div class="hero-content">
+      <span class="eyebrow">Inteligencia Artificial · Automatización · Datos</span>
+      <h1>Soluciones Digitales con <span class="gradient-text">IA</span> para Negocios</h1>
+      <p class="subtitle">Herramientas inteligentes para vender mejor, ahorrar tiempo y tomar mejores decisiones.</p>
+      <div class="hero-btns">
+        <a href="https://wa.me/51976828556?text=Hola%2C%20quiero%20agendar%20una%20llamada%20para%20hablar%20sobre%20soluciones%20digitales%20con%20IA%20para%20mi%20negocio" class="btn btn-primary">Agenda una llamada</a>
+        <a href="#servicios" class="btn btn-outline">Ver servicios</a>
+      </div>
+    </div>
+    <div class="scroll-cue"><span>Scroll</span><div class="mouse"></div></div>
+    <div class="scroll-progress-bar"><div class="scroll-progress-fill" id="progressFill"></div></div>
+  </div>
+</section>
+
+<!-- SOBRE NOSOTROS -->
+<section class="about" id="sobre">
+  <div class="bg-glow violet" style="width:500px;height:500px;top:-100px;left:-150px;"></div>
+  <div class="container" style="position:relative;z-index:1;">
+    <div class="about-lead reveal">
+      <span class="eyebrow">Quiénes somos</span>
+      <h2>Tecnología pensada para resolver problemas <span class="gradient-text">reales</span> de negocio</h2>
+      <p>Creamos webs modernas, auditorías digitales, automatizaciones, dashboards, sistemas de prospección y soluciones personalizadas con inteligencia artificial para negocios, profesionales, creadores y empresas que quieren crecer con tecnología.</p>
+      <p>No desarrollamos soluciones genéricas. Analizamos cada caso, entendemos el objetivo del negocio y construimos herramientas digitales pensadas para resolver problemas reales: captar más clientes, mejorar procesos, organizar información, automatizar tareas y aumentar la eficiencia comercial.</p>
+    </div>
+
+    <div class="about-lead reveal" style="margin-bottom:40px;">
+      <span class="eyebrow">El problema</span>
+      <h2 style="font-size:clamp(1.6rem,3.4vw,2.2rem);">Tecnología aplicada a resultados reales</h2>
+    </div>
+
+    <div class="problem-grid">
+      <div class="problem-card reveal">
+        <span class="num">01</span>
+        <p>Hoy muchos negocios tienen redes sociales, páginas web, campañas publicitarias, bases de datos, facturas, clientes potenciales e información dispersa en diferentes herramientas.</p>
+      </div>
+      <div class="problem-card reveal">
+        <span class="num">02</span>
+        <p>El problema no siempre es la falta de tecnología. Muchas veces el problema es que esa tecnología no está conectada, no está bien estructurada o no está trabajando a favor del negocio.</p>
+      </div>
+      <div class="problem-card highlight reveal">
+        <span class="num">03</span>
+        <p>Por eso creamos soluciones digitales prácticas, visuales y personalizadas, combinando inteligencia artificial, automatización, análisis de datos, desarrollo web y estrategia comercial.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section class="services" id="servicios">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Nuestras soluciones</span>
+      <h2>Diez formas de llevar tu negocio a otro nivel</h2>
+      <p>Cada solución se adapta al caso real del cliente. Esto es lo que podemos construir para ti.</p>
+    </div>
+
+    <!-- 1. Web Scrolling -->
+    <div class="service-block">
+      <div class="service-left reveal">
+        <span class="service-num">01 / 10</span>
+        <h3>Web Scrolling</h3>
+        <p class="tagline">Webs interactivas tipo Apple para presentar mejor tu negocio</p>
+      </div>
+      <div class="service-right reveal">
+        <p>Creamos páginas web modernas, visuales e interactivas, donde el usuario descubre la información a medida que hace scroll.</p>
+        <p>A diferencia de una web tradicional, una web scrolling no muestra todo de forma plana. Presenta la información de manera progresiva, con animaciones, imágenes, videos, textos estratégicos y llamados a la acción que guían al visitante hasta tomar una decisión.</p>
+        <p>Este tipo de web es ideal para negocios que quieren transmitir una imagen más profesional, diferenciarse de la competencia y presentar sus productos o servicios de forma más atractiva.</p>
+        <div class="service-lists">
+          <div class="list-block">
+            <h4>Ideal para</h4>
+            <ul class="list-check">
+              <li>Empresas que lanzan un nuevo servicio</li>
+              <li>Clínicas que quieren presentar tratamientos premium</li>
+              <li>Marcas personales que necesitan una web de alto impacto</li>
+              <li>Consultores, coaches o profesionales independientes</li>
+              <li>Productos digitales, cursos, eventos o lanzamientos</li>
+              <li>Negocios que quieren una landing page más visual y moderna</li>
+            </ul>
+          </div>
+          <div class="list-block">
+            <h4>Qué puede incluir</h4>
+            <ul class="list-check">
+              <li>Diseño moderno y profesional</li>
+              <li>Animaciones al hacer scroll</li>
+              <li>Secciones tipo storytelling</li>
+              <li>Presentación clara del producto, servicio o negocio</li>
+              <li>Imágenes, videos, mockups o elementos visuales</li>
+              <li>Beneficios explicados de forma simple</li>
+              <li>Comparativas, casos de uso o resultados</li>
+              <li>Botones de contacto, reserva, compra o agendamiento</li>
+              <li>Diseño responsive para celular, tablet y computador</li>
+            </ul>
+          </div>
+        </div>
+        <div class="result-box">
+          <span class="label">Resultado</span>
+          <p>Una web que no solo informa, sino que capta la atención, comunica valor, transmite confianza y ayuda a convertir visitantes en clientes.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Instagram a Web -->
+    <div class="service-block">
+      <div class="service-left reveal">
+        <span class="service-num">02 / 10</span>
+        <h3>Instagram a Web</h3>
+        <p class="tagline">Convierte tu perfil de Instagram en una página web profesional</p>
+        <span class="price-badge">200€ – 1000€</span>
+      </div>
+      <div class="service-right reveal">
+        <p>Muchos creadores, profesionales y negocios ya tienen gran parte de su contenido en Instagram, pero no cuentan con una web propia que les ayude a vender mejor, captar clientes y transmitir más confianza.</p>
+        <p>Esta solución toma la información visible del perfil de Instagram —biografía, fotos, videos, servicios, productos, testimonios, estilo visual, tono de comunicación y propuesta de valor— y la transforma en una página web profesional, clara y lista para convertir visitantes en clientes.</p>
+        <p>La idea es que el negocio deje de depender únicamente de Instagram y tenga una presencia digital más sólida, ordenada y comercial.</p>
+        <div class="service-lists">
+          <div class="list-block">
+            <h4>Ideal para</h4>
+            <ul class="list-check">
+              <li>Creadores de contenido</li>
+              <li>Marcas personales</li>
+              <li>Coaches y consultores</li>
+              <li>Fotógrafos, artistas y diseñadores</li>
+              <li>Odontólogos, médicos y profesionales de salud</li>
+              <li>Estilistas, spas y centros de belleza</li>
+              <li>Restaurantes, cafeterías y negocios locales</li>
+              <li>Emprendedores que venden por redes sociales</li>
+            </ul>
+          </div>
+          <div class="list-block">
+            <h4>Qué puede incluir</h4>
+            <ul class="list-check">
+              <li>Presentación profesional del creador, marca o negocio</li>
+              <li>Servicios o productos principales</li>
+              <li>Galería visual con contenido destacado</li>
+              <li>Testimonios o casos de éxito, si existen</li>
+              <li>Botones de contacto por WhatsApp, email o redes sociales</li>
+              <li>Llamados a la acción para reservas, compras, consultas o contratación</li>
+              <li>Diseño alineado con la identidad visual del Instagram</li>
+              <li>Versión optimizada para celular</li>
+              <li>Estructura clara para que el visitante entienda rápido qué se ofrece</li>
+            </ul>
+          </div>
+        </div>
+        <div class="result-box">
+          <span class="label">Resultado</span>
+          <p>Una web propia, profesional y bien estructurada, creada a partir del contenido que el cliente ya tiene en Instagram.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Auditoría Meta Ads -->
+    <div class="service-block">
+      <div class="service-left reveal">
+        <span class="service-num">03 / 10</span>
+        <h3>Auditoría Meta Ads</h3>
+        <p class="tagline">Diagnóstico para dejar de quemar dinero en publicidad</p>
+        <span class="price-badge">200€ – 800€</span>
+      </div>
+      <div class="service-right reveal">
+        <p>Muchos negocios invierten en Meta Ads —Facebook e Instagram— sin tener una estrategia clara. Publican anuncios, gastan presupuesto, reciben algunos clics, pero no logran convertir de forma rentable.</p>
+        <p>Esta auditoría permite analizar campañas, anuncios, landing pages y mensajes comerciales para detectar qué está fallando y qué debe mejorar el negocio para obtener mejores resultados.</p>
+        <p>Está pensada especialmente para negocios pequeños, emprendedores, marcas personales, clínicas, ecommerce, academias, restaurantes, inmobiliarias o empresas que invierten en publicidad pero no están satisfechas con sus resultados.</p>
+        <div class="service-lists single">
+          <div class="list-block">
+            <h4>Qué se analiza</h4>
+            <ul class="list-check">
+              <li>Anuncios activos o recientes</li>
+              <li>Creatividades: imágenes, videos, carruseles o reels</li>
+              <li>Copy de los anuncios</li>
+              <li>Oferta comercial</li>
+              <li>Segmentación y mensaje</li>
+              <li>Landing page o página de destino</li>
+              <li>Llamados a la acción</li>
+              <li>Coherencia entre anuncio, oferta y página</li>
+              <li>Posibles fugas de conversión</li>
+              <li>Claridad del embudo comercial</li>
+              <li>Errores que pueden estar causando pérdida de presupuesto</li>
+            </ul>
+          </div>
+        </div>
+        <div class="highlight-box">
+          <span class="label">Entregable</span>
+          <p>Se entrega una auditoría visual, clara y accionable, con un diagnóstico de lo que está funcionando, lo que está fallando y las mejoras recomendadas. El objetivo no es solo decir qué está mal, sino entregar una guía práctica para mejorar campañas, reducir pérdidas y aumentar conversiones.</p>
+        </div>
+        <div class="result-box">
+          <span class="label">Resultado</span>
+          <p>El negocio entiende por qué está quemando presupuesto y recibe una ruta concreta para mejorar sus anuncios, su mensaje, su oferta y su proceso de conversión.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. Auditoría SEO -->
+    <div class="service-block">
+      <div class="service-left reveal">
+        <span class="service-num">04 / 10</span>
+        <h3>Auditoría SEO</h3>
+        <p class="tagline">Mejora tu posicionamiento orgánico en Google</p>
+        <span class="price-badge">200€ – 700€</span>
+      </div>
+      <div class="service-right reveal">
+        <p>Una web puede verse bonita, pero si nadie la encuentra en Google, está perdiendo oportunidades todos los días.</p>
+        <p>Esta auditoría analiza el estado SEO de una página web para identificar problemas técnicos, oportunidades de posicionamiento, falta de palabras clave, estructura deficiente, contenido débil o elementos que impiden que la empresa aparezca mejor en buscadores.</p>
+        <div class="service-lists">
+          <div class="list-block">
+            <h4>Qué se analiza</h4>
+            <ul class="list-check">
+              <li>Estado general del sitio web</li>
+              <li>Palabras clave actuales y oportunidades</li>
+              <li>Títulos, metadescripciones y encabezados</li>
+              <li>Estructura de contenidos</li>
+              <li>Velocidad y experiencia de usuario</li>
+              <li>Indexación en Google</li>
+              <li>SEO local, cuando aplica</li>
+              <li>Competidores principales</li>
+              <li>Contenido faltante o mal optimizado</li>
+            </ul>
+          </div>
+          <div class="list-block">
+            <h4>Ideal para</h4>
+            <ul class="list-check">
+              <li>Empresas que no aparecen en Google</li>
+              <li>Negocios locales que quieren más visibilidad</li>
+              <li>Profesionales con web pero sin tráfico</li>
+              <li>Clínicas, restaurantes, inmobiliarias, consultores y ecommerce</li>
+              <li>Marcas que dependen demasiado de publicidad paga</li>
+            </ul>
+          </div>
+        </div>
+        <div class="highlight-box">
+          <span class="label">Entregable</span>
+          <p>Una auditoría SEO visual y fácil de entender, con hallazgos principales, problemas detectados y recomendaciones priorizadas.</p>
+        </div>
+        <div class="result-box">
+          <span class="label">Resultado</span>
+          <p>El negocio obtiene una visión clara de qué debe mejorar para aparecer mejor en Google, atraer más tráfico orgánico y depender menos de anuncios pagados.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. Automatizaciones n8n -->
+    <div class="service-block">
+      <div class="service-left reveal">
+        <span class="service-num">05 / 10</span>
+        <h3>Automatizaciones n8n</h3>
+        <p class="tagline">Automatiza procesos y reduce tareas manuales</p>
+        <span class="price-badge">100€ – 1000€</span>
+      </div>
+      <div class="service-right reveal">
+        <p>Muchas empresas pierden tiempo haciendo tareas repetitivas: copiar datos, responder mensajes, enviar correos, actualizar hojas de cálculo, agendar citas, generar reportes o mover información entre herramientas.</p>
+        <p>Con n8n se pueden crear automatizaciones personalizadas para conectar aplicaciones, procesar información y ejecutar flujos de trabajo sin intervención manual. La idea es que el negocio trabaje de forma más ordenada, rápida y eficiente.</p>
+        <div class="service-lists">
+          <div class="list-block">
+            <h4>Qué se puede automatizar</h4>
+            <ul class="list-check">
+              <li>Captura de leads desde formularios, WhatsApp o landing pages</li>
+              <li>Registro automático en Google Sheets, Airtable, Notion o bases de datos</li>
+              <li>Envío de correos automáticos</li>
+              <li>Notificaciones por Telegram, Slack o WhatsApp</li>
+              <li>Agendamiento en Google Calendar</li>
+              <li>Recordatorios de citas</li>
+              <li>Seguimiento de prospectos</li>
+              <li>Clasificación de clientes</li>
+              <li>Generación de reportes</li>
+              <li>Integraciones con CRM</li>
+              <li>Procesamiento de documentos o archivos</li>
+              <li>Workflows con inteligencia artificial</li>
+            </ul>
+          </div>
+          <div class="list-block">
+            <h4>Ideal para</h4>
+            <ul class="list-check">
+              <li>Consultorios médicos y odontológicos</li>
+              <li>Agencias</li>
+              <li>Inmobiliarias</li>
+              <li>Restaurantes y hoteles</li>
+              <li>Ecommerce</li>
+              <li>Equipos comerciales</li>
+              <li>Consultoras</li>
+              <li>Profesionales independientes</li>
+              <li>Negocios que atienden muchos mensajes o leads</li>
+            </ul>
+          </div>
+        </div>
+        <div class="result-box">
+          <span class="label">Resultado</span>
+          <p>El negocio reduce trabajo manual, responde más rápido, organiza mejor su información y puede operar con procesos más eficientes.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. Auditoría de Negocio Digital -->
+    <div class="service-block">
+      <div class="service-left reveal">
+        <span class="service-num">06 / 10</span>
+        <h3>Auditoría de Negocio Digital</h3>
+        <p class="tagline">Diagnóstico integral de presencia, oferta y estrategia digital</p>
+        <span class="price-badge">500€ – 3000€</span>
+      </div>
+      <div class="service-right reveal">
+        <p>Esta auditoría realiza un análisis completo del negocio digital para detectar fallas, oportunidades y puntos de mejora en su presencia online, comunicación, publicidad, oferta y estrategia comercial.</p>
+        <p>A diferencia de una auditoría puntual de SEO o Meta Ads, esta revisión mira el negocio de forma global: qué vende, cómo lo comunica, cómo se posiciona, qué tan clara es su oferta, cómo se ve frente a la competencia y qué tan coherente es su estrategia digital.</p>
+        <div class="service-lists single">
+          <div class="list-block">
+            <h4>Qué se analiza</h4>
+            <ul class="list-check">
+              <li>Posicionamiento del negocio</li>
+              <li>Página web o landing page</li>
+              <li>Redes sociales</li>
+              <li>Marca personal o marca empresarial</li>
+              <li>Google Ads</li>
+              <li>Meta Ads</li>
+              <li>Mensaje comercial</li>
+              <li>Oferta</li>
+              <li>Precios</li>
+              <li>Promesa de valor</li>
+              <li>Embudo de ventas</li>
+              <li>Claridad de los servicios o productos</li>
+              <li>Incongruencias entre lo que comunica y lo que vende</li>
+              <li>Experiencia del usuario</li>
+              <li>Competencia digital</li>
+              <li>Oportunidades de mejora</li>
+            </ul>
+          </div>
+        </div>
+        <div class="highlight-box">
+          <span class="label">Entregable</span>
+          <p>Se entrega un reporte visual con una auditoría completa del negocio, incluyendo diagnóstico, hallazgos principales, oportunidades y recomendaciones concretas.</p>
+        </div>
+        <div class="result-box">
+          <span class="label">Resultado</span>
+          <p>El cliente recibe una visión estratégica de su negocio digital y una hoja de ruta para mejorar su comunicación, su presencia online, su oferta y su capacidad de conversión.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7. Dashboard de Facturas -->
+    <div class="service-block">
+      <div class="service-left reveal">
+        <span class="service-num">07 / 10</span>
+        <h3>Dashboard de Facturas</h3>
+        <p class="tagline">Convierte facturas desordenadas en información clara para decidir mejor</p>
+        <span class="price-badge">100€ – 500€</span>
+      </div>
+      <div class="service-right reveal">
+        <p>Muchos negocios pequeños llevan su contabilidad en Excel, guardan facturas en carpetas del computador o tienen documentos mezclados sin una estructura clara. Esto hace difícil saber cuánto se vendió, cuánto se gastó, qué impuestos se pagaron, cuáles fueron los principales costos o cómo va el balance del mes.</p>
+        <p>Esta solución permite analizar facturas, archivos y documentos para extraer información clave y convertirla en un dashboard visual y ordenado.</p>
+        <div class="service-lists">
+          <div class="list-block">
+            <h4>Qué puede analizar</h4>
+            <ul class="list-check">
+              <li>Facturas de compra</li>
+              <li>Facturas de venta</li>
+              <li>Gastos</li>
+              <li>Ingresos</li>
+              <li>Impuestos</li>
+              <li>Proveedores</li>
+              <li>Clientes</li>
+              <li>Fechas</li>
+              <li>Categorías de gasto</li>
+              <li>Balance mensual</li>
+              <li>Comparación entre meses</li>
+            </ul>
+          </div>
+          <div class="list-block">
+            <h4>Qué puede mostrar el dashboard</h4>
+            <ul class="list-check">
+              <li>Total de ingresos</li>
+              <li>Total de gastos</li>
+              <li>Balance del mes</li>
+              <li>Gastos por categoría</li>
+              <li>Proveedores principales</li>
+              <li>Evolución mensual</li>
+              <li>Facturas pendientes</li>
+              <li>Comparativos históricos</li>
+            </ul>
+          </div>
+        </div>
+        <div class="highlight-box">
+          <span class="label">Cómo funciona</span>
+          <p>El cliente entrega una carpeta con facturas, archivos PDF, imágenes o documentos. La herramienta analiza la información, extrae los datos relevantes, los organiza y los presenta en un dashboard visual.</p>
+        </div>
+        <div class="result-box">
+          <span class="label">Resultado</span>
+          <p>El negocio deja de tener información financiera desordenada y obtiene una vista clara, visual y práctica para tomar mejores decisiones.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 8. Prospección con Firecrawl -->
+    <div class="service-block">
+      <div class="service-left reveal">
+        <span class="service-num">08 / 10</span>
+        <h3>Prospección con Firecrawl</h3>
+        <p class="tagline">Extracción y organización de leads para campañas comerciales</p>
+        <span class="price-badge">400€ – 900€ aprox.</span>
+      </div>
+      <div class="service-right reveal">
+        <p>Esta solución permite realizar prospección digital mediante extracción de datos públicos de internet, organizando la información en bases limpias y útiles para acciones comerciales.</p>
+        <p>Por ejemplo, se puede buscar información de dentistas en Madrid, clínicas en Lima, restaurantes en una ciudad específica, hoteles, inmobiliarias, abogados, coaches, negocios locales o empresas de un sector determinado.</p>
+        <div class="service-lists">
+          <div class="list-block">
+            <h4>Qué tipo de datos se pueden obtener</h4>
+            <ul class="list-check">
+              <li>Nombre del negocio</li>
+              <li>Sitio web</li>
+              <li>Correo electrónico público</li>
+              <li>Teléfono público</li>
+              <li>Dirección</li>
+              <li>Redes sociales</li>
+              <li>Categoría del negocio</li>
+              <li>Ciudad o zona</li>
+              <li>Información comercial disponible públicamente</li>
+            </ul>
+          </div>
+          <div class="list-block">
+            <h4>Dónde se puede entregar la información</h4>
+            <ul class="list-check">
+              <li>Google Sheets</li>
+              <li>Excel</li>
+              <li>PDF</li>
+              <li>Base de datos</li>
+              <li>CRM</li>
+              <li>Archivo descargable</li>
+              <li>Panel organizado por categorías</li>
+            </ul>
+          </div>
+        </div>
+        <div class="highlight-box">
+          <span class="label">Uso recomendado</span>
+          <p>La información obtenida puede servir para campañas de prospección comercial, email outreach, contacto directo, investigación de mercado o construcción de bases de datos segmentadas.</p>
+          <p class="note-inline">El proceso debe usarse siempre respetando buenas prácticas, normativas aplicables y datos disponibles públicamente.</p>
+        </div>
+        <div class="result-box">
+          <span class="label">Resultado</span>
+          <p>El cliente obtiene una base de leads organizada, segmentada y lista para trabajar comercialmente.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 9. Extensiones de Chrome -->
+    <div class="service-block">
+      <div class="service-left reveal">
+        <span class="service-num">09 / 10</span>
+        <h3>Extensiones de Chrome</h3>
+        <p class="tagline">Herramientas personalizadas directamente en el navegador</p>
+      </div>
+      <div class="service-right reveal">
+        <p>Creamos extensiones de Google Chrome diseñadas para resolver necesidades específicas dentro del navegador.</p>
+        <p>Una extensión puede funcionar como una herramienta interna, un asistente comercial, un analizador de precios, un extractor de información, un comparador, un panel de ayuda o una utilidad personalizada para equipos de trabajo.</p>
+        <div class="example-cards">
+          <div class="example-card">Una extensión para <strong>Amazon</strong> puede analizar precios de productos y mostrar en un costado de la pantalla si el precio está alto, bajo o dentro del promedio de mercado.</div>
+          <div class="example-card">Una extensión para <strong>AliExpress o Alibaba</strong> puede ayudar a comparar precios, revisar proveedores, detectar oportunidades y apoyar procesos de compra para ecommerce.</div>
+          <div class="example-card">Una extensión para <strong>YouTube</strong> puede analizar videos, comparar rendimiento, revisar etiquetas, estudiar contenido de la competencia y mostrar información útil en tiempo real.</div>
+        </div>
+        <p>También se pueden crear extensiones para LinkedIn, páginas internas, CRMs, ecommerce, sistemas administrativos o plataformas específicas.</p>
+        <div class="service-lists single">
+          <div class="list-block">
+            <h4>Qué puede hacer una extensión</h4>
+            <ul class="list-check">
+              <li>Leer información visible en una página</li>
+              <li>Mostrar recomendaciones en tiempo real</li>
+              <li>Comparar precios o datos</li>
+              <li>Extraer información útil</li>
+              <li>Automatizar acciones repetitivas</li>
+              <li>Ayudar a equipos comerciales</li>
+              <li>Analizar contenido</li>
+              <li>Mostrar alertas o indicadores</li>
+              <li>Conectar con APIs externas</li>
+              <li>Integrarse con IA</li>
+            </ul>
+          </div>
+        </div>
+        <div class="result-box">
+          <span class="label">Resultado</span>
+          <p>El cliente obtiene una herramienta personalizada que vive dentro del navegador y le permite trabajar más rápido, analizar mejor la información o automatizar tareas específicas.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 10. Skill Creator -->
+    <div class="service-block">
+      <div class="service-left reveal">
+        <span class="service-num">10 / 10</span>
+        <h3>Skill Creator</h3>
+        <p class="tagline">Creación de skills personalizadas para nuevos casos de uso</p>
+      </div>
+      <div class="service-right reveal">
+        <p>Esta solución permite diseñar y construir nuevas skills a medida, según el problema, negocio o proceso que se quiera resolver.</p>
+        <p>La idea es tener una base flexible para crear soluciones específicas: auditorías, automatizaciones, scraping, análisis de datos, generación de reportes, agentes de IA, herramientas internas o procesos digitales especializados.</p>
+        <div class="service-lists single">
+          <div class="list-block">
+            <h4>Qué se puede crear</h4>
+            <ul class="list-check">
+              <li>Skills para análisis de documentos</li>
+              <li>Skills para auditorías comerciales</li>
+              <li>Skills para generación de reportes</li>
+              <li>Skills para automatización de tareas</li>
+              <li>Skills para extracción de datos</li>
+              <li>Skills para atención al cliente</li>
+              <li>Skills para investigación de mercado</li>
+              <li>Skills para análisis de competencia</li>
+              <li>Skills para procesamiento de facturas</li>
+              <li>Skills para ventas, marketing o soporte</li>
+              <li>Skills internas para equipos de trabajo</li>
+            </ul>
+          </div>
+        </div>
+        <div class="highlight-box">
+          <span class="label">Ideal para</span>
+          <p>Empresas, profesionales o equipos que tienen una necesidad concreta, pero no encuentran una herramienta existente que la resuelva exactamente como necesitan.</p>
+        </div>
+        <div class="result-box">
+          <span class="label">Resultado</span>
+          <p>Se crea una skill personalizada que responde a un problema específico del cliente y puede integrarse dentro de su flujo de trabajo digital.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PARA QUIÉN -->
+<section class="audience" id="publico">
+  <div class="container audience-inner">
+    <div class="reveal">
+      <span class="eyebrow">Para quién</span>
+      <h2>¿Para quién son estas soluciones?</h2>
+      <p>Estas soluciones están pensadas para negocios, profesionales, creadores, agencias y empresas que quieren aprovechar la inteligencia artificial, la automatización y el desarrollo digital para mejorar sus resultados. Son especialmente útiles para quienes quieren:</p>
+    </div>
+    <div class="tag-grid reveal">
+      <span class="tag-pill">Vender mejor</span>
+      <span class="tag-pill">Automatizar procesos</span>
+      <span class="tag-pill">Ahorrar tiempo</span>
+      <span class="tag-pill">Captar más clientes</span>
+      <span class="tag-pill">Mejorar su presencia digital</span>
+      <span class="tag-pill">Entender mejor sus datos</span>
+      <span class="tag-pill">Dejar de depender de tareas manuales</span>
+      <span class="tag-pill">Convertir información desordenada en decisiones claras</span>
+      <span class="tag-pill">Crear herramientas digitales propias</span>
+    </div>
+  </div>
+</section>
+
+<!-- CÓMO TRABAJAMOS -->
+<section class="process" id="proceso">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Metodología</span>
+      <h2>Cómo trabajamos</h2>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item reveal">
+        <span class="timeline-num">01</span>
+        <div>
+          <h3>Entendemos el problema</h3>
+          <p>Primero analizamos qué necesita el negocio, qué herramientas usa actualmente, qué proceso quiere mejorar y qué resultado espera obtener.</p>
+        </div>
+      </div>
+      <div class="timeline-item reveal">
+        <span class="timeline-num">02</span>
+        <div>
+          <h3>Diseñamos la solución</h3>
+          <p>Definimos la estructura de la solución: web, auditoría, automatización, dashboard, extensión, base de datos o skill personalizada.</p>
+        </div>
+      </div>
+      <div class="timeline-item reveal">
+        <span class="timeline-num">03</span>
+        <div>
+          <h3>Construimos la herramienta</h3>
+          <p>Desarrollamos la solución usando tecnología moderna, inteligencia artificial, automatización y diseño orientado a resultados.</p>
+        </div>
+      </div>
+      <div class="timeline-item reveal">
+        <span class="timeline-num">04</span>
+        <div>
+          <h3>Entregamos una solución clara y utilizable</h3>
+          <p>El cliente recibe una herramienta funcional, visual y práctica, lista para usar o implementar en su proceso de trabajo.</p>
+        </div>
+      </div>
+      <div class="timeline-item reveal">
+        <span class="timeline-num">05</span>
+        <div>
+          <h3>Ajustamos según el caso real</h3>
+          <p>Cada negocio es diferente. Por eso las soluciones pueden adaptarse, mejorar y escalar según las necesidades del cliente.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NUESTRA DIFERENCIA -->
+<section class="difference">
+  <div class="bg-glow cyan" style="width:460px;height:460px;bottom:-120px;right:-100px;"></div>
+  <div class="container reveal-scale" style="position:relative;z-index:1;">
+    <span class="eyebrow" style="justify-content:center;">Nuestra diferencia</span>
+    <h2>No vendemos tecnología por vender tecnología</h2>
+    <p>Creamos soluciones digitales pensadas para resolver problemas concretos de negocio.</p>
+    <p>Combinamos estrategia, automatización, inteligencia artificial, análisis de datos y desarrollo web para construir herramientas útiles, visuales y orientadas a resultados.</p>
+    <p class="emphasis">La meta es simple: que el negocio venda mejor, trabaje con menos fricción y tome decisiones con información más clara.</p>
+  </div>
+</section>
+
+<!-- CTA FINAL + CONTACTO -->
+<section class="final-cta" id="contacto">
+  <div class="bg-glow violet" style="width:520px;height:520px;top:60px;left:50%;transform:translateX(-50%);"></div>
+  <div class="container reveal" style="position:relative;z-index:1;">
+    <span class="eyebrow" style="justify-content:center;">Empecemos</span>
+    <h2>¿Quieres una solución digital<br>adaptada a tu negocio?</h2>
+    <p>Cuéntanos qué necesitas mejorar: tu web, tus campañas, tus procesos, tus datos, tus leads o tus herramientas internas. Analizamos tu caso y te proponemos una solución práctica, personalizada y enfocada en resultados.</p>
+    <div class="cta-buttons">
+      <a href="https://wa.me/51976828556?text=Hola%2C%20quiero%20agendar%20una%20llamada%20para%20hablar%20sobre%20soluciones%20digitales%20con%20IA%20para%20mi%20negocio" class="btn btn-primary">Agenda una llamada</a>
+      <a href="https://wa.me/51976828556?text=Hola%2C%20quiero%20solicitar%20una%20auditor%C3%ADa%20para%20mi%20negocio" class="btn btn-outline">Solicita una auditoría</a>
+      <a href="https://wa.me/51976828556?text=Hola%2C%20quiero%20automatizar%20procesos%20de%20mi%20negocio" class="btn btn-outline">Quiero automatizar mi negocio</a>
+    </div>
+  </div>
+  <div class="container closing reveal">
+    <h3>Tecnología que trabaja para tu negocio</h3>
+    <p>Desde una web profesional hasta una automatización completa, creamos soluciones digitales con IA para que tu negocio pueda crecer, organizarse mejor y tomar decisiones más inteligentes. Transforma procesos manuales en sistemas inteligentes.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="#scroll-hero" class="logo"><span class="logo-dot"></span>Agentes<span>IA</span></a>
+        <p>Soluciones digitales con inteligencia artificial para negocios, profesionales, creadores y empresas que quieren crecer con tecnología.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navegación</h4>
+        <a href="#sobre">Sobre nosotros</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#proceso">Cómo trabajamos</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <a href="mailto:smart.consulting@agentes-inteligencia-artificial.online">smart.consulting@agentes-inteligencia-artificial.online</a>
+        <a href="https://wa.me/51976828556" target="_blank" rel="noopener">+51 976 828 556 (WhatsApp)</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span id="footerYear">© 2026 Agentes IA. Todos los derechos reservados.</span>
+      <span>Hecho con inteligencia artificial y estrategia.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // Nav scroll state
+  const navbar = document.getElementById('navbar');
+  const onScrollNav = () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 40);
+  };
+  window.addEventListener('scroll', onScrollNav, { passive:true });
+  onScrollNav();
+
+  // Mobile menu toggle
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    navToggle.textContent = isOpen ? '✕' : '☰';
+  });
+  navLinks.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      navToggle.textContent = '☰';
+    });
+  });
+
+  // Reveal on scroll
+  const revealEls = document.querySelectorAll('.reveal, .reveal-scale');
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReduced) {
+    revealEls.forEach(el => el.classList.add('is-visible'));
+  } else {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+    revealEls.forEach(el => io.observe(el));
+  }
+
+  // Scroll-driven hero video
+  const video = document.getElementById('heroVideo');
+  const hero = document.getElementById('scroll-hero');
+  const progressFill = document.getElementById('progressFill');
+  if (video && hero) {
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+
+    if (isMobile || prefersReduced) {
+      video.autoplay = true;
+      video.loop = true;
+      video.play().catch(() => {});
+    } else {
+      video.pause();
+      let isReady = false;
+      video.addEventListener('loadedmetadata', () => { isReady = true; });
+      video.addEventListener('error', () => { isReady = false; });
+      video.load();
+
+      function updateVideo() {
+        if (!isReady || !video.duration) return;
+        const rect = hero.getBoundingClientRect();
+        const scrolled = -rect.top;
+        const scrollable = hero.offsetHeight - window.innerHeight;
+        let progress = 0;
+        if (scrolled <= 0) {
+          progress = 0;
+        } else if (scrolled >= scrollable) {
+          progress = 1;
+        } else {
+          progress = scrolled / scrollable;
+        }
+        video.currentTime = progress * video.duration;
+        if (progressFill) progressFill.style.width = (progress * 100) + '%';
+      }
+
+      let ticking = false;
+      window.addEventListener('scroll', () => {
+        if (!ticking) {
+          requestAnimationFrame(() => { updateVideo(); ticking = false; });
+          ticking = true;
+        }
+      }, { passive: true });
+      window.addEventListener('resize', updateVideo);
+    }
+  }
+})();
+</script>
+</body>
+</html>
