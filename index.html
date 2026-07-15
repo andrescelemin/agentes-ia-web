@@ -1,16 +1,2391 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Agentes de IA para Empresas | Smart Prompt Consulting</title>
-    <meta
-      name="description"
-      content="Implementamos agentes de IA y automatización para negocios con soluciones modernas, landing pages optimizadas y flujos inteligentes."
-    />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agentes IA — Soluciones Digitales con Inteligencia Artificial</title>
+<meta name="description" content="Webs modernas, auditorías digitales, automatizaciones, dashboards, prospección y soluciones personalizadas con IA para negocios que quieren crecer con tecnología.">
+<link rel="canonical" href="https://www.agentes-inteligencia-artificial.online/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Agentes IA">
+<meta property="og:title" content="Agentes IA — Soluciones Digitales con Inteligencia Artificial">
+<meta property="og:description" content="Webs modernas, auditorías digitales, automatizaciones, dashboards, prospección y soluciones personalizadas con IA para negocios que quieren crecer con tecnología.">
+<meta property="og:url" content="https://www.agentes-inteligencia-artificial.online/">
+<meta property="og:image" content="https://www.agentes-inteligencia-artificial.online/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="es_ES">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Agentes IA — Soluciones Digitales con Inteligencia Artificial">
+<meta name="twitter:description" content="Webs modernas, auditorías digitales, automatizaciones, dashboards, prospección y soluciones personalizadas con IA para negocios que quieren crecer con tecnología.">
+<meta name="twitter:image" content="https://www.agentes-inteligencia-artificial.online/assets/og-image.jpg">
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="alternate icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta name="theme-color" content="#06060c">
+
+<!-- Google Search Console: descomenta y pega tu código de verificación cuando lo tengas -->
+<!-- <meta name="google-site-verification" content="TU_CODIGO_DE_VERIFICACION"> -->
+
+<!-- dataLayer inicializado temprano para GTM/GA4 (los eventos solo se envían si el visitante acepta cookies analíticas) -->
+<script>window.dataLayer = window.dataLayer || [];</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Datos estructurados -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Agentes IA",
+  "url": "https://www.agentes-inteligencia-artificial.online/",
+  "description": "Soluciones digitales con inteligencia artificial: webs modernas, auditorías, automatizaciones, dashboards y prospección para negocios.",
+  "areaServed": ["ES", "LATAM"],
+  "email": "mailto:smart.consulting@agentes-inteligencia-artificial.online",
+  "telephone": "+51976828556",
+  "sameAs": [],
+  "makesOffer": [
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Instagram a Web" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Web Scrolling Premium" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Auditoría SEO" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Auditoría Meta Ads" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Automatizaciones con n8n" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Dashboards e informes" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Prospección con IA" } }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Qué tipo de soluciones ofrecen?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Webs modernas, auditorías digitales, automatizaciones, dashboards, sistemas de prospección y soluciones personalizadas con inteligencia artificial: Web Scrolling, Instagram a Web, Auditoría Meta Ads, Auditoría SEO, Automatizaciones con n8n, Auditoría de Negocio Digital, Dashboard de Facturas, Prospección con Firecrawl, Extensiones de Chrome y Skill Creator." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto cuesta un proyecto?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Tenemos 4 planes: Diagnóstico Digital desde US$100, Web + WhatsApp desde US$249, Automatización Pro desde US$349, y Sistema IA Completo por cotización según el alcance. Cada proyecto se ajusta al caso concreto del cliente." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo es el proceso de trabajo?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Primero se analiza el problema y las herramientas actuales del negocio. Después se diseña la solución, se construye, se entrega lista para usar y se ajusta según la evolución del caso." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Para quién son estas soluciones?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Para negocios, profesionales, creadores, agencias y empresas que quieren vender mejor, automatizar procesos, ahorrar tiempo, captar más clientes o dejar de depender de tareas manuales." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Trabajan con negocios fuera de España?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí, se trabaja con negocios en España y Latinoamérica de forma remota, coordinando todo por WhatsApp y correo electrónico." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo empiezo?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Escribiendo por WhatsApp contando qué se necesita mejorar (web, campañas, procesos o datos). Se analiza el caso y se propone una solución práctica enfocada en resultados." }
+    }
+  ]
+}
+</script>
+<style>
+  :root{
+    --bg:#06060c;
+    --bg-alt:#0a0a14;
+    --surface:#12121f;
+    --surface-2:#181829;
+    --border:rgba(255,255,255,.08);
+    --border-2:rgba(255,255,255,.14);
+    --text:#f3f3f8;
+    --text-muted:#9c9cb0;
+    --text-dim:#6c6c82;
+    --violet:#a855f7;
+    --violet-2:#7c3aed;
+    --cyan:#22d3ee;
+    --gradient:linear-gradient(135deg,var(--violet) 0%,var(--cyan) 100%);
+    --gradient-soft:linear-gradient(135deg,rgba(168,85,247,.15),rgba(34,211,238,.10));
+    --shadow-glow:0 0 60px rgba(168,85,247,.25);
+    --ease:cubic-bezier(.16,1,.3,1);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter',sans-serif;
+    line-height:1.6;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{font-family:'Sora',sans-serif;line-height:1.15;letter-spacing:-.02em;}
+  a{color:inherit;text-decoration:none;}
+  ul{list-style:none;}
+  img,video{max-width:100%;display:block;}
+  ::selection{background:var(--violet);color:#fff;}
+  ::-webkit-scrollbar{width:10px;}
+  ::-webkit-scrollbar-track{background:var(--bg);}
+  ::-webkit-scrollbar-thumb{background:var(--surface-2);border-radius:10px;}
+  ::-webkit-scrollbar-thumb:hover{background:var(--violet-2);}
+
+  .container{max-width:1200px;margin:0 auto;padding:0 24px;}
+  section{position:relative;}
+
+  /* background decorative glow */
+  .bg-glow{position:absolute;border-radius:50%;filter:blur(120px);opacity:.35;pointer-events:none;z-index:0;}
+  .bg-glow.violet{background:var(--violet);}
+  .bg-glow.cyan{background:var(--cyan);}
+
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:.78rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--cyan);margin-bottom:16px;
+  }
+  .eyebrow::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--gradient);}
+
+  .gradient-text{
+    background:var(--gradient);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+
+  /* ---------- NAV ---------- */
+  .navbar{
+    position:fixed;top:0;left:0;width:100%;z-index:1000;
+    padding:20px 0;transition:all .4s var(--ease);
+    border-bottom:1px solid transparent;
+  }
+  .navbar.scrolled{
+    background:rgba(6,6,12,.75);backdrop-filter:blur(16px) saturate(140%);
+    -webkit-backdrop-filter:blur(16px) saturate(140%);
+    border-bottom:1px solid var(--border);padding:14px 0;
+  }
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;}
+  .logo{font-family:'Sora',sans-serif;font-weight:700;font-size:1.3rem;display:flex;align-items:center;gap:10px;}
+  .logo-mark{width:36px;height:36px;border-radius:10px;display:block;}
+  .logo span{background:var(--gradient);-webkit-background-clip:text;background-clip:text;color:transparent;}
+  .nav-links{display:flex;align-items:center;gap:clamp(16px,2.4vw,36px);}
+  .nav-links a{font-size:.92rem;font-weight:500;color:var(--text-muted);transition:color .25s;}
+  .nav-links a:hover{color:var(--text);}
+  .nav-cta{
+    display:inline-flex;align-items:center;gap:6px;
+    background:var(--gradient);color:#fff !important;font-weight:600;font-size:.88rem;
+    padding:10px 20px;border-radius:100px;transition:transform .25s var(--ease),box-shadow .25s;
+  }
+  .nav-cta:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(168,85,247,.4);}
+  .nav-toggle{display:none;background:none;border:none;color:var(--text);font-size:1.6rem;cursor:pointer;}
+
+  @media (max-width:860px){
+    .nav-links{
+      position:fixed;inset:0 0 0 auto;width:78%;max-width:340px;height:100vh;
+      background:var(--bg-alt);border-left:1px solid var(--border);
+      flex-direction:column;justify-content:center;align-items:flex-start;
+      gap:28px;padding:40px;transform:translateX(100%);transition:transform .4s var(--ease);
+    }
+    .nav-links.open{transform:translateX(0);}
+    .nav-links a{font-size:1.1rem;}
+    .nav-toggle{display:block;z-index:1001;}
+  }
+
+  /* ---------- BUTTONS ---------- */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    padding:15px 30px;border-radius:100px;font-weight:600;font-size:.95rem;
+    cursor:pointer;transition:transform .3s var(--ease),box-shadow .3s,background .3s,border-color .3s;
+    border:1px solid transparent;white-space:nowrap;
+  }
+  .btn-primary{background:var(--gradient);color:#fff;}
+  .btn-primary:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(168,85,247,.4);}
+  .btn-outline{border-color:var(--border-2);color:var(--text);background:rgba(255,255,255,.02);}
+  .btn-outline:hover{border-color:var(--cyan);color:var(--cyan);transform:translateY(-3px);}
+  .btn-block{width:100%;}
+
+  /* ---------- HERO / SCROLL VIDEO ---------- */
+  .scroll-video-hero{height:400vh;position:relative;background:var(--bg);}
+  .scroll-video-sticky{
+    position:sticky;top:0;height:100vh;width:100%;overflow:hidden;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:36px;
+    background:radial-gradient(circle at 30% 20%,rgba(124,58,237,.35),transparent 55%),
+               radial-gradient(circle at 75% 75%,rgba(34,211,238,.22),transparent 55%),var(--bg);
+  }
+  .video-frame{
+    position:relative;width:min(820px,86vw);aspect-ratio:16/9;border-radius:20px;overflow:hidden;
+    box-shadow:0 30px 80px rgba(0,0,0,.55),0 0 0 1px rgba(255,255,255,.08);
+  }
+  .video-frame video{
+    position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;
+  }
+  .scroll-cue{
+    position:absolute;bottom:36px;left:50%;transform:translateX(-50%);z-index:2;
+    display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--text-dim);font-size:.75rem;
+    letter-spacing:.1em;text-transform:uppercase;
+  }
+  .scroll-cue .mouse{
+    width:22px;height:36px;border:2px solid var(--border-2);border-radius:14px;position:relative;
+  }
+  .scroll-cue .mouse::before{
+    content:"";position:absolute;top:6px;left:50%;transform:translateX(-50%);
+    width:4px;height:8px;border-radius:2px;background:var(--cyan);animation:scrollcue 1.6s infinite;
+  }
+  @keyframes scrollcue{0%{opacity:1;top:6px;}100%{opacity:0;top:18px;}}
+  .scroll-progress-bar{position:absolute;bottom:0;left:0;width:100%;height:3px;background:rgba(255,255,255,.08);z-index:3;}
+  .scroll-progress-fill{height:100%;width:0%;background:var(--gradient);transition:width .05s linear;}
+
+  @media (max-width:768px){
+    .scroll-video-hero{height:100vh;}
+    .scroll-video-sticky{position:relative;}
+  }
+
+  /* ---------- HERO TEXT ---------- */
+  .hero-text{
+    min-height:100vh;display:flex;align-items:center;justify-content:center;
+    padding:140px 0 80px;background:var(--bg);text-align:center;
+  }
+  .hero-text-inner{display:flex;flex-direction:column;align-items:center;max-width:900px;margin:0 auto;padding:0 20px;}
+  .hero-text .eyebrow{justify-content:center;}
+  .hero-text h1{font-size:clamp(2.4rem,6vw,4.6rem);font-weight:800;margin-bottom:22px;}
+  .hero-text p.subtitle{font-size:clamp(1.05rem,2vw,1.35rem);color:var(--text-muted);max-width:680px;margin:0 auto 40px;}
+  .hero-btns{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;}
+  @media (prefers-reduced-motion:reduce){
+    .scroll-video-hero{height:100vh;}
+  }
+
+  /* ---------- REVEAL ---------- */
+  .reveal{opacity:0;transform:translateY(36px);transition:opacity .8s var(--ease),transform .8s var(--ease);}
+  .reveal.is-visible{opacity:1;transform:translateY(0);}
+  .reveal-scale{opacity:0;transform:scale(.94);transition:opacity .7s var(--ease),transform .7s var(--ease);}
+  .reveal-scale.is-visible{opacity:1;transform:scale(1);}
+  .stagger > *{transition-delay:calc(var(--i,0) * 80ms);}
+
+  /* ---------- ABOUT ---------- */
+  .about{padding:160px 0 120px;background:var(--bg-alt);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+  .about-lead{max-width:820px;margin-bottom:70px;}
+  .about-lead h2{font-size:clamp(1.9rem,4vw,2.8rem);margin-bottom:26px;}
+  .about-lead p{font-size:1.08rem;color:var(--text-muted);margin-bottom:18px;max-width:760px;}
+  .problem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .problem-card{
+    background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:32px 28px;
+    transition:transform .35s var(--ease),border-color .35s;
+  }
+  .problem-card:hover{transform:translateY(-6px);border-color:var(--border-2);}
+  .problem-card .num{font-family:'Sora',sans-serif;font-weight:800;font-size:1.6rem;color:transparent;-webkit-text-stroke:1.5px var(--violet);margin-bottom:16px;display:block;}
+  .problem-card p{color:var(--text-muted);font-size:.98rem;}
+  .problem-card.highlight{background:var(--gradient-soft);border-color:rgba(168,85,247,.3);}
+  @media (max-width:900px){.problem-grid{grid-template-columns:1fr;}}
+
+  /* ---------- SERVICES ---------- */
+  .services{padding:150px 0 100px;}
+  .section-head{max-width:720px;margin:0 auto 90px;text-align:center;}
+  .section-head h2{font-size:clamp(2rem,4.5vw,3.2rem);margin-bottom:18px;}
+  .section-head p{color:var(--text-muted);font-size:1.08rem;}
+
+  .service-block{
+    position:relative;padding:64px 0;border-top:1px solid var(--border);
+    display:grid;grid-template-columns:.75fr 1.25fr;gap:60px;
+  }
+  .service-block:first-of-type{border-top:none;}
+  .service-left{position:sticky;top:120px;align-self:start;height:max-content;}
+  .service-num{
+    font-family:'Sora',sans-serif;font-weight:800;font-size:1rem;color:var(--cyan);
+    letter-spacing:.08em;margin-bottom:18px;display:block;
+  }
+  .service-left h3{font-size:clamp(1.5rem,2.6vw,2rem);margin-bottom:14px;}
+  .service-left .tagline{color:var(--text-muted);font-size:1.02rem;margin-bottom:20px;}
+  .price-badge{
+    display:inline-flex;align-items:center;gap:8px;background:var(--surface-2);
+    border:1px solid var(--border-2);padding:9px 18px;border-radius:100px;
+    font-size:.85rem;font-weight:600;color:var(--cyan);
+  }
+  .service-right p{color:var(--text-muted);margin-bottom:18px;font-size:1rem;}
+  .service-lists{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin:30px 0;}
+  .service-lists.single{grid-template-columns:1fr;}
+  .list-block h4{
+    font-size:.82rem;text-transform:uppercase;letter-spacing:.08em;color:var(--text);
+    margin-bottom:16px;font-family:'Sora',sans-serif;font-weight:700;
+  }
+  .list-check li{
+    position:relative;padding-left:26px;margin-bottom:11px;color:var(--text-muted);font-size:.94rem;
+  }
+  .list-check li::before{
+    content:"";position:absolute;left:0;top:7px;width:9px;height:9px;border-radius:3px;
+    background:var(--gradient);transform:rotate(45deg);
+  }
+  .example-cards{display:grid;grid-template-columns:1fr;gap:14px;margin:24px 0;}
+  .example-card{
+    background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--violet);
+    border-radius:12px;padding:18px 22px;color:var(--text-muted);font-size:.94rem;
+  }
+  .highlight-box{
+    background:var(--surface);border:1px solid var(--border);border-radius:16px;
+    padding:24px 28px;margin:22px 0;
+  }
+  .highlight-box .label{
+    font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;color:var(--cyan);
+    font-weight:700;margin-bottom:10px;display:block;
+  }
+  .highlight-box p{margin-bottom:0;color:var(--text-muted);}
+  .result-box{
+    background:var(--gradient-soft);border:1px solid rgba(168,85,247,.3);border-radius:16px;
+    padding:26px 30px;margin-top:8px;
+  }
+  .result-box .label{font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;color:var(--violet);font-weight:700;margin-bottom:10px;display:block;}
+  .result-box p{color:var(--text);font-size:1rem;margin:0;font-weight:500;}
+  .note-inline{font-size:.85rem;color:var(--text-dim);font-style:italic;margin-top:14px;}
+
+  @media (max-width:900px){
+    .service-block{grid-template-columns:1fr;gap:26px;}
+    .service-left{position:static;}
+    .service-lists{grid-template-columns:1fr;}
+  }
+
+  /* ---------- NICHOS ---------- */
+  .niches{padding:130px 0;}
+  .niche-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:60px;}
+  .niche-card{
+    background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:30px 26px;
+    display:flex;flex-direction:column;transition:transform .35s var(--ease),border-color .35s;
+  }
+  .niche-card:hover{transform:translateY(-6px);border-color:var(--border-2);}
+  .niche-card .niche-badge{
+    width:40px;height:40px;border-radius:11px;background:var(--gradient-soft);
+    display:flex;align-items:center;justify-content:center;margin-bottom:18px;
+    font-family:'Sora',sans-serif;font-weight:800;font-size:.85rem;color:var(--violet);
+  }
+  .niche-card h3{font-size:1.1rem;margin-bottom:10px;}
+  .niche-card p{color:var(--text-muted);font-size:.9rem;margin-bottom:16px;flex:1;}
+  .niche-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px;}
+  .niche-tag{font-size:.7rem;padding:4px 10px;border-radius:100px;background:var(--surface-2);color:var(--text-dim);border:1px solid var(--border);}
+  .niche-cta{
+    font-size:.85rem;font-weight:600;color:var(--cyan);display:inline-flex;align-items:center;gap:6px;
+    margin-top:auto;transition:color .25s;
+  }
+  .niche-cta:hover{color:var(--violet);}
+  @media (max-width:900px){.niche-grid{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:600px){.niche-grid{grid-template-columns:1fr;}}
+
+  /* ---------- AUDIENCE ---------- */
+  .audience{padding:110px 0;background:var(--bg-alt);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+  .audience-inner{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:center;}
+  .audience h2{font-size:clamp(1.8rem,3.6vw,2.5rem);margin-bottom:20px;}
+  .audience p{color:var(--text-muted);font-size:1.02rem;}
+  .tag-grid{display:flex;flex-wrap:wrap;gap:12px;}
+  .tag-pill{
+    background:var(--surface);border:1px solid var(--border);padding:11px 20px;border-radius:100px;
+    font-size:.9rem;color:var(--text-muted);transition:border-color .3s,color .3s,transform .3s;
+  }
+  .tag-pill:hover{border-color:var(--cyan);color:var(--text);transform:translateY(-3px);}
+  @media (max-width:860px){.audience-inner{grid-template-columns:1fr;}}
+
+  /* ---------- PROCESS ---------- */
+  .process{padding:150px 0;}
+  .timeline{display:flex;flex-direction:column;gap:0;}
+  .timeline-item{
+    display:grid;grid-template-columns:100px 1fr;gap:32px;padding:40px 0;border-top:1px solid var(--border);
+  }
+  .timeline-item:last-child{border-bottom:1px solid var(--border);}
+  .timeline-num{
+    font-family:'Sora',sans-serif;font-weight:800;font-size:2.4rem;
+    background:var(--gradient);-webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .timeline-item h3{font-size:1.35rem;margin-bottom:10px;}
+  .timeline-item p{color:var(--text-muted);max-width:640px;}
+  @media (max-width:700px){.timeline-item{grid-template-columns:1fr;gap:10px;}}
+
+  /* ---------- EJEMPLOS / CASOS SIMULADOS ---------- */
+  .examples{padding:130px 0;}
+  .examples-note{
+    max-width:720px;margin:0 auto 60px;text-align:center;color:var(--text-dim);font-size:.9rem;
+    font-style:italic;
+  }
+  .example-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
+  .example-item-card{
+    background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:30px 30px 26px;
+  }
+  .example-item-card .sim-badge{
+    display:inline-flex;align-items:center;gap:6px;font-size:.7rem;font-weight:700;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--violet);background:var(--gradient-soft);padding:5px 12px;
+    border-radius:100px;margin-bottom:16px;
+  }
+  .example-item-card h3{font-size:1.15rem;margin-bottom:18px;}
+  .example-row{display:flex;gap:12px;margin-bottom:14px;}
+  .example-row:last-child{margin-bottom:0;}
+  .example-row .tag{
+    flex-shrink:0;width:84px;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;
+    color:var(--cyan);padding-top:2px;
+  }
+  .example-row p{color:var(--text-muted);font-size:.92rem;margin:0;}
+  @media (max-width:860px){.example-grid{grid-template-columns:1fr;}}
+
+  /* ---------- PLANES ---------- */
+  .plans{padding:130px 0;background:var(--bg-alt);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+  .plans-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:60px;align-items:stretch;}
+  .plan-card{
+    background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:32px 26px;
+    display:flex;flex-direction:column;transition:transform .35s var(--ease),border-color .35s;
+  }
+  .plan-card:hover{transform:translateY(-6px);border-color:var(--border-2);}
+  .plan-card.highlight{border-color:rgba(168,85,247,.4);background:var(--gradient-soft);}
+  .plan-card h3{font-size:1.15rem;margin-bottom:10px;}
+  .plan-card .plan-audience{color:var(--text-muted);font-size:.88rem;margin-bottom:20px;flex:1;}
+  .plan-card .plan-price{
+    font-family:'Sora',sans-serif;font-weight:800;font-size:1.5rem;margin-bottom:18px;
+    background:var(--gradient);-webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .plan-card .plan-includes{list-style:none;margin:0 0 24px;padding:0;}
+  .plan-card .plan-includes li{
+    position:relative;padding-left:22px;margin-bottom:10px;color:var(--text-muted);font-size:.88rem;
+  }
+  .plan-card .plan-includes li::before{
+    content:"";position:absolute;left:0;top:6px;width:8px;height:8px;border-radius:2px;
+    background:var(--gradient);transform:rotate(45deg);
+  }
+  .plan-card .btn{margin-top:auto;}
+  @media (max-width:1000px){.plans-grid{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:600px){.plans-grid{grid-template-columns:1fr;}}
+
+  /* ---------- DIFFERENCE ---------- */
+  .difference{padding:130px 0;text-align:center;position:relative;background:var(--bg-alt);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+  .difference h2{font-size:clamp(2rem,4.4vw,3rem);max-width:820px;margin:0 auto 30px;}
+  .difference p{color:var(--text-muted);font-size:1.08rem;max-width:720px;margin:0 auto 16px;}
+  .difference .emphasis{color:var(--text);font-weight:600;font-size:1.2rem;margin-top:26px;}
+
+  /* ---------- FAQ ---------- */
+  .faq{padding:130px 0;}
+  .faq-list{max-width:820px;margin:0 auto;}
+  .faq-item{border-bottom:1px solid var(--border);}
+  .faq-item summary{
+    list-style:none;cursor:pointer;padding:26px 4px;display:flex;justify-content:space-between;
+    align-items:center;gap:20px;font-family:'Sora',sans-serif;font-weight:650;font-size:1.05rem;
+  }
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary .icon{
+    flex-shrink:0;width:26px;height:26px;border-radius:50%;border:1px solid var(--border-2);
+    display:flex;align-items:center;justify-content:center;font-size:1rem;color:var(--cyan);
+    transition:transform .3s var(--ease);
+  }
+  .faq-item[open] summary .icon{transform:rotate(45deg);}
+  .faq-item p{color:var(--text-muted);font-size:.98rem;padding:0 4px 26px;max-width:700px;}
+
+  /* ---------- FINAL CTA ---------- */
+  .final-cta{padding:150px 0 60px;text-align:center;position:relative;overflow:hidden;}
+  .final-cta h2{font-size:clamp(2.1rem,5vw,3.4rem);margin-bottom:22px;}
+  .final-cta > .container > p{color:var(--text-muted);font-size:1.08rem;max-width:640px;margin:0 auto 44px;}
+  .cta-buttons{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin-bottom:56px;}
+  .cta-divider{display:flex;align-items:center;gap:16px;max-width:520px;margin:0 auto 44px;color:var(--text-dim);font-size:.85rem;text-transform:uppercase;letter-spacing:.08em;}
+  .cta-divider::before,.cta-divider::after{content:"";flex:1;height:1px;background:var(--border);}
+  .contact-form{
+    max-width:560px;margin:0 auto 110px;background:var(--surface);border:1px solid var(--border);
+    border-radius:20px;padding:36px;text-align:left;
+  }
+  .form-tabs{
+    max-width:560px;margin:0 auto 0;display:flex;gap:8px;background:var(--surface);
+    border:1px solid var(--border);border-bottom:none;border-radius:20px 20px 0 0;padding:8px;
+  }
+  .form-tab{
+    flex:1;background:none;border:none;border-radius:14px;padding:12px 16px;color:var(--text-muted);
+    font-family:'Inter',sans-serif;font-size:.88rem;font-weight:600;cursor:pointer;transition:background .25s,color .25s;
+  }
+  .form-tab.is-active{background:var(--surface-2);color:var(--text);}
+  .form-tab:hover:not(.is-active){color:var(--text);}
+  .contact-form.has-tabs{border-radius:0 0 20px 20px;margin-top:0;}
+  .diagnostico-fields{border-top:1px solid var(--border);margin-top:4px;padding-top:18px;}
+  .diagnostico-fields .hint{color:var(--text-dim);font-size:.85rem;margin:-4px 0 18px;}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .form-field{margin-bottom:18px;display:flex;flex-direction:column;gap:8px;}
+  .form-field label{font-size:.85rem;font-weight:600;color:var(--text-muted);}
+  .form-field input,.form-field select,.form-field textarea{
+    background:var(--surface-2);border:1px solid var(--border-2);border-radius:10px;
+    padding:12px 14px;color:var(--text);font-family:'Inter',sans-serif;font-size:.95rem;
+    outline:none;transition:border-color .25s;
+  }
+  .form-field input:focus,.form-field select:focus,.form-field textarea:focus{border-color:var(--cyan);}
+  .form-field textarea{resize:vertical;min-height:90px;}
+  .form-honeypot{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;}
+  .checkbox-field{
+    display:flex;align-items:flex-start;gap:10px;font-size:.88rem;color:var(--text-muted);
+    margin-bottom:20px;cursor:pointer;line-height:1.5;
+  }
+  .checkbox-field input{margin-top:3px;flex-shrink:0;accent-color:var(--cyan);width:16px;height:16px;cursor:pointer;}
+  .checkbox-field a{color:var(--cyan);}
+  .form-status{font-size:.9rem;margin-top:14px;min-height:20px;}
+  .form-status.ok{color:#2fd08a;}
+  .form-status.err{color:#f16e64;}
+  @media (max-width:560px){.form-row{grid-template-columns:1fr;}.contact-form{padding:26px;}}
+  .closing{text-align:center;max-width:700px;margin:0 auto 90px;}
+  .closing h3{font-size:clamp(1.5rem,3vw,2rem);margin-bottom:16px;}
+  .closing p{color:var(--text-muted);}
+
+  /* ---------- FOOTER ---------- */
+  footer{border-top:1px solid var(--border);padding:70px 0 34px;}
+  .footer-inner{display:grid;grid-template-columns:1.1fr .8fr .8fr .9fr;gap:40px;margin-bottom:60px;}
+  .footer-brand p{color:var(--text-muted);margin-top:14px;max-width:320px;font-size:.94rem;}
+  .footer-col h4{font-size:.85rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:18px;font-family:'Sora',sans-serif;}
+  .footer-col a, .footer-col p{display:block;color:var(--text-muted);font-size:.94rem;margin-bottom:12px;transition:color .25s;}
+  .footer-col a:hover{color:var(--cyan);}
+  .footer-bottom{
+    border-top:1px solid var(--border);padding-top:26px;display:flex;justify-content:space-between;
+    flex-wrap:wrap;gap:12px;color:var(--text-dim);font-size:.85rem;
+  }
+  @media (max-width:980px){.footer-inner{grid-template-columns:1fr 1fr;}}
+  @media (max-width:600px){.footer-inner{grid-template-columns:1fr;gap:36px;}}
+
+  /* ---------- WHATSAPP FLOTANTE ---------- */
+  .whatsapp-float{
+    position:fixed;bottom:24px;right:24px;z-index:900;
+    width:58px;height:58px;border-radius:50%;
+    background:#25D366;display:flex;align-items:center;justify-content:center;
+    box-shadow:0 8px 24px rgba(0,0,0,.35),0 0 0 0 rgba(37,211,102,.5);
+    transition:transform .25s var(--ease),box-shadow .25s;
+    animation:wa-pulse 2.4s infinite;
+  }
+  .whatsapp-float:hover{transform:scale(1.08);}
+  .whatsapp-float svg{width:30px;height:30px;}
+  @keyframes wa-pulse{
+    0%{box-shadow:0 8px 24px rgba(0,0,0,.35),0 0 0 0 rgba(37,211,102,.45);}
+    70%{box-shadow:0 8px 24px rgba(0,0,0,.35),0 0 0 14px rgba(37,211,102,0);}
+    100%{box-shadow:0 8px 24px rgba(0,0,0,.35),0 0 0 0 rgba(37,211,102,0);}
+  }
+  @media (prefers-reduced-motion:reduce){.whatsapp-float{animation:none;}}
+  @media (max-width:600px){.whatsapp-float{bottom:18px;right:18px;width:52px;height:52px;}.whatsapp-float svg{width:26px;height:26px;}}
+
+  /* ---------- CHAT WEB (asistente virtual) ---------- */
+  .chat-toggle{
+    position:fixed;bottom:94px;right:24px;z-index:900;
+    width:58px;height:58px;border-radius:50%;border:none;cursor:pointer;
+    background:var(--gradient);display:flex;align-items:center;justify-content:center;
+    box-shadow:0 8px 24px rgba(0,0,0,.35);transition:transform .25s var(--ease);
+  }
+  .chat-toggle:hover{transform:scale(1.08);}
+  .chat-toggle svg{width:26px;height:26px;}
+  .chat-toggle .chat-toggle-close{display:none;}
+  .chat-toggle.is-open .chat-toggle-chat{display:none;}
+  .chat-toggle.is-open .chat-toggle-close{display:block;}
+  @media (max-width:600px){.chat-toggle{bottom:82px;right:18px;width:52px;height:52px;}}
+
+  .chat-window{
+    position:fixed;bottom:162px;right:24px;z-index:899;width:360px;max-width:calc(100vw - 40px);
+    height:min(520px,70vh);background:var(--surface);border:1px solid var(--border-2);border-radius:20px;
+    box-shadow:0 30px 80px rgba(0,0,0,.5);display:flex;flex-direction:column;overflow:hidden;
+    transform:translateY(16px) scale(.97);opacity:0;pointer-events:none;transition:transform .25s var(--ease),opacity .25s;
+  }
+  .chat-window.is-open{transform:translateY(0) scale(1);opacity:1;pointer-events:auto;}
+  @media (max-width:600px){.chat-window{bottom:144px;right:18px;width:calc(100vw - 36px);}}
+
+  .chat-header{
+    background:var(--gradient);padding:16px 18px;display:flex;align-items:center;gap:10px;flex-shrink:0;
+  }
+  .chat-header .chat-avatar{
+    width:34px;height:34px;border-radius:10px;background:rgba(255,255,255,.2);
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  }
+  .chat-header .chat-avatar svg{width:18px;height:18px;}
+  .chat-header .chat-title{font-family:'Sora',sans-serif;font-weight:700;font-size:.92rem;color:#fff;}
+  .chat-header .chat-status{font-size:.72rem;color:rgba(255,255,255,.85);display:flex;align-items:center;gap:5px;}
+  .chat-header .chat-status::before{content:"";width:6px;height:6px;border-radius:50%;background:#25D366;}
+
+  .chat-body{flex:1;overflow-y:auto;padding:18px;display:flex;flex-direction:column;gap:10px;}
+  .chat-msg{max-width:85%;padding:10px 14px;border-radius:14px;font-size:.88rem;line-height:1.5;}
+  .chat-msg.bot{background:var(--surface-2);color:var(--text);align-self:flex-start;border-bottom-left-radius:4px;}
+  .chat-msg.user{background:var(--gradient);color:#fff;align-self:flex-end;border-bottom-right-radius:4px;}
+  .chat-options{display:flex;flex-direction:column;gap:8px;margin-top:4px;}
+  .chat-option-btn{
+    background:var(--surface-2);border:1px solid var(--border-2);color:var(--text);
+    border-radius:12px;padding:10px 14px;font-size:.85rem;text-align:left;cursor:pointer;
+    font-family:'Inter',sans-serif;transition:border-color .2s,color .2s;
+  }
+  .chat-option-btn:hover{border-color:var(--cyan);color:var(--cyan);}
+  .chat-input-row{display:flex;gap:8px;padding:14px;border-top:1px solid var(--border);flex-shrink:0;}
+  .chat-input-row input{
+    flex:1;background:var(--surface-2);border:1px solid var(--border-2);border-radius:100px;
+    padding:10px 16px;color:var(--text);font-family:'Inter',sans-serif;font-size:.88rem;outline:none;
+  }
+  .chat-input-row input:focus{border-color:var(--cyan);}
+  .chat-input-row button{
+    background:var(--gradient);border:none;border-radius:100px;width:38px;height:38px;flex-shrink:0;
+    display:flex;align-items:center;justify-content:center;cursor:pointer;
+  }
+  .chat-input-row button svg{width:16px;height:16px;}
+  .chat-disclaimer{font-size:.68rem;color:var(--text-dim);text-align:center;padding:0 14px 12px;}
+
+  /* ---------- COOKIE BANNER ---------- */
+  .cookie-banner{
+    position:fixed;left:20px;right:20px;bottom:20px;z-index:1200;max-width:920px;margin:0 auto;
+    background:var(--surface);border:1px solid var(--border-2);border-radius:16px;
+    padding:22px 26px;box-shadow:0 20px 60px rgba(0,0,0,.5);
+    display:flex;align-items:center;gap:24px;flex-wrap:wrap;
+    transform:translateY(140%);transition:transform .5s var(--ease);
+  }
+  .cookie-banner.is-visible{transform:translateY(0);}
+  .cookie-banner p{color:var(--text-muted);font-size:.9rem;margin:0;flex:1;min-width:240px;}
+  .cookie-banner p a{color:var(--cyan);}
+  .cookie-banner-actions{display:flex;gap:10px;flex-wrap:wrap;}
+  .btn-sm{padding:10px 18px;font-size:.85rem;}
+
+  .cookie-modal-overlay{
+    position:fixed;inset:0;z-index:1300;background:rgba(4,5,10,.7);
+    display:flex;align-items:center;justify-content:center;padding:20px;
+    opacity:0;pointer-events:none;transition:opacity .3s var(--ease);
+  }
+  .cookie-modal-overlay.is-visible{opacity:1;pointer-events:auto;}
+  .cookie-modal{
+    background:var(--surface);border:1px solid var(--border-2);border-radius:20px;
+    padding:32px;max-width:480px;width:100%;max-height:85vh;overflow-y:auto;
+  }
+  .cookie-modal h3{font-family:'Sora',sans-serif;font-size:1.25rem;margin-bottom:10px;}
+  .cookie-modal > p{color:var(--text-muted);font-size:.92rem;margin-bottom:22px;}
+  .cookie-category{border-top:1px solid var(--border);padding:16px 0;}
+  .cookie-category-head{display:flex;align-items:center;justify-content:space-between;gap:12px;font-weight:600;font-size:.95rem;margin-bottom:8px;}
+  .cookie-category p{color:var(--text-muted);font-size:.85rem;margin:0;}
+  .cookie-always-on{font-size:.75rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:.05em;}
+  .switch{position:relative;display:inline-block;width:42px;height:24px;flex-shrink:0;}
+  .switch input{opacity:0;width:0;height:0;}
+  .switch-track{
+    position:absolute;inset:0;background:var(--surface-2);border:1px solid var(--border-2);
+    border-radius:100px;cursor:pointer;transition:background .25s;
+  }
+  .switch-track::before{
+    content:"";position:absolute;width:16px;height:16px;left:3px;top:3px;background:var(--text-dim);
+    border-radius:50%;transition:transform .25s,background .25s;
+  }
+  .switch input:checked + .switch-track{background:rgba(34,211,238,.25);border-color:var(--cyan);}
+  .switch input:checked + .switch-track::before{transform:translateX(18px);background:var(--cyan);}
+  .cookie-modal-actions{margin-top:24px;}
+  .cookie-modal-link{display:block;text-align:center;margin-top:16px;font-size:.85rem;color:var(--text-muted);}
+  @media (max-width:600px){
+    .cookie-banner{left:12px;right:12px;bottom:12px;padding:20px;}
+    .cookie-banner-actions{width:100%;justify-content:stretch;}
+    .cookie-banner-actions button{flex:1;}
+  }
+</style>
+<noscript><style>.reveal,.reveal-scale{opacity:1 !important;transform:none !important;}</style></noscript>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="container nav-inner">
+    <a href="#inicio" class="logo"><img src="assets/logo-3a.svg" alt="Agentes IA" class="logo-mark">Agentes<span>IA</span></a>
+    <div class="nav-links" id="navLinks">
+      <a href="#sobre">Sobre nosotros</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#nichos">Por negocio</a>
+      <a href="#planes">Planes</a>
+      <a href="#proceso">Cómo trabajamos</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contacto">Contacto</a>
+      <a href="https://wa.me/51976828556?text=Hola%2C%20quiero%20hablar%20sobre%20soluciones%20digitales%20con%20IA%20para%20mi%20negocio" target="_blank" rel="noopener" class="nav-cta">Hablemos</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">☰</button>
+  </div>
+</nav>
+
+<!-- HERO DE TEXTO -->
+<section class="hero-text" id="inicio">
+  <div class="hero-text-inner">
+    <span class="eyebrow">Inteligencia Artificial · Automatización · Datos</span>
+    <h1>Soluciones Digitales con <span class="gradient-text">IA</span> para Negocios</h1>
+    <p class="subtitle">Herramientas inteligentes para vender mejor, ahorrar tiempo y tomar mejores decisiones.</p>
+    <div class="hero-btns">
+      <a href="https://wa.me/51976828556?text=Hola%2C%20quiero%20agendar%20una%20llamada%20para%20hablar%20sobre%20soluciones%20digitales%20con%20IA%20para%20mi%20negocio" target="_blank" rel="noopener" class="btn btn-primary">Agenda una llamada</a>
+      <a href="#servicios" class="btn btn-outline">Ver servicios</a>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO SCROLL-DRIVEN (formato vertical, sin recortar) -->
+<section class="scroll-video-hero" id="scroll-hero">
+  <div class="scroll-video-sticky">
+    <div class="video-frame">
+      <video id="heroVideo" src="assets/hero.mp4" poster="assets/hero-poster.jpg" playsinline muted preload="metadata"></video>
+    </div>
+    <div class="scroll-cue"><span>Scroll</span><div class="mouse"></div></div>
+    <div class="scroll-progress-bar"><div class="scroll-progress-fill" id="progressFill"></div></div>
+  </div>
+</section>
+
+<!-- SOBRE NOSOTROS -->
+<section class="about" id="sobre">
+  <div class="bg-glow violet" style="width:500px;height:500px;top:-100px;left:-150px;"></div>
+  <div class="container" style="position:relative;z-index:1;">
+    <div class="about-lead reveal">
+      <span class="eyebrow">Quiénes somos</span>
+      <h2>Tecnología pensada para resolver problemas <span class="gradient-text">reales</span> de negocio</h2>
+      <p>Creamos webs modernas, auditorías digitales, automatizaciones, dashboards, sistemas de prospección y soluciones personalizadas con inteligencia artificial para negocios, profesionales, creadores y empresas que quieren crecer con tecnología.</p>
+      <p>No desarrollamos soluciones genéricas. Analizamos cada caso, entendemos el objetivo del negocio y construimos herramientas digitales pensadas para resolver problemas reales: captar más clientes, mejorar procesos, organizar información, automatizar tareas y aumentar la eficiencia comercial.</p>
+    </div>
+
+    <div class="about-lead reveal" style="margin-bottom:40px;">
+      <span class="eyebrow">El problema</span>
+      <h2 style="font-size:clamp(1.6rem,3.4vw,2.2rem);">Tecnología aplicada a resultados reales</h2>
+    </div>
+
+    <div class="problem-grid">
+      <div class="problem-card reveal">
+        <span class="num">01</span>
+        <p>Hoy muchos negocios tienen redes sociales, páginas web, campañas publicitarias, bases de datos, facturas, clientes potenciales e información dispersa en diferentes herramientas.</p>
+      </div>
+      <div class="problem-card reveal">
+        <span class="num">02</span>
+        <p>El problema no siempre es la falta de tecnología. Muchas veces el problema es que esa tecnología no está conectada, no está bien estructurada o no está trabajando a favor del negocio.</p>
+      </div>
+      <div class="problem-card highlight reveal">
+        <span class="num">03</span>
+        <p>Por eso creamos soluciones digitales prácticas, visuales y personalizadas, combinando inteligencia artificial, automatización, análisis de datos, desarrollo web y estrategia comercial.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section class="services" id="servicios">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Nuestras soluciones</span>
+      <h2>Diez formas de llevar tu negocio a otro nivel</h2>
+      <p>Cada solución se adapta al caso real del cliente. Esto es lo que podemos construir para ti.</p>
+    </div>
+
+    <!-- 1. Web Scrolling -->
+    <div class="service-block">
+      <div class="service-left reveal">
+        <span class="service-num">01 / 10</span>
+        <h3>Web Scrolling</h3>
+        <p class="tagline">Webs interactivas tipo Apple para presentar mejor tu negocio</p>
+      </div>
+      <div class="service-right reveal">
+        <p>Creamos páginas web modernas, visuales e interactivas, donde el usuario descubre la información a medida que hace scroll.</p>
+        <p>A diferencia de una web tradicional, una web scrolling no muestra todo de forma plana. Presenta la información de manera progresiva, con animaciones, imágenes, videos, textos estratégicos y llamados a la acción que guían al visitante hasta tomar una decisión.</p>
+        <p>Este tipo de web es ideal para negocios que quieren transmitir una imagen más profesional, diferenciarse de la competencia y presentar sus productos o servicios de forma más atractiva.</p>
+        <div class="service-lists">
+          <div class="list-block">
+            <h4>Ideal para</h4>
+            <ul class="list-check">
+              <li>Empresas que lanzan un nuevo servicio</li>
+              <li>Clínicas que quieren presentar tratamientos premium</li>
+              <li>Marcas personales que necesitan una web de alto impacto</li>
+              <li>Consultores, coaches o profesionales independientes</li>
+              <li>Productos digitales, cursos, eventos o lanzamientos</li>
+              <li>Negocios que quieren una landing page más visual y moderna</li>
+            </ul>
+          </div>
+          <div class="list-block">
+            <h4>Qué puede incluir</h4>
+            <ul class="list-check">
+              <li>Diseño moderno y profesional</li>
+              <li>Animaciones al hacer scroll</li>
+              <li>Secciones tipo storytelling</li>
+              <li>Presentación clara del producto, servicio o negocio</li>
+              <li>Imágenes, videos, mockups o elementos visuales</li>
+              <li>Beneficios explicados de forma simple</li>
+              <li>Comparativas, casos de uso o resultados</li>
+              <li>Botones de contacto, reserva, compra o agendamiento</li>
+              <li>Diseño responsive para celular, tablet y computador</li>
+            </ul>
+          </div>
+        </div>
+        <div class="result-box">
+          <span class="label">Resultado</span>
+          <p>Una web que no solo informa, sino que capta la atención, comunica valor, transmite confianza y ayuda a convertir visitantes en clientes.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Instagram a Web -->
+    <div class="service-block">
+      <div class="service-left reveal">
+        <span class="service-num">02 / 10</span>
+        <h3>Instagram a Web</h3>
+        <p class="tagline">Convierte tu perfil de Instagram en una página web profesional</p>
+      </div>
+      <div class="service-right reveal">
+        <p>Muchos creadores, profesionales y negocios ya tienen gran parte de su contenido en Instagram, pero no cuentan con una web propia que les ayude a vender mejor, captar clientes y transmitir más confianza.</p>
+        <p>Esta solución toma la información visible del perfil de Instagram —biografía, fotos, videos, servicios, productos, testimonios, estilo visual, tono de comunicación y propuesta de valor— y la transforma en una página web profesional, clara y lista para convertir visitantes en clientes.</p>
+        <p>La idea es que el negocio deje de depender únicamente de Instagram y tenga una presencia digital más sólida, ordenada y comercial.</p>
+        <div class="service-lists">
+          <div class="list-block">
+            <h4>Ideal para</h4>
+            <ul class="list-check">
+              <li>Creadores de contenido</li>
+              <li>Marcas personales</li>
+              <li>Coaches y consultores</li>
+              <li>Fotógrafos, artistas y diseñadores</li>
+              <li>Odontólogos, médicos y profesionales de salud</li>
+              <li>Estilistas, spas y centros de belleza</li>
+              <li>Restaurantes, cafeterías y negocios locales</li>
+              <li>Emprendedores que venden por redes sociales</li>
+            </ul>
+          </div>
+          <div class="list-block">
+            <h4>Qué puede incluir</h4>
+            <ul class="list-check">
+              <li>Presentación profesional del creador, marca o negocio</li>
+              <li>Servicios o productos principales</li>
+              <li>Galería visual con contenido destacado</li>
+              <li>Testimonios o casos de éxito, si existen</li>
+              <li>Botones de contacto por WhatsApp, email o redes sociales</li>
+              <li>Llamados a la acción para reservas, compras, consultas o contratación</li>
+              <li>Diseño alineado con la identidad visual del Instagram</li>
+              <li>Versión optimizada para celular</li>
+              <li>Estructura clara para que el visitante entienda rápido qué se ofrece</li>
+            </ul>
+          </div>
+        </div>
+        <div class="result-box">
+          <span class="label">Resultado</span>
+          <p>Una web propia, profesional y bien estructurada, creada a partir del contenido que el cliente ya tiene en Instagram.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Auditoría Meta Ads -->
+    <div class="service-block">
+      <div class="service-left reveal">
+        <span class="service-num">03 / 10</span>
+        <h3>Auditoría Meta Ads</h3>
+        <p class="tagline">Diagnóstico para dejar de quemar dinero en publicidad</p>
+      </div>
+      <div class="service-right reveal">
+        <p>Muchos negocios invierten en Meta Ads —Facebook e Instagram— sin tener una estrategia clara. Publican anuncios, gastan presupuesto, reciben algunos clics, pero no logran convertir de forma rentable.</p>
+        <p>Esta auditoría permite analizar campañas, anuncios, landing pages y mensajes comerciales para detectar qué está fallando y qué debe mejorar el negocio para obtener mejores resultados.</p>
+        <p>Está pensada especialmente para negocios pequeños, emprendedores, marcas personales, clínicas, ecommerce, academias, restaurantes, inmobiliarias o empresas que invierten en publicidad pero no están satisfechas con sus resultados.</p>
+        <div class="service-lists single">
+          <div class="list-block">
+            <h4>Qué se analiza</h4>
+            <ul class="list-check">
+              <li>Anuncios activos o recientes</li>
+              <li>Creatividades: imágenes, videos, carruseles o reels</li>
+              <li>Copy de los anuncios</li>
+              <li>Oferta comercial</li>
+              <li>Segmentación y mensaje</li>
+              <li>Landing page o página de destino</li>
+              <li>Llamados a la acción</li>
+              <li>Coherencia entre anuncio, oferta y página</li>
+              <li>Posibles fugas de conversión</li>
+              <li>Claridad del embudo comercial</li>
+              <li>Errores que pueden estar causando pérdida de presupuesto</li>
+            </ul>
+          </div>
+        </div>
+        <div class="highlight-box">
+          <span class="label">Entregable</span>
+          <p>Se entrega una auditoría visual, clara y accionable, con un diagnóstico de lo que está funcionando, lo que está fallando y las mejoras recomendadas. El objetivo no es solo decir qué está mal, sino entregar una guía práctica para mejorar campañas, reducir pérdidas y aumentar conversiones.</p>
+        </div>
+        <div class="result-box">
+          <span class="label">Resultado</span>
+          <p>El negocio entiende por qué está quemando presupuesto y recibe una ruta concreta para mejorar sus anuncios, su mensaje, su oferta y su proceso de conversión.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. Auditoría SEO -->
+    <div class="service-block">
+      <div class="service-left reveal">
+        <span class="service-num">04 / 10</span>
+        <h3>Auditoría SEO</h3>
+        <p class="tagline">Mejora tu posicionamiento orgánico en Google</p>
+      </div>
+      <div class="service-right reveal">
+        <p>Una web puede verse bonita, pero si nadie la encuentra en Google, está perdiendo oportunidades todos los días.</p>
+        <p>Esta auditoría analiza el estado SEO de una página web para identificar problemas técnicos, oportunidades de posicionamiento, falta de palabras clave, estructura deficiente, contenido débil o elementos que impiden que la empresa aparezca mejor en buscadores.</p>
+        <div class="service-lists">
+          <div class="list-block">
+            <h4>Qué se analiza</h4>
+            <ul class="list-check">
+              <li>Estado general del sitio web</li>
+              <li>Palabras clave actuales y oportunidades</li>
+              <li>Títulos, metadescripciones y encabezados</li>
+              <li>Estructura de contenidos</li>
+              <li>Velocidad y experiencia de usuario</li>
+              <li>Indexación en Google</li>
+              <li>SEO local, cuando aplica</li>
+              <li>Competidores principales</li>
+              <li>Contenido faltante o mal optimizado</li>
+            </ul>
+          </div>
+          <div class="list-block">
+            <h4>Ideal para</h4>
+            <ul class="list-check">
+              <li>Empresas que no aparecen en Google</li>
+              <li>Negocios locales que quieren más visibilidad</li>
+              <li>Profesionales con web pero sin tráfico</li>
+              <li>Clínicas, restaurantes, inmobiliarias, consultores y ecommerce</li>
+              <li>Marcas que dependen demasiado de publicidad paga</li>
+            </ul>
+          </div>
+        </div>
+        <div class="highlight-box">
+          <span class="label">Entregable</span>
+          <p>Una auditoría SEO visual y fácil de entender, con hallazgos principales, problemas detectados y recomendaciones priorizadas.</p>
+        </div>
+        <div class="result-box">
+          <span class="label">Resultado</span>
+          <p>El negocio obtiene una visión clara de qué debe mejorar para aparecer mejor en Google, atraer más tráfico orgánico y depender menos de anuncios pagados.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. Automatizaciones n8n -->
+    <div class="service-block">
+      <div class="service-left reveal">
+        <span class="service-num">05 / 10</span>
+        <h3>Automatizaciones n8n</h3>
+        <p class="tagline">Automatiza procesos y reduce tareas manuales</p>
+      </div>
+      <div class="service-right reveal">
+        <p>Muchas empresas pierden tiempo haciendo tareas repetitivas: copiar datos, responder mensajes, enviar correos, actualizar hojas de cálculo, agendar citas, generar reportes o mover información entre herramientas.</p>
+        <p>Con n8n se pueden crear automatizaciones personalizadas para conectar aplicaciones, procesar información y ejecutar flujos de trabajo sin intervención manual. La idea es que el negocio trabaje de forma más ordenada, rápida y eficiente.</p>
+        <div class="service-lists">
+          <div class="list-block">
+            <h4>Qué se puede automatizar</h4>
+            <ul class="list-check">
+              <li>Captura de leads desde formularios, WhatsApp o landing pages</li>
+              <li>Registro automático en Google Sheets, Airtable, Notion o bases de datos</li>
+              <li>Envío de correos automáticos</li>
+              <li>Notificaciones por Telegram, Slack o WhatsApp</li>
+              <li>Agendamiento en Google Calendar</li>
+              <li>Recordatorios de citas</li>
+              <li>Seguimiento de prospectos</li>
+              <li>Clasificación de clientes</li>
+              <li>Generación de reportes</li>
+              <li>Integraciones con CRM</li>
+              <li>Procesamiento de documentos o archivos</li>
+              <li>Workflows con inteligencia artificial</li>
+            </ul>
+          </div>
+          <div class="list-block">
+            <h4>Ideal para</h4>
+            <ul class="list-check">
+              <li>Consultorios médicos y odontológicos</li>
+              <li>Agencias</li>
+              <li>Inmobiliarias</li>
+              <li>Restaurantes y hoteles</li>
+              <li>Ecommerce</li>
+              <li>Equipos comerciales</li>
+              <li>Consultoras</li>
+              <li>Profesionales independientes</li>
+              <li>Negocios que atienden muchos mensajes o leads</li>
+            </ul>
+          </div>
+        </div>
+        <div class="result-box">
+          <span class="label">Resultado</span>
+          <p>El negocio reduce trabajo manual, responde más rápido, organiza mejor su información y puede operar con procesos más eficientes.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. Auditoría de Negocio Digital -->
+    <div class="service-block">
+      <div class="service-left reveal">
+        <span class="service-num">06 / 10</span>
+        <h3>Auditoría de Negocio Digital</h3>
+        <p class="tagline">Diagnóstico integral de presencia, oferta y estrategia digital</p>
+      </div>
+      <div class="service-right reveal">
+        <p>Esta auditoría realiza un análisis completo del negocio digital para detectar fallas, oportunidades y puntos de mejora en su presencia online, comunicación, publicidad, oferta y estrategia comercial.</p>
+        <p>A diferencia de una auditoría puntual de SEO o Meta Ads, esta revisión mira el negocio de forma global: qué vende, cómo lo comunica, cómo se posiciona, qué tan clara es su oferta, cómo se ve frente a la competencia y qué tan coherente es su estrategia digital.</p>
+        <div class="service-lists single">
+          <div class="list-block">
+            <h4>Qué se analiza</h4>
+            <ul class="list-check">
+              <li>Posicionamiento del negocio</li>
+              <li>Página web o landing page</li>
+              <li>Redes sociales</li>
+              <li>Marca personal o marca empresarial</li>
+              <li>Google Ads</li>
+              <li>Meta Ads</li>
+              <li>Mensaje comercial</li>
+              <li>Oferta</li>
+              <li>Precios</li>
+              <li>Promesa de valor</li>
+              <li>Embudo de ventas</li>
+              <li>Claridad de los servicios o productos</li>
+              <li>Incongruencias entre lo que comunica y lo que vende</li>
+              <li>Experiencia del usuario</li>
+              <li>Competencia digital</li>
+              <li>Oportunidades de mejora</li>
+            </ul>
+          </div>
+        </div>
+        <div class="highlight-box">
+          <span class="label">Entregable</span>
+          <p>Se entrega un reporte visual con una auditoría completa del negocio, incluyendo diagnóstico, hallazgos principales, oportunidades y recomendaciones concretas.</p>
+        </div>
+        <div class="result-box">
+          <span class="label">Resultado</span>
+          <p>El cliente recibe una visión estratégica de su negocio digital y una hoja de ruta para mejorar su comunicación, su presencia online, su oferta y su capacidad de conversión.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7. Dashboard de Facturas -->
+    <div class="service-block">
+      <div class="service-left reveal">
+        <span class="service-num">07 / 10</span>
+        <h3>Dashboard de Facturas</h3>
+        <p class="tagline">Convierte facturas desordenadas en información clara para decidir mejor</p>
+      </div>
+      <div class="service-right reveal">
+        <p>Muchos negocios pequeños llevan su contabilidad en Excel, guardan facturas en carpetas del computador o tienen documentos mezclados sin una estructura clara. Esto hace difícil saber cuánto se vendió, cuánto se gastó, qué impuestos se pagaron, cuáles fueron los principales costos o cómo va el balance del mes.</p>
+        <p>Esta solución permite analizar facturas, archivos y documentos para extraer información clave y convertirla en un dashboard visual y ordenado.</p>
+        <div class="service-lists">
+          <div class="list-block">
+            <h4>Qué puede analizar</h4>
+            <ul class="list-check">
+              <li>Facturas de compra</li>
+              <li>Facturas de venta</li>
+              <li>Gastos</li>
+              <li>Ingresos</li>
+              <li>Impuestos</li>
+              <li>Proveedores</li>
+              <li>Clientes</li>
+              <li>Fechas</li>
+              <li>Categorías de gasto</li>
+              <li>Balance mensual</li>
+              <li>Comparación entre meses</li>
+            </ul>
+          </div>
+          <div class="list-block">
+            <h4>Qué puede mostrar el dashboard</h4>
+            <ul class="list-check">
+              <li>Total de ingresos</li>
+              <li>Total de gastos</li>
+              <li>Balance del mes</li>
+              <li>Gastos por categoría</li>
+              <li>Proveedores principales</li>
+              <li>Evolución mensual</li>
+              <li>Facturas pendientes</li>
+              <li>Comparativos históricos</li>
+            </ul>
+          </div>
+        </div>
+        <div class="highlight-box">
+          <span class="label">Cómo funciona</span>
+          <p>El cliente entrega una carpeta con facturas, archivos PDF, imágenes o documentos. La herramienta analiza la información, extrae los datos relevantes, los organiza y los presenta en un dashboard visual.</p>
+        </div>
+        <div class="result-box">
+          <span class="label">Resultado</span>
+          <p>El negocio deja de tener información financiera desordenada y obtiene una vista clara, visual y práctica para tomar mejores decisiones.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 8. Prospección con Firecrawl -->
+    <div class="service-block">
+      <div class="service-left reveal">
+        <span class="service-num">08 / 10</span>
+        <h3>Prospección con Firecrawl</h3>
+        <p class="tagline">Extracción y organización de leads para campañas comerciales</p>
+      </div>
+      <div class="service-right reveal">
+        <p>Esta solución permite realizar prospección digital mediante extracción de datos públicos de internet, organizando la información en bases limpias y útiles para acciones comerciales.</p>
+        <p>Por ejemplo, se puede buscar información de dentistas en Madrid, clínicas en Lima, restaurantes en una ciudad específica, hoteles, inmobiliarias, abogados, coaches, negocios locales o empresas de un sector determinado.</p>
+        <div class="service-lists">
+          <div class="list-block">
+            <h4>Qué tipo de datos se pueden obtener</h4>
+            <ul class="list-check">
+              <li>Nombre del negocio</li>
+              <li>Sitio web</li>
+              <li>Correo electrónico público</li>
+              <li>Teléfono público</li>
+              <li>Dirección</li>
+              <li>Redes sociales</li>
+              <li>Categoría del negocio</li>
+              <li>Ciudad o zona</li>
+              <li>Información comercial disponible públicamente</li>
+            </ul>
+          </div>
+          <div class="list-block">
+            <h4>Dónde se puede entregar la información</h4>
+            <ul class="list-check">
+              <li>Google Sheets</li>
+              <li>Excel</li>
+              <li>PDF</li>
+              <li>Base de datos</li>
+              <li>CRM</li>
+              <li>Archivo descargable</li>
+              <li>Panel organizado por categorías</li>
+            </ul>
+          </div>
+        </div>
+        <div class="highlight-box">
+          <span class="label">Uso recomendado</span>
+          <p>La información obtenida puede servir para campañas de prospección comercial, email outreach, contacto directo, investigación de mercado o construcción de bases de datos segmentadas.</p>
+          <p class="note-inline">El proceso debe usarse siempre respetando buenas prácticas, normativas aplicables y datos disponibles públicamente.</p>
+        </div>
+        <div class="result-box">
+          <span class="label">Resultado</span>
+          <p>El cliente obtiene una base de leads organizada, segmentada y lista para trabajar comercialmente.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 9. Extensiones de Chrome -->
+    <div class="service-block">
+      <div class="service-left reveal">
+        <span class="service-num">09 / 10</span>
+        <h3>Extensiones de Chrome</h3>
+        <p class="tagline">Herramientas personalizadas directamente en el navegador</p>
+      </div>
+      <div class="service-right reveal">
+        <p>Creamos extensiones de Google Chrome diseñadas para resolver necesidades específicas dentro del navegador.</p>
+        <p>Una extensión puede funcionar como una herramienta interna, un asistente comercial, un analizador de precios, un extractor de información, un comparador, un panel de ayuda o una utilidad personalizada para equipos de trabajo.</p>
+        <div class="example-cards">
+          <div class="example-card">Una extensión para <strong>Amazon</strong> puede analizar precios de productos y mostrar en un costado de la pantalla si el precio está alto, bajo o dentro del promedio de mercado.</div>
+          <div class="example-card">Una extensión para <strong>AliExpress o Alibaba</strong> puede ayudar a comparar precios, revisar proveedores, detectar oportunidades y apoyar procesos de compra para ecommerce.</div>
+          <div class="example-card">Una extensión para <strong>YouTube</strong> puede analizar videos, comparar rendimiento, revisar etiquetas, estudiar contenido de la competencia y mostrar información útil en tiempo real.</div>
+        </div>
+        <p>También se pueden crear extensiones para LinkedIn, páginas internas, CRMs, ecommerce, sistemas administrativos o plataformas específicas.</p>
+        <div class="service-lists single">
+          <div class="list-block">
+            <h4>Qué puede hacer una extensión</h4>
+            <ul class="list-check">
+              <li>Leer información visible en una página</li>
+              <li>Mostrar recomendaciones en tiempo real</li>
+              <li>Comparar precios o datos</li>
+              <li>Extraer información útil</li>
+              <li>Automatizar acciones repetitivas</li>
+              <li>Ayudar a equipos comerciales</li>
+              <li>Analizar contenido</li>
+              <li>Mostrar alertas o indicadores</li>
+              <li>Conectar con APIs externas</li>
+              <li>Integrarse con IA</li>
+            </ul>
+          </div>
+        </div>
+        <div class="result-box">
+          <span class="label">Resultado</span>
+          <p>El cliente obtiene una herramienta personalizada que vive dentro del navegador y le permite trabajar más rápido, analizar mejor la información o automatizar tareas específicas.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 10. Skill Creator -->
+    <div class="service-block">
+      <div class="service-left reveal">
+        <span class="service-num">10 / 10</span>
+        <h3>Skill Creator</h3>
+        <p class="tagline">Creación de skills personalizadas para nuevos casos de uso</p>
+      </div>
+      <div class="service-right reveal">
+        <p>Esta solución permite diseñar y construir nuevas skills a medida, según el problema, negocio o proceso que se quiera resolver.</p>
+        <p>La idea es tener una base flexible para crear soluciones específicas: auditorías, automatizaciones, scraping, análisis de datos, generación de reportes, agentes de IA, herramientas internas o procesos digitales especializados.</p>
+        <div class="service-lists single">
+          <div class="list-block">
+            <h4>Qué se puede crear</h4>
+            <ul class="list-check">
+              <li>Skills para análisis de documentos</li>
+              <li>Skills para auditorías comerciales</li>
+              <li>Skills para generación de reportes</li>
+              <li>Skills para automatización de tareas</li>
+              <li>Skills para extracción de datos</li>
+              <li>Skills para atención al cliente</li>
+              <li>Skills para investigación de mercado</li>
+              <li>Skills para análisis de competencia</li>
+              <li>Skills para procesamiento de facturas</li>
+              <li>Skills para ventas, marketing o soporte</li>
+              <li>Skills internas para equipos de trabajo</li>
+            </ul>
+          </div>
+        </div>
+        <div class="highlight-box">
+          <span class="label">Ideal para</span>
+          <p>Empresas, profesionales o equipos que tienen una necesidad concreta, pero no encuentran una herramienta existente que la resuelva exactamente como necesitan.</p>
+        </div>
+        <div class="result-box">
+          <span class="label">Resultado</span>
+          <p>Se crea una skill personalizada que responde a un problema específico del cliente y puede integrarse dentro de su flujo de trabajo digital.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SOLUCIONES POR TIPO DE NEGOCIO -->
+<section class="niches" id="nichos">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" style="justify-content:center;">Casos de uso</span>
+      <h2>Soluciones por tipo de negocio</h2>
+      <p>Cada negocio tiene retos distintos. Así aplicamos nuestros servicios según tu rubro.</p>
+    </div>
+    <div class="niche-grid">
+
+      <div class="niche-card reveal">
+        <span class="niche-badge">01</span>
+        <h3>Clínicas y consultorios</h3>
+        <p>Presenta tus tratamientos con una web premium, automatiza recordatorios de citas y agendamiento, y aparece mejor en Google para quienes buscan tus servicios.</p>
+        <div class="niche-tags">
+          <span class="niche-tag">Web Scrolling</span>
+          <span class="niche-tag">Automatizaciones n8n</span>
+          <span class="niche-tag">Auditoría SEO</span>
+        </div>
+        <a href="https://wa.me/51976828556?text=Hola%2C%20tengo%20una%20cl%C3%ADnica%20o%20consultorio%20y%20quiero%20mejorar%20mi%20presencia%20digital" target="_blank" rel="noopener" class="niche-cta">Ver solución para clínicas →</a>
+      </div>
+
+      <div class="niche-card reveal">
+        <span class="niche-badge">02</span>
+        <h3>Hoteles y lodges</h3>
+        <p>Automatiza reservas, mensajes y seguimiento de huéspedes, y presenta tu propiedad con una web visual que transmita confianza antes de reservar.</p>
+        <div class="niche-tags">
+          <span class="niche-tag">Web Scrolling</span>
+          <span class="niche-tag">Automatizaciones n8n</span>
+          <span class="niche-tag">Prospección</span>
+        </div>
+        <a href="https://wa.me/51976828556?text=Hola%2C%20tengo%20un%20hotel%20o%20lodge%20y%20quiero%20automatizar%20reservas%20y%20mejorar%20mi%20web" target="_blank" rel="noopener" class="niche-cta">Ver solución para hoteles →</a>
+      </div>
+
+      <div class="niche-card reveal">
+        <span class="niche-badge">03</span>
+        <h3>Restaurantes</h3>
+        <p>Convierte tu Instagram en una web que también venda, automatiza pedidos o reservas, y mejora tu visibilidad para quienes buscan dónde comer cerca.</p>
+        <div class="niche-tags">
+          <span class="niche-tag">Instagram a Web</span>
+          <span class="niche-tag">Automatizaciones n8n</span>
+          <span class="niche-tag">Auditoría SEO</span>
+        </div>
+        <a href="https://wa.me/51976828556?text=Hola%2C%20tengo%20un%20restaurante%20y%20quiero%20convertir%20mi%20Instagram%20en%20una%20web%20y%20automatizar%20pedidos" target="_blank" rel="noopener" class="niche-cta">Ver solución para restaurantes →</a>
+      </div>
+
+      <div class="niche-card reveal">
+        <span class="niche-badge">04</span>
+        <h3>Spas y centros de belleza</h3>
+        <p>Transforma tu perfil de Instagram en una web profesional que muestre tus servicios y resultados, lista para convertir seguidores en clientes.</p>
+        <div class="niche-tags">
+          <span class="niche-tag">Instagram a Web</span>
+          <span class="niche-tag">Automatizaciones n8n</span>
+        </div>
+        <a href="https://wa.me/51976828556?text=Hola%2C%20tengo%20un%20spa%20o%20centro%20de%20belleza%20y%20quiero%20convertir%20mi%20Instagram%20en%20una%20web" target="_blank" rel="noopener" class="niche-cta">Ver solución para spas →</a>
+      </div>
+
+      <div class="niche-card reveal">
+        <span class="niche-badge">05</span>
+        <h3>Inmobiliarias</h3>
+        <p>Automatiza el seguimiento de prospectos, organiza tus leads y mejora tu posicionamiento para quienes buscan propiedades en tu zona.</p>
+        <div class="niche-tags">
+          <span class="niche-tag">Automatizaciones n8n</span>
+          <span class="niche-tag">Auditoría SEO</span>
+          <span class="niche-tag">Prospección</span>
+        </div>
+        <a href="https://wa.me/51976828556?text=Hola%2C%20tengo%20una%20inmobiliaria%20y%20quiero%20automatizar%20el%20seguimiento%20de%20mis%20prospectos" target="_blank" rel="noopener" class="niche-cta">Ver solución para inmobiliarias →</a>
+      </div>
+
+      <div class="niche-card reveal">
+        <span class="niche-badge">06</span>
+        <h3>Agencias</h3>
+        <p>Automatiza reportes, seguimiento de clientes y flujos internos para que tu equipo dedique menos tiempo a tareas repetitivas y más a resultados.</p>
+        <div class="niche-tags">
+          <span class="niche-tag">Automatizaciones n8n</span>
+        </div>
+        <a href="https://wa.me/51976828556?text=Hola%2C%20tengo%20una%20agencia%20y%20quiero%20automatizar%20procesos%20internos" target="_blank" rel="noopener" class="niche-cta">Ver solución para agencias →</a>
+      </div>
+
+      <div class="niche-card reveal">
+        <span class="niche-badge">07</span>
+        <h3>Profesionales independientes</h3>
+        <p>Ten una web que refleje tu marca personal, convierte tu Instagram en un canal de ventas y automatiza el seguimiento de tus clientes.</p>
+        <div class="niche-tags">
+          <span class="niche-tag">Web Scrolling</span>
+          <span class="niche-tag">Instagram a Web</span>
+          <span class="niche-tag">Automatizaciones n8n</span>
+        </div>
+        <a href="https://wa.me/51976828556?text=Hola%2C%20soy%20profesional%20independiente%20y%20quiero%20mejorar%20mi%20presencia%20digital" target="_blank" rel="noopener" class="niche-cta">Ver solución para profesionales →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PARA QUIÉN -->
+<section class="audience" id="publico">
+  <div class="container audience-inner">
+    <div class="reveal">
+      <span class="eyebrow">Para quién</span>
+      <h2>¿Para quién son estas soluciones?</h2>
+      <p>Estas soluciones están pensadas para negocios, profesionales, creadores, agencias y empresas que quieren aprovechar la inteligencia artificial, la automatización y el desarrollo digital para mejorar sus resultados. Son especialmente útiles para quienes quieren:</p>
+    </div>
+    <div class="tag-grid reveal">
+      <span class="tag-pill">Vender mejor</span>
+      <span class="tag-pill">Automatizar procesos</span>
+      <span class="tag-pill">Ahorrar tiempo</span>
+      <span class="tag-pill">Captar más clientes</span>
+      <span class="tag-pill">Mejorar su presencia digital</span>
+      <span class="tag-pill">Entender mejor sus datos</span>
+      <span class="tag-pill">Dejar de depender de tareas manuales</span>
+      <span class="tag-pill">Convertir información desordenada en decisiones claras</span>
+      <span class="tag-pill">Crear herramientas digitales propias</span>
+    </div>
+  </div>
+</section>
+
+<!-- CÓMO TRABAJAMOS -->
+<section class="process" id="proceso">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Metodología</span>
+      <h2>Cómo trabajamos</h2>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item reveal">
+        <span class="timeline-num">01</span>
+        <div>
+          <h3>Entendemos el problema</h3>
+          <p>Primero analizamos qué necesita el negocio, qué herramientas usa actualmente, qué proceso quiere mejorar y qué resultado espera obtener.</p>
+        </div>
+      </div>
+      <div class="timeline-item reveal">
+        <span class="timeline-num">02</span>
+        <div>
+          <h3>Diseñamos la solución</h3>
+          <p>Definimos la estructura de la solución: web, auditoría, automatización, dashboard, extensión, base de datos o skill personalizada.</p>
+        </div>
+      </div>
+      <div class="timeline-item reveal">
+        <span class="timeline-num">03</span>
+        <div>
+          <h3>Construimos la herramienta</h3>
+          <p>Desarrollamos la solución usando tecnología moderna, inteligencia artificial, automatización y diseño orientado a resultados.</p>
+        </div>
+      </div>
+      <div class="timeline-item reveal">
+        <span class="timeline-num">04</span>
+        <div>
+          <h3>Entregamos una solución clara y utilizable</h3>
+          <p>El cliente recibe una herramienta funcional, visual y práctica, lista para usar o implementar en su proceso de trabajo.</p>
+        </div>
+      </div>
+      <div class="timeline-item reveal">
+        <span class="timeline-num">05</span>
+        <div>
+          <h3>Ajustamos según el caso real</h3>
+          <p>Cada negocio es diferente. Por eso las soluciones pueden adaptarse, mejorar y escalar según las necesidades del cliente.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EJEMPLOS DE IMPLEMENTACIÓN (CASOS SIMULADOS) -->
+<section class="examples" id="ejemplos">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" style="justify-content:center;">Ejemplos de implementación</span>
+      <h2>Así aplicaríamos nuestros servicios en un caso real</h2>
+      <p>Todavía estamos construyendo nuestro portafolio de clientes. Mientras tanto, así es como planteamos cada servicio ante un problema típico de cada rubro.</p>
+    </div>
+    <p class="examples-note">Los siguientes son casos simulados con fines ilustrativos, no corresponden a clientes reales ni garantizan resultados específicos.</p>
+    <div class="example-grid">
+
+      <div class="example-item-card reveal">
+        <span class="sim-badge">Caso simulado</span>
+        <h3>Clínica dental (ejemplo)</h3>
+        <div class="example-row"><span class="tag">Antes</span><p>Web básica sin mostrar tratamientos y agenda de citas llevada a mano por WhatsApp.</p></div>
+        <div class="example-row"><span class="tag">Aplicaríamos</span><p>Web Scrolling para presentar tratamientos premium + automatización de recordatorios de citas con n8n.</p></div>
+        <div class="example-row"><span class="tag">Esperado</span><p>Presentación más profesional de sus servicios y menos inasistencias gracias a recordatorios automáticos.</p></div>
+      </div>
+
+      <div class="example-item-card reveal">
+        <span class="sim-badge">Caso simulado</span>
+        <h3>Restaurante (ejemplo)</h3>
+        <div class="example-row"><span class="tag">Antes</span><p>Todo su contenido vivía en Instagram, sin web propia ni forma de recibir reservas fuera del chat.</p></div>
+        <div class="example-row"><span class="tag">Aplicaríamos</span><p>Instagram a Web + automatización de reservas y mensajes por WhatsApp.</p></div>
+        <div class="example-row"><span class="tag">Esperado</span><p>Presencia web propia y reservas gestionadas sin depender de responder cada mensaje manualmente.</p></div>
+      </div>
+
+      <div class="example-item-card reveal">
+        <span class="sim-badge">Caso simulado</span>
+        <h3>Inmobiliaria (ejemplo)</h3>
+        <div class="example-row"><span class="tag">Antes</span><p>Leads de distintos portales sin seguimiento centralizado; varios prospectos se perdían en el camino.</p></div>
+        <div class="example-row"><span class="tag">Aplicaríamos</span><p>Automatización de captura y seguimiento de leads + prospección con Firecrawl.</p></div>
+        <div class="example-row"><span class="tag">Esperado</span><p>Leads organizados en un solo lugar y seguimiento automático de cada prospecto.</p></div>
+      </div>
+
+      <div class="example-item-card reveal">
+        <span class="sim-badge">Caso simulado</span>
+        <h3>Negocio con finanzas desordenadas (ejemplo)</h3>
+        <div class="example-row"><span class="tag">Antes</span><p>Facturas en carpetas sueltas y en Excel, sin claridad de cuánto entraba y salía cada mes.</p></div>
+        <div class="example-row"><span class="tag">Aplicaríamos</span><p>Dashboard de Facturas para analizar ingresos, gastos y balance mensual.</p></div>
+        <div class="example-row"><span class="tag">Esperado</span><p>Vista clara y visual del estado financiero del negocio, mes a mes.</p></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PLANES O PAQUETES -->
+<section class="plans" id="planes">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" style="justify-content:center;">Planes</span>
+      <h2>Elige el paquete que se ajusta a tu negocio</h2>
+      <p>Combinamos nuestros servicios en paquetes claros. Si tu caso es distinto, lo adaptamos.</p>
+    </div>
+    <div class="plans-grid">
+
+      <div class="plan-card reveal">
+        <h3>Diagnóstico Digital</h3>
+        <p class="plan-audience">Negocios que quieren saber qué mejorar antes de invertir en algo más grande.</p>
+        <div class="plan-price">Desde US$100</div>
+        <ul class="plan-includes">
+          <li>Análisis de tu web, redes o campañas</li>
+          <li>Hallazgos priorizados</li>
+          <li>Reporte visual y fácil de entender</li>
+        </ul>
+        <a href="https://wa.me/51976828556?text=Hola%2C%20me%20interesa%20el%20plan%20Diagn%C3%B3stico%20Digital" target="_blank" rel="noopener" class="btn btn-outline btn-block">Quiero este plan</a>
+      </div>
+
+      <div class="plan-card highlight reveal">
+        <h3>Web + WhatsApp</h3>
+        <p class="plan-audience">Negocios que necesitan presencia profesional y contacto rápido con clientes.</p>
+        <div class="plan-price">Desde US$249</div>
+        <ul class="plan-includes">
+          <li>Web Scrolling con animaciones</li>
+          <li>Botón de contacto por WhatsApp</li>
+          <li>Diseño responsive (celular, tablet, computador)</li>
+        </ul>
+        <a href="https://wa.me/51976828556?text=Hola%2C%20me%20interesa%20el%20plan%20Web%20%2B%20WhatsApp" target="_blank" rel="noopener" class="btn btn-primary btn-block">Quiero este plan</a>
+      </div>
+
+      <div class="plan-card reveal">
+        <h3>Automatización Pro</h3>
+        <p class="plan-audience">Negocios que quieren captar, registrar y responder leads sin trabajo manual.</p>
+        <div class="plan-price">Desde US$349</div>
+        <ul class="plan-includes">
+          <li>Captura de leads (formulario, WhatsApp o web)</li>
+          <li>Registro automático en Sheets, Airtable o CRM</li>
+          <li>Notificaciones y respuestas automáticas</li>
+        </ul>
+        <a href="https://wa.me/51976828556?text=Hola%2C%20me%20interesa%20el%20plan%20Automatizaci%C3%B3n%20Pro" target="_blank" rel="noopener" class="btn btn-outline btn-block">Quiero este plan</a>
+      </div>
+
+      <div class="plan-card reveal">
+        <h3>Sistema IA Completo</h3>
+        <p class="plan-audience">Empresas con varios procesos que quieren una solución integral.</p>
+        <div class="plan-price">Cotización</div>
+        <ul class="plan-includes">
+          <li>Combinación de varios servicios según tu caso</li>
+          <li>Automatizaciones, dashboards y prospección</li>
+          <li>Acompañamiento continuo</li>
+        </ul>
+        <a href="https://wa.me/51976828556?text=Hola%2C%20me%20interesa%20el%20plan%20Sistema%20IA%20Completo" target="_blank" rel="noopener" class="btn btn-outline btn-block">Solicitar cotización</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- NUESTRA DIFERENCIA -->
+<section class="difference">
+  <div class="bg-glow cyan" style="width:460px;height:460px;bottom:-120px;right:-100px;"></div>
+  <div class="container reveal-scale" style="position:relative;z-index:1;">
+    <span class="eyebrow" style="justify-content:center;">Nuestra diferencia</span>
+    <h2>No vendemos tecnología por vender tecnología</h2>
+    <p>Creamos soluciones digitales pensadas para resolver problemas concretos de negocio.</p>
+    <p>Combinamos estrategia, automatización, inteligencia artificial, análisis de datos y desarrollo web para construir herramientas útiles, visuales y orientadas a resultados.</p>
+    <p class="emphasis">La meta es simple: que el negocio venda mejor, trabaje con menos fricción y tome decisiones con información más clara.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" style="justify-content:center;">Preguntas frecuentes</span>
+      <h2>Antes de escribirnos</h2>
+    </div>
+    <div class="faq-list reveal">
+      <details class="faq-item" open>
+        <summary>¿Qué tipo de soluciones ofrecen?<span class="icon">+</span></summary>
+        <p>Webs modernas, auditorías digitales, automatizaciones, dashboards, sistemas de prospección y soluciones personalizadas con inteligencia artificial: Web Scrolling, Instagram a Web, Auditoría Meta Ads, Auditoría SEO, Automatizaciones con n8n, Auditoría de Negocio Digital, Dashboard de Facturas, Prospección con Firecrawl, Extensiones de Chrome y Skill Creator.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Cuánto cuesta un proyecto?<span class="icon">+</span></summary>
+        <p>Tenemos 4 planes: <a href="#planes">Diagnóstico Digital</a> desde US$100, Web + WhatsApp desde US$249, Automatización Pro desde US$349, y Sistema IA Completo por cotización según el alcance. Cada proyecto se ajusta a tu caso concreto.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Cómo es el proceso de trabajo?<span class="icon">+</span></summary>
+        <p>Primero entendemos el problema y qué herramientas usas hoy. Después diseñamos la solución (web, auditoría, automatización, dashboard o skill personalizada), la construimos, te la entregamos lista para usar y la ajustamos según cómo evolucione tu caso.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Para quién son estas soluciones?<span class="icon">+</span></summary>
+        <p>Para negocios, profesionales, creadores, agencias y empresas que quieren vender mejor, automatizar procesos, ahorrar tiempo, captar más clientes o dejar de depender de tareas manuales.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Trabajan con negocios fuera de España?<span class="icon">+</span></summary>
+        <p>Sí, trabajamos con negocios en España y Latinoamérica. Todo se coordina de forma remota por WhatsApp y correo electrónico, sin importar la ciudad o el país.</p>
+      </details>
+      <details class="faq-item">
+        <summary>¿Cómo empiezo?<span class="icon">+</span></summary>
+        <p>Escríbenos por WhatsApp contándonos qué necesitas mejorar: tu web, tus campañas, tus procesos o tus datos. Analizamos tu caso y te proponemos una solución práctica y enfocada en resultados.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL + CONTACTO -->
+<section class="final-cta" id="contacto">
+  <div class="bg-glow violet" style="width:520px;height:520px;top:60px;left:50%;transform:translateX(-50%);"></div>
+  <div class="container reveal" style="position:relative;z-index:1;">
+    <span class="eyebrow" style="justify-content:center;">Empecemos</span>
+    <h2>¿Quieres una solución digital<br>adaptada a tu negocio?</h2>
+    <p>Cuéntanos qué necesitas mejorar: tu web, tus campañas, tus procesos, tus datos, tus leads o tus herramientas internas. Analizamos tu caso y te proponemos una solución práctica, personalizada y enfocada en resultados.</p>
+    <div class="cta-buttons">
+      <a href="https://wa.me/51976828556?text=Hola%2C%20quiero%20agendar%20una%20llamada%20para%20hablar%20sobre%20soluciones%20digitales%20con%20IA%20para%20mi%20negocio" target="_blank" rel="noopener" class="btn btn-primary">Agenda una llamada</a>
+      <a href="https://wa.me/51976828556?text=Hola%2C%20quiero%20solicitar%20una%20auditor%C3%ADa%20para%20mi%20negocio" target="_blank" rel="noopener" class="btn btn-outline">Solicita una auditoría</a>
+      <a href="https://wa.me/51976828556?text=Hola%2C%20quiero%20automatizar%20procesos%20de%20mi%20negocio" target="_blank" rel="noopener" class="btn btn-outline">Quiero automatizar mi negocio</a>
+    </div>
+
+    <div class="cta-divider">o escríbenos aquí</div>
+    <div class="form-tabs reveal" role="tablist">
+      <button type="button" class="form-tab is-active" id="tabRapido" data-tab="rapido" role="tab" aria-selected="true">Contacto rápido</button>
+      <button type="button" class="form-tab" id="tabDiagnostico" data-tab="diagnostico" role="tab" aria-selected="false">Solicitar diagnóstico</button>
+    </div>
+    <form class="contact-form has-tabs reveal" id="contactForm" novalidate>
+      <div class="form-row">
+        <div class="form-field">
+          <label for="cf-nombre">Nombre</label>
+          <input type="text" id="cf-nombre" name="nombre" autocomplete="name" required>
+        </div>
+        <div class="form-field">
+          <label for="cf-email">Email</label>
+          <input type="email" id="cf-email" name="email" autocomplete="email" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-field">
+          <label for="cf-telefono">Teléfono / WhatsApp</label>
+          <input type="tel" id="cf-telefono" name="telefono" autocomplete="tel">
+        </div>
+        <div class="form-field">
+          <label for="cf-servicio">Servicio de interés</label>
+          <select id="cf-servicio" name="servicio">
+            <option value="">Selecciona una opción</option>
+            <option>Web Scrolling</option>
+            <option>Instagram a Web</option>
+            <option>Auditoría Meta Ads</option>
+            <option>Auditoría SEO</option>
+            <option>Automatizaciones n8n</option>
+            <option>Auditoría de Negocio Digital</option>
+            <option>Dashboard de Facturas</option>
+            <option>Prospección con Firecrawl</option>
+            <option>Extensiones de Chrome</option>
+            <option>Skill Creator</option>
+            <option>No estoy seguro / otro</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-field" id="fieldMensaje">
+        <label for="cf-mensaje">Cuéntanos qué necesitas</label>
+        <textarea id="cf-mensaje" name="mensaje" required></textarea>
+      </div>
+
+      <div class="diagnostico-fields" id="diagnosticoFields" hidden>
+        <p class="hint">Cuéntanos un poco más de tu negocio para preparar un diagnóstico útil desde el primer contacto.</p>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="cf-negocio">Nombre del negocio</label>
+            <input type="text" id="cf-negocio" name="negocio">
+          </div>
+          <div class="form-field">
+            <label for="cf-ciudad">Ciudad / país</label>
+            <input type="text" id="cf-ciudad" name="ciudad">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="cf-tipo-negocio">Tipo de negocio</label>
+            <input type="text" id="cf-tipo-negocio" name="tipo_negocio" placeholder="Ej. clínica, ecommerce, restaurante...">
+          </div>
+          <div class="form-field">
+            <label for="cf-canal">Canal principal</label>
+            <select id="cf-canal" name="canal_principal">
+              <option value="">Selecciona una opción</option>
+              <option>WhatsApp</option>
+              <option>Web</option>
+              <option>Instagram</option>
+              <option>Email</option>
+              <option>Otro</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-field" id="fieldProblema">
+          <label for="cf-problema">¿Qué problema quieres resolver?</label>
+          <textarea id="cf-problema" name="problema"></textarea>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="cf-presupuesto">Presupuesto aproximado</label>
+            <select id="cf-presupuesto" name="presupuesto">
+              <option value="">Selecciona una opción</option>
+              <option>Menos de US$150</option>
+              <option>US$150 – US$500</option>
+              <option>US$500 – US$1500</option>
+              <option>Más de US$1500</option>
+              <option>Aún no lo sé</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="cf-urgencia">Urgencia</label>
+            <select id="cf-urgencia" name="urgencia">
+              <option value="">Selecciona una opción</option>
+              <option>Esta semana</option>
+              <option>Este mes</option>
+              <option>Más adelante</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-field">
+          <label for="cf-horario">Mejor horario de contacto</label>
+          <select id="cf-horario" name="horario_contacto">
+            <option value="">Selecciona una opción</option>
+            <option>Mañana</option>
+            <option>Tarde</option>
+            <option>Noche</option>
+            <option>Cualquier horario</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-honeypot" aria-hidden="true">
+        <label for="cf-empresa">No completar este campo</label>
+        <input type="text" id="cf-empresa" name="empresa_web" tabindex="-1" autocomplete="off">
+      </div>
+      <label class="checkbox-field">
+        <input type="checkbox" id="cf-acepta" name="acepta_privacidad" required>
+        Acepto la <a href="privacidad.html" target="_blank" rel="noopener">Política de Privacidad</a> y autorizo el uso de mis datos para ser contactado.
+      </label>
+      <button type="submit" class="btn btn-primary btn-block" id="cfSubmit">Enviar mensaje</button>
+      <p class="form-status" id="cfStatus" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+  <div class="container closing reveal">
+    <h3>Tecnología que trabaja para tu negocio</h3>
+    <p>Desde una web profesional hasta una automatización completa, creamos soluciones digitales con IA para que tu negocio pueda crecer, organizarse mejor y tomar decisiones más inteligentes. Transforma procesos manuales en sistemas inteligentes.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="#inicio" class="logo"><img src="assets/logo-3a.svg" alt="Agentes IA" class="logo-mark">Agentes<span>IA</span></a>
+        <p>Soluciones digitales con inteligencia artificial para negocios, profesionales, creadores y empresas que quieren crecer con tecnología.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navegación</h4>
+        <a href="#sobre">Sobre nosotros</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#nichos">Por negocio</a>
+        <a href="#planes">Planes</a>
+        <a href="#proceso">Cómo trabajamos</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <a href="mailto:smart.consulting@agentes-inteligencia-artificial.online">smart.consulting@agentes-inteligencia-artificial.online</a>
+        <a href="https://wa.me/51976828556" target="_blank" rel="noopener">+51 976 828 556 (WhatsApp)</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="privacidad.html">Política de privacidad</a>
+        <a href="terminos-y-condiciones.html">Términos y condiciones</a>
+        <a href="politica-de-servicio.html">Política de servicio</a>
+        <a href="politica-de-reembolsos.html">Política de reembolsos</a>
+        <a href="politica-de-cookies.html">Política de cookies</a>
+        <a href="aviso-legal.html">Aviso legal</a>
+        <a href="#" id="footerCookieSettings">Configurar cookies</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span id="footerYear">© 2026 Agentes IA. Todos los derechos reservados.</span>
+      <span>Hecho con inteligencia artificial y estrategia.</span>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/51976828556?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20soluciones%20digitales%20con%20IA%20para%20mi%20negocio"
+   target="_blank" rel="noopener" class="whatsapp-float" aria-label="Escríbenos por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true">
+    <path d="M17.47 14.38c-.29-.15-1.72-.85-1.98-.95-.27-.1-.46-.15-.66.15-.2.29-.76.94-.93 1.14-.17.2-.34.22-.63.07-.29-.15-1.23-.45-2.34-1.44-.87-.77-1.45-1.72-1.62-2.01-.17-.29-.02-.45.13-.6.13-.13.29-.34.44-.5.15-.17.2-.29.29-.49.1-.2.05-.37-.02-.51-.07-.15-.66-1.58-.9-2.16-.24-.58-.48-.5-.66-.51-.17-.01-.37-.01-.56-.01-.2 0-.51.07-.78.37-.27.29-1.02 1-1.02 2.43 0 1.43 1.04 2.82 1.19 3.01.15.2 2.05 3.13 4.97 4.39.69.3 1.24.48 1.66.61.7.22 1.34.19 1.84.12.56-.08 1.72-.7 1.96-1.38.24-.68.24-1.26.17-1.38-.07-.12-.27-.2-.56-.34z"/>
+    <path d="M12.02 2C6.5 2 2 6.48 2 12c0 1.85.5 3.58 1.36 5.07L2 22l5.09-1.33A9.95 9.95 0 0 0 12.02 22C17.52 22 22 17.52 22 12S17.52 2 12.02 2zm0 18.18c-1.7 0-3.28-.47-4.64-1.29l-.33-.2-3.02.79.8-2.94-.22-.34a8.18 8.18 0 0 1-1.28-4.4c0-4.53 3.69-8.22 8.24-8.22 4.54 0 8.23 3.69 8.23 8.22 0 4.54-3.69 8.38-8.28 8.38z"/>
+  </svg>
+</a>
+
+<!-- CHAT WEB (asistente virtual) -->
+<button type="button" class="chat-toggle" id="chatToggle" aria-label="Abrir chat de ayuda" aria-expanded="false">
+  <svg class="chat-toggle-chat" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+  </svg>
+  <svg class="chat-toggle-close" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <line x1="18" y1="6" x2="6" y2="18"></line>
+    <line x1="6" y1="6" x2="18" y2="18"></line>
+  </svg>
+</button>
+
+<div class="chat-window" id="chatWindow" role="dialog" aria-label="Asistente virtual de Agentes IA" aria-hidden="true">
+  <div class="chat-header">
+    <div class="chat-avatar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"></path></svg>
+    </div>
+    <div>
+      <div class="chat-title">Asistente de Agentes IA</div>
+      <div class="chat-status">Asistente automatizado</div>
+    </div>
+  </div>
+  <div class="chat-body" id="chatBody"></div>
+  <p class="chat-disclaimer">Este es un asistente automatizado con respuestas preprogramadas, no un chat en vivo. Para hablar con nuestro equipo, usa la opción de WhatsApp.</p>
+</div>
+
+<!-- BANNER DE COOKIES -->
+<div class="cookie-banner" id="cookieBanner" role="dialog" aria-live="polite" aria-label="Aviso de cookies">
+  <p>Usamos cookies propias y de terceros para medir el tráfico y mejorar tu experiencia. Puedes aceptar todas, rechazarlas o configurar tus preferencias. Más información en nuestra <a href="politica-de-cookies.html" target="_blank" rel="noopener">Política de Cookies</a>.</p>
+  <div class="cookie-banner-actions">
+    <button type="button" class="btn btn-outline btn-sm" id="cookieReject">Rechazar</button>
+    <button type="button" class="btn btn-outline btn-sm" id="cookieSettings">Configurar</button>
+    <button type="button" class="btn btn-primary btn-sm" id="cookieAccept">Aceptar</button>
+  </div>
+</div>
+
+<!-- MODAL DE PREFERENCIAS DE COOKIES -->
+<div class="cookie-modal-overlay" id="cookieModalOverlay">
+  <div class="cookie-modal" role="dialog" aria-modal="true" aria-label="Preferencias de cookies">
+    <h3>Preferencias de cookies</h3>
+    <p>Elige qué tipos de cookies permites. Puedes cambiar esta decisión cuando quieras desde el enlace "Configurar cookies" en el pie de página.</p>
+
+    <div class="cookie-category">
+      <div class="cookie-category-head">
+        <span>Necesarias</span>
+        <span class="cookie-always-on">Siempre activas</span>
+      </div>
+      <p>Imprescindibles para que el sitio funcione correctamente. No pueden desactivarse.</p>
+    </div>
+
+    <div class="cookie-category">
+      <div class="cookie-category-head">
+        <span>Analíticas y medición</span>
+        <label class="switch">
+          <input type="checkbox" id="cookieAnalyticsToggle">
+          <span class="switch-track"></span>
+        </label>
+      </div>
+      <p>Nos ayudan a entender cómo usas el sitio: Google Analytics, Google Tag Manager, Meta Pixel y Microsoft Clarity.</p>
+    </div>
+
+    <div class="cookie-modal-actions">
+      <button type="button" class="btn btn-primary btn-block" id="cookieSavePrefs">Guardar preferencias</button>
+    </div>
+    <a href="politica-de-cookies.html" target="_blank" rel="noopener" class="cookie-modal-link">Ver política de cookies completa</a>
+  </div>
+</div>
+
+<script>
+(function(){
+  const N8N_WEBHOOK_URL = 'https://n8n-n8n.pqtz58.easypanel.host/webhook/02537f66-fe8d-43b3-b666-e0504d665b35';
+
+  // Cookie consent
+  (function cookieConsent(){
+    // Rellena estos IDs cuando los tengas: mientras estén vacíos, no se carga ningún script de medición.
+    const GTM_ID = '';          // ej. 'GTM-XXXXXXX'
+    const GA_MEASUREMENT_ID = ''; // ej. 'G-XXXXXXXXXX'
+    const META_PIXEL_ID = '';   // ej. '1234567890123456'
+    const CLARITY_ID = '';      // ej. 'abcd1234ef'
+
+    const STORAGE_KEY = 'cookie_consent';
+    const banner = document.getElementById('cookieBanner');
+    const overlay = document.getElementById('cookieModalOverlay');
+    const analyticsToggle = document.getElementById('cookieAnalyticsToggle');
+    if (!banner || !overlay) return;
+
+    function getConsent(){
+      try { return JSON.parse(localStorage.getItem(STORAGE_KEY)); } catch(e){ return null; }
+    }
+    function saveConsent(analytics){
+      localStorage.setItem(STORAGE_KEY, JSON.stringify({ analytics, decided:true, ts:new Date().toISOString() }));
+    }
+    function showBanner(){ banner.classList.add('is-visible'); }
+    function hideBanner(){ banner.classList.remove('is-visible'); }
+    function openModal(){ overlay.classList.add('is-visible'); }
+    function closeModal(){ overlay.classList.remove('is-visible'); }
+
+    function loadGTM(id){
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtm.js?id=' + id;
+      document.head.appendChild(s);
+    }
+    function loadGA(id){
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=' + id;
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function(){ window.dataLayer.push(arguments); };
+      window.gtag('js', new Date());
+      window.gtag('config', id);
+    }
+    function loadMetaPixel(id){
+      /* eslint-disable */
+      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+      window.fbq('init', id);
+      window.fbq('track', 'PageView');
+      /* eslint-enable */
+    }
+    function loadClarity(id){
+      /* eslint-disable */
+      (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src='https://www.clarity.ms/tag/'+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)})(window, document, 'clarity', 'script', id);
+      /* eslint-enable */
+    }
+    let consentAnalytics = false;
+
+    // API compartida: dispara eventos a GTM/GA4/Meta Pixel solo si hay consentimiento analítico.
+    window.trackEvent = function(name, params){
+      if (!consentAnalytics) return;
+      params = params || {};
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push(Object.assign({ event: name }, params));
+      if (typeof window.gtag === 'function') window.gtag('event', name, params);
+      if (typeof window.fbq === 'function') window.fbq('trackCustom', name, params);
+    };
+
+    function applyConsent(analytics){
+      consentAnalytics = !!analytics;
+      if (!analytics) return;
+      if (GTM_ID) loadGTM(GTM_ID);
+      if (GA_MEASUREMENT_ID) loadGA(GA_MEASUREMENT_ID);
+      if (META_PIXEL_ID) loadMetaPixel(META_PIXEL_ID);
+      if (CLARITY_ID) loadClarity(CLARITY_ID);
+    }
+
+    const existing = getConsent();
+    if (existing && existing.decided) {
+      applyConsent(existing.analytics);
+    } else {
+      showBanner();
+    }
+
+    document.getElementById('cookieAccept').addEventListener('click', () => {
+      saveConsent(true);
+      hideBanner();
+      applyConsent(true);
+    });
+    document.getElementById('cookieReject').addEventListener('click', () => {
+      saveConsent(false);
+      consentAnalytics = false;
+      hideBanner();
+    });
+    document.getElementById('cookieSettings').addEventListener('click', () => {
+      const current = getConsent();
+      analyticsToggle.checked = current ? !!current.analytics : false;
+      openModal();
+    });
+    document.getElementById('cookieSavePrefs').addEventListener('click', () => {
+      const analytics = analyticsToggle.checked;
+      saveConsent(analytics);
+      closeModal();
+      hideBanner();
+      applyConsent(analytics);
+    });
+    const openSettingsLink = document.getElementById('footerCookieSettings');
+    if (openSettingsLink) {
+      openSettingsLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        const current = getConsent();
+        analyticsToggle.checked = current ? !!current.analytics : false;
+        openModal();
+      });
+    }
+  })();
+
+  // Analytics: eventos de conversión (clic WhatsApp, "Agenda una llamada", envío de formulario, scroll profundo)
+  (function conversionEvents(){
+    // Clics en cualquier botón/enlace de WhatsApp
+    document.querySelectorAll('a[href*="wa.me"]').forEach((el) => {
+      el.addEventListener('click', () => {
+        const label = (el.textContent || el.getAttribute('aria-label') || 'whatsapp').trim();
+        window.trackEvent && window.trackEvent('whatsapp_click', { label });
+        if (/agenda una llamada/i.test(label)) {
+          window.trackEvent && window.trackEvent('agenda_llamada_click', { label });
+        }
+        if (/auditor/i.test(label)) {
+          window.trackEvent && window.trackEvent('auditoria_solicitada', { label, origen: 'whatsapp' });
+        }
+      });
+    });
+
+    // Scroll profundo: 25/50/75/90%
+    const thresholds = [25, 50, 75, 90];
+    const fired = new Set();
+    let ticking = false;
+    function checkScrollDepth(){
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      if (docHeight <= 0) return;
+      const pct = Math.round((scrollTop / docHeight) * 100);
+      thresholds.forEach((t) => {
+        if (pct >= t && !fired.has(t)) {
+          fired.add(t);
+          window.trackEvent && window.trackEvent('scroll_depth', { percent: t });
+        }
+      });
+    }
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(() => { checkScrollDepth(); ticking = false; });
+        ticking = true;
+      }
+    }, { passive: true });
+  })();
+
+  // Chat web: asistente automatizado con respuestas preprogramadas
+  (function chatWidget(){
+    const toggle = document.getElementById('chatToggle');
+    const win = document.getElementById('chatWindow');
+    const body = document.getElementById('chatBody');
+    if (!toggle || !win || !body) return;
+
+    const WA_NUMBER = '51976828556';
+    let isOpen = false;
+    let started = false;
+    let lead = { nombre:'', negocio:'', telefono:'' };
+    let leadStep = null; // 'nombre' | 'negocio' | 'telefono'
+    let inputRow = null;
+
+    const flows = {
+      root: {
+        bot: '¡Hola! 👋 Soy el asistente de Agentes IA. ¿En qué puedo ayudarte?',
+        options: [
+          { label: '¿Qué servicios ofrecen?', next: 'services' },
+          { label: 'Ver planes y precios', next: 'plans' },
+          { label: 'Preguntas frecuentes', next: 'faq' },
+          { label: 'Quiero que me contacten', action: 'lead' },
+          { label: 'Hablar por WhatsApp ahora', action: 'whatsapp' }
+        ]
+      },
+      services: {
+        bot: 'Ofrecemos 10 servicios: Web Scrolling, Instagram a Web, Auditoría Meta Ads, Auditoría SEO, Automatizaciones n8n, Auditoría de Negocio Digital, Dashboard de Facturas, Prospección con Firecrawl, Extensiones de Chrome y Skill Creator.',
+        options: [
+          { label: 'Ver todos los servicios en la web', action: 'scroll', target: '#servicios' },
+          { label: 'Ver planes y precios', next: 'plans' },
+          { label: '⬅ Volver al menú', next: 'root' }
+        ]
+      },
+      plans: {
+        bot: 'Tenemos 4 planes:\n• Diagnóstico Digital — desde US$100\n• Web + WhatsApp — desde US$249\n• Automatización Pro — desde US$349\n• Sistema IA Completo — cotización',
+        options: [
+          { label: 'Ver planes completos en la web', action: 'scroll', target: '#planes' },
+          { label: 'Quiero que me contacten', action: 'lead' },
+          { label: '⬅ Volver al menú', next: 'root' }
+        ]
+      },
+      faq: {
+        bot: '¿Sobre qué quieres saber más?',
+        options: [
+          { label: '¿Cuánto cuesta un proyecto?', next: 'faq_precio' },
+          { label: '¿Cómo es el proceso de trabajo?', next: 'faq_proceso' },
+          { label: '¿Trabajan fuera de España?', next: 'faq_paises' },
+          { label: '¿Cómo empiezo?', next: 'faq_empiezo' },
+          { label: '⬅ Volver al menú', next: 'root' }
+        ]
+      },
+      faq_precio: {
+        bot: 'Tenemos 4 planes: Diagnóstico Digital desde US$100, Web + WhatsApp desde US$249, Automatización Pro desde US$349, y Sistema IA Completo por cotización según el alcance.',
+        options: [{ label: '⬅ Volver a preguntas', next: 'faq' }, { label: '⬅ Volver al menú', next: 'root' }]
+      },
+      faq_proceso: {
+        bot: 'Primero entendemos tu problema y qué herramientas usas hoy. Después diseñamos la solución, la construimos, te la entregamos lista para usar y la ajustamos según cómo evolucione tu caso.',
+        options: [{ label: '⬅ Volver a preguntas', next: 'faq' }, { label: '⬅ Volver al menú', next: 'root' }]
+      },
+      faq_paises: {
+        bot: 'Sí, trabajamos con negocios en España y Latinoamérica. Todo se coordina de forma remota por WhatsApp y correo electrónico, sin importar la ciudad o el país.',
+        options: [{ label: '⬅ Volver a preguntas', next: 'faq' }, { label: '⬅ Volver al menú', next: 'root' }]
+      },
+      faq_empiezo: {
+        bot: 'Escríbenos por WhatsApp contándonos qué necesitas mejorar, o déjanos tus datos aquí mismo y te contactamos nosotros.',
+        options: [
+          { label: 'Quiero que me contacten', action: 'lead' },
+          { label: 'Hablar por WhatsApp ahora', action: 'whatsapp' },
+          { label: '⬅ Volver al menú', next: 'root' }
+        ]
+      }
+    };
+
+    function scrollToBottom(){ body.scrollTop = body.scrollHeight; }
+
+    function addBotMessage(text, opts){
+      const el = document.createElement('div');
+      el.className = 'chat-msg bot';
+      el.style.whiteSpace = 'pre-line';
+      if (opts && opts.html) el.innerHTML = text; else el.textContent = text;
+      body.appendChild(el);
+      scrollToBottom();
+    }
+    function addUserMessage(text){
+      const el = document.createElement('div');
+      el.className = 'chat-msg user';
+      el.textContent = text;
+      body.appendChild(el);
+      scrollToBottom();
+    }
+    function clearOptions(){
+      body.querySelectorAll('.chat-options').forEach(n => n.remove());
+    }
+    function addOptions(options){
+      const wrap = document.createElement('div');
+      wrap.className = 'chat-options';
+      options.forEach(opt => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'chat-option-btn';
+        btn.textContent = opt.label;
+        btn.addEventListener('click', () => {
+          addUserMessage(opt.label);
+          clearOptions();
+          handleOption(opt);
+        });
+        wrap.appendChild(btn);
+      });
+      body.appendChild(wrap);
+      scrollToBottom();
+    }
+    function goToState(key){
+      const state = flows[key];
+      if (!state) return;
+      addBotMessage(state.bot);
+      addOptions(state.options);
+    }
+    function handleOption(opt){
+      if (opt.action === 'whatsapp'){
+        openWhatsApp();
+        return;
+      }
+      if (opt.action === 'scroll'){
+        toggleChat(false);
+        const target = document.querySelector(opt.target);
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+        return;
+      }
+      if (opt.action === 'lead'){
+        startLeadCapture();
+        return;
+      }
+      if (opt.next){
+        goToState(opt.next);
+      }
+    }
+
+    function openWhatsApp(){
+      const parts = [];
+      if (lead.nombre) parts.push('Soy ' + lead.nombre);
+      if (lead.negocio) parts.push('de ' + lead.negocio);
+      const contextMsg = parts.length ? '. ' + parts.join(' ') + '.' : '';
+      const text = encodeURIComponent('Hola, vengo del chat de la web y quiero más información' + contextMsg);
+      window.trackEvent && window.trackEvent('whatsapp_click', { label: 'chat-web' });
+      window.open('https://wa.me/' + WA_NUMBER + '?text=' + text, '_blank', 'noopener');
+    }
+
+    function showInputRow(placeholder, type){
+      hideInputRow();
+      inputRow = document.createElement('div');
+      inputRow.className = 'chat-input-row';
+      inputRow.innerHTML =
+        '<input type="' + (type || 'text') + '" placeholder="' + placeholder + '" autocomplete="off">' +
+        '<button type="button" aria-label="Enviar"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button>';
+      win.insertBefore(inputRow, win.querySelector('.chat-disclaimer'));
+      const input = inputRow.querySelector('input');
+      const send = () => {
+        const val = input.value.trim();
+        if (!val) return;
+        addUserMessage(val);
+        hideInputRow();
+        handleLeadInput(val);
+      };
+      inputRow.querySelector('button').addEventListener('click', send);
+      input.addEventListener('keydown', (e) => { if (e.key === 'Enter') send(); });
+      setTimeout(() => input.focus(), 50);
+    }
+    function hideInputRow(){
+      if (inputRow && inputRow.parentNode) inputRow.parentNode.removeChild(inputRow);
+      inputRow = null;
+    }
+
+    function startLeadCapture(){
+      leadStep = 'nombre';
+      addBotMessage('Perfecto. Antes de continuar: al compartir tus datos aceptas nuestra <a href="privacidad.html" target="_blank" rel="noopener" style="color:#fff;text-decoration:underline;">Política de Privacidad</a>. ¿Cuál es tu nombre?', { html: true });
+      showInputRow('Tu nombre...');
+    }
+
+    function handleLeadInput(value){
+      if (leadStep === 'nombre'){
+        lead.nombre = value;
+        leadStep = 'negocio';
+        addBotMessage('Gracias, ' + value + '. ¿Cómo se llama tu negocio?');
+        showInputRow('Nombre de tu negocio...');
+      } else if (leadStep === 'negocio'){
+        lead.negocio = value;
+        leadStep = 'telefono';
+        addBotMessage('¿Cuál es tu WhatsApp? (con código de país)');
+        showInputRow('Ej. +51 999 999 999', 'tel');
+      } else if (leadStep === 'telefono'){
+        lead.telefono = value;
+        leadStep = null;
+        submitLead();
+      }
+    }
+
+    async function submitLead(){
+      addBotMessage('Enviando tus datos...');
+      try {
+        const res = await fetch(N8N_WEBHOOK_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            tipo_formulario: 'chat-web',
+            nombre: lead.nombre,
+            negocio: lead.negocio,
+            telefono: lead.telefono,
+            email: '',
+            servicio: '',
+            mensaje: 'Contacto iniciado desde el chat web',
+            acepta_privacidad: true,
+            origen: 'chat-web',
+            fecha: new Date().toISOString()
+          })
+        });
+        if (!res.ok) throw new Error('bad response');
+        window.trackEvent && window.trackEvent('form_submit_success', { origen: 'chat-web' });
+        addBotMessage('¡Listo, ' + lead.nombre + '! Ya recibimos tus datos y te contactaremos pronto. Si quieres avanzar más rápido, escríbenos ahora mismo por WhatsApp.');
+        addOptions([
+          { label: 'Continuar por WhatsApp', action: 'whatsapp' },
+          { label: '⬅ Volver al menú', next: 'root' }
+        ]);
+      } catch (err) {
+        addBotMessage('No pudimos enviar tus datos. Mejor escríbenos directo por WhatsApp para no perder tiempo.');
+        addOptions([
+          { label: 'Hablar por WhatsApp ahora', action: 'whatsapp' },
+          { label: '⬅ Volver al menú', next: 'root' }
+        ]);
+      }
+    }
+
+    function toggleChat(force){
+      isOpen = typeof force === 'boolean' ? force : !isOpen;
+      win.classList.toggle('is-open', isOpen);
+      win.setAttribute('aria-hidden', String(!isOpen));
+      toggle.classList.toggle('is-open', isOpen);
+      toggle.setAttribute('aria-expanded', String(isOpen));
+      toggle.setAttribute('aria-label', isOpen ? 'Cerrar chat de ayuda' : 'Abrir chat de ayuda');
+      if (isOpen && !started){
+        started = true;
+        goToState('root');
+      }
+    }
+
+    toggle.addEventListener('click', () => toggleChat());
+  })();
+
+  // Nav scroll state
+  const navbar = document.getElementById('navbar');
+  const onScrollNav = () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 40);
+  };
+  window.addEventListener('scroll', onScrollNav, { passive:true });
+  onScrollNav();
+
+  // Mobile menu toggle
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    navToggle.textContent = isOpen ? '✕' : '☰';
+    navToggle.setAttribute('aria-expanded', String(isOpen));
+    navToggle.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
+  });
+  navLinks.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      navToggle.textContent = '☰';
+      navToggle.setAttribute('aria-expanded', 'false');
+      navToggle.setAttribute('aria-label', 'Abrir menú');
+    });
+  });
+
+  // Contact form -> n8n webhook
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    const cfSubmit = document.getElementById('cfSubmit');
+    const cfStatus = document.getElementById('cfStatus');
+
+    // Tabs: contacto rápido <-> solicitar diagnóstico
+    const tabRapido = document.getElementById('tabRapido');
+    const tabDiagnostico = document.getElementById('tabDiagnostico');
+    const diagnosticoFields = document.getElementById('diagnosticoFields');
+    const mensajeEl = document.getElementById('cf-mensaje');
+    const problemaEl = document.getElementById('cf-problema');
+    let activeTab = 'rapido';
+
+    function setTab(tab){
+      activeTab = tab;
+      const isDiagnostico = tab === 'diagnostico';
+      tabRapido.classList.toggle('is-active', !isDiagnostico);
+      tabDiagnostico.classList.toggle('is-active', isDiagnostico);
+      tabRapido.setAttribute('aria-selected', String(!isDiagnostico));
+      tabDiagnostico.setAttribute('aria-selected', String(isDiagnostico));
+      diagnosticoFields.hidden = !isDiagnostico;
+      mensajeEl.required = !isDiagnostico;
+      problemaEl.required = isDiagnostico;
+      cfSubmit.textContent = isDiagnostico ? 'Solicitar diagnóstico' : 'Enviar mensaje';
+    }
+    tabRapido.addEventListener('click', () => setTab('rapido'));
+    tabDiagnostico.addEventListener('click', () => setTab('diagnostico'));
+
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      if (contactForm.empresa_web.value) return; // honeypot: bot detectado, no enviar
+
+      const data = {
+        tipo_formulario: activeTab,
+        nombre: contactForm.nombre.value.trim(),
+        email: contactForm.email.value.trim(),
+        telefono: contactForm.telefono.value.trim(),
+        servicio: contactForm.servicio.value,
+        mensaje: activeTab === 'diagnostico' ? contactForm.problema.value.trim() : contactForm.mensaje.value.trim(),
+        acepta_privacidad: contactForm.acepta_privacidad.checked,
+        origen: 'web-agentes-ia',
+        fecha: new Date().toISOString()
+      };
+
+      if (activeTab === 'diagnostico') {
+        Object.assign(data, {
+          negocio: contactForm.negocio.value.trim(),
+          ciudad: contactForm.ciudad.value.trim(),
+          tipo_negocio: contactForm.tipo_negocio.value.trim(),
+          canal_principal: contactForm.canal_principal.value,
+          presupuesto: contactForm.presupuesto.value,
+          urgencia: contactForm.urgencia.value,
+          horario_contacto: contactForm.horario_contacto.value
+        });
+      }
+
+      if (!data.acepta_privacidad) {
+        cfStatus.textContent = 'Debes aceptar la Política de Privacidad para enviar el formulario.';
+        cfStatus.className = 'form-status err';
+        return;
+      }
+
+      if (!data.nombre || !data.email || !data.mensaje) {
+        cfStatus.textContent = activeTab === 'diagnostico'
+          ? 'Completa nombre, email y el problema a resolver antes de enviar.'
+          : 'Completa nombre, email y mensaje antes de enviar.';
+        cfStatus.className = 'form-status err';
+        return;
+      }
+
+      const submitLabel = cfSubmit.textContent;
+      cfSubmit.disabled = true;
+      cfSubmit.textContent = 'Enviando...';
+      cfStatus.textContent = '';
+      cfStatus.className = 'form-status';
+
+      try {
+        const res = await fetch(N8N_WEBHOOK_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+        if (!res.ok) throw new Error('bad response');
+        contactForm.reset();
+        const redirectParams = new URLSearchParams({
+          servicio: data.servicio || '',
+          origen: activeTab === 'diagnostico' ? 'formulario-diagnostico' : 'formulario-contacto'
+        });
+        window.location.href = 'gracias.html?' + redirectParams.toString();
+        return;
+      } catch (err) {
+        cfStatus.textContent = 'No pudimos enviar el mensaje. Escríbenos por WhatsApp mientras lo revisamos.';
+        cfStatus.className = 'form-status err';
+      } finally {
+        cfSubmit.disabled = false;
+        cfSubmit.textContent = submitLabel;
+      }
+    });
+  }
+
+  // Reveal on scroll
+  const revealEls = document.querySelectorAll('.reveal, .reveal-scale');
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReduced) {
+    revealEls.forEach(el => el.classList.add('is-visible'));
+  } else {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+    revealEls.forEach(el => io.observe(el));
+  }
+
+  // Scroll-driven hero video
+  const video = document.getElementById('heroVideo');
+  const hero = document.getElementById('scroll-hero');
+  const progressFill = document.getElementById('progressFill');
+  if (video && hero) {
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+
+    if (isMobile || prefersReduced) {
+      video.autoplay = true;
+      video.loop = true;
+      video.play().catch(() => {});
+    } else {
+      video.pause();
+      let isReady = false;
+      video.addEventListener('loadedmetadata', () => { isReady = true; });
+      video.addEventListener('error', () => { isReady = false; });
+      video.load();
+
+      function updateVideo() {
+        if (!isReady || !video.duration) return;
+        const rect = hero.getBoundingClientRect();
+        const scrolled = -rect.top;
+        const scrollable = hero.offsetHeight - window.innerHeight;
+        let progress = 0;
+        if (scrolled <= 0) {
+          progress = 0;
+        } else if (scrolled >= scrollable) {
+          progress = 1;
+        } else {
+          progress = scrolled / scrollable;
+        }
+        video.currentTime = progress * video.duration;
+        if (progressFill) progressFill.style.width = (progress * 100) + '%';
+      }
+
+      let ticking = false;
+      window.addEventListener('scroll', () => {
+        if (!ticking) {
+          requestAnimationFrame(() => { updateVideo(); ticking = false; });
+          ticking = true;
+        }
+      }, { passive: true });
+      window.addEventListener('resize', updateVideo);
+    }
+  }
+})();
+</script>
+</body>
 </html>

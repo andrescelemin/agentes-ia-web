@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>¡Gracias por escribirnos! — Agentes IA</title>
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://www.agentes-inteligencia-artificial.online/gracias.html">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="alternate icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta name="theme-color" content="#06060c">
+
+<!-- Google Search Console: descomenta y pega tu código de verificación cuando lo tengas -->
+<!-- <meta name="google-site-verification" content="TU_CODIGO_DE_VERIFICACION"> -->
+
+<!-- dataLayer inicializado temprano para GTM/GA4 (los eventos solo se envían si el visitante acepta cookies analíticas) -->
+<script>window.dataLayer = window.dataLayer || [];</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#06060c;--surface:#12121f;--border:rgba(255,255,255,.08);--border-2:rgba(255,255,255,.14);
+    --text:#f3f3f8;--text-muted:#9c9cb0;--violet:#a855f7;--cyan:#22d3ee;
+    --gradient:linear-gradient(135deg,var(--violet) 0%,var(--cyan) 100%);--ease:cubic-bezier(.16,1,.3,1);
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;text-align:center;
+    -webkit-font-smoothing:antialiased;padding:24px;
+    background-image:radial-gradient(circle at 20% 20%,rgba(124,58,237,.25),transparent 55%),
+                      radial-gradient(circle at 80% 80%,rgba(34,211,238,.18),transparent 55%);
+  }
+  .wrap{max-width:560px;}
+  .logo{font-family:'Sora',sans-serif;font-weight:700;font-size:1.2rem;display:inline-flex;align-items:center;gap:10px;margin-bottom:40px;}
+  .logo-mark{width:36px;height:36px;border-radius:10px;display:block;}
+  .logo span{background:var(--gradient);-webkit-background-clip:text;background-clip:text;color:transparent;}
+  .check{
+    width:72px;height:72px;border-radius:50%;background:var(--gradient);display:flex;align-items:center;justify-content:center;
+    margin:0 auto 28px;box-shadow:0 0 50px rgba(168,85,247,.4);
+  }
+  .check svg{width:34px;height:34px;}
+  h1{font-family:'Sora',sans-serif;font-size:clamp(1.6rem,4vw,2.2rem);margin:0 0 14px;}
+  p{color:var(--text-muted);font-size:1.02rem;margin:0 0 34px;line-height:1.6;}
+  .btns{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 26px;
+    border-radius:100px;font-weight:600;font-size:.92rem;text-decoration:none;transition:transform .25s var(--ease);
+    border:1px solid transparent;
+  }
+  .btn-primary{background:var(--gradient);color:#fff;}
+  .btn-primary:hover{transform:translateY(-3px);}
+  .btn-outline{border-color:var(--border-2);color:var(--text);background:rgba(255,255,255,.02);}
+  .btn-outline:hover{border-color:var(--cyan);color:var(--cyan);transform:translateY(-3px);}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a href="index.html" class="logo"><img src="assets/logo-3a.svg" alt="Agentes IA" class="logo-mark">Agentes<span>IA</span></a>
+  <div class="check">
+    <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+  </div>
+  <h1 id="graciasTitulo">¡Gracias! Recibimos tu mensaje</h1>
+  <p id="graciasTexto">Nuestro equipo va a revisar tu caso y te contactará pronto por email o WhatsApp. Mientras tanto, si quieres avanzar más rápido, escríbenos directo.</p>
+  <div class="btns">
+    <a href="https://wa.me/51976828556?text=Hola%2C%20acabo%20de%20escribir%20por%20el%20formulario%20de%20la%20web" target="_blank" rel="noopener" class="btn btn-primary">Escríbenos por WhatsApp</a>
+    <a href="index.html" class="btn btn-outline">Volver al inicio</a>
+  </div>
+</div>
+
+<script>
+(function(){
+  // Rellena estos IDs cuando los tengas: mientras estén vacíos, no se carga ningún script de medición.
+  const GTM_ID = '';
+  const GA_MEASUREMENT_ID = '';
+  const META_PIXEL_ID = '';
+  const CLARITY_ID = '';
+
+  function loadGTM(id){
+    const s = document.createElement('script'); s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtm.js?id=' + id;
+    document.head.appendChild(s);
+  }
+  function loadGA(id){
+    const s = document.createElement('script'); s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + id;
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function(){ window.dataLayer.push(arguments); };
+    window.gtag('js', new Date());
+    window.gtag('config', id);
+  }
+  function loadMetaPixel(id){
+    /* eslint-disable */
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    window.fbq('init', id);
+    window.fbq('track', 'PageView');
+    /* eslint-enable */
+  }
+  function loadClarity(id){
+    /* eslint-disable */
+    (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src='https://www.clarity.ms/tag/'+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)})(window, document, 'clarity', 'script', id);
+    /* eslint-enable */
+  }
+
+  function getConsent(){
+    try { return JSON.parse(localStorage.getItem('cookie_consent')); } catch(e){ return null; }
+  }
+  function trackEvent(name, params){
+    params = params || {};
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push(Object.assign({ event: name }, params));
+    if (typeof window.gtag === 'function') window.gtag('event', name, params);
+    if (typeof window.fbq === 'function') window.fbq('trackCustom', name, params);
+  }
+
+  const consent = getConsent();
+  const analyticsAllowed = !!(consent && consent.decided && consent.analytics);
+
+  if (analyticsAllowed) {
+    if (GTM_ID) loadGTM(GTM_ID);
+    if (GA_MEASUREMENT_ID) loadGA(GA_MEASUREMENT_ID);
+    if (META_PIXEL_ID) loadMetaPixel(META_PIXEL_ID);
+    if (CLARITY_ID) loadClarity(CLARITY_ID);
+  }
+
+  // Personaliza el mensaje y dispara el evento de conversión según el servicio solicitado.
+  const params = new URLSearchParams(window.location.search);
+  const servicio = params.get('servicio') || '';
+  const origen = params.get('origen') || 'formulario';
+
+  if (servicio) {
+    document.getElementById('graciasTexto').textContent =
+      'Recibimos tu solicitud sobre "' + servicio + '". Nuestro equipo va a revisar tu caso y te contactará pronto por email o WhatsApp.';
+  }
+
+  if (analyticsAllowed) {
+    trackEvent('form_submit_success', { servicio, origen });
+    if (/auditor/i.test(servicio)) {
+      trackEvent('auditoria_solicitada', { servicio, origen });
+    }
+  }
+})();
+</script>
+</body>
+</html>
