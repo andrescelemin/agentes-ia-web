@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#060A1A"/>
+      <stop offset="100%" stop-color="#0B0820"/>
+    </linearGradient>
+    <radialGradient id="orbGrad" cx="35%" cy="30%" r="75%">
+      <stop offset="0%" stop-color="#5C8CFF"/>
+      <stop offset="45%" stop-color="#2E6BFF"/>
+      <stop offset="100%" stop-color="#8B5CF6"/>
+    </radialGradient>
+  </defs>
+  <rect width="64" height="64" rx="15" fill="url(#bgGrad)"/>
+  <circle cx="32" cy="32" r="18" fill="url(#orbGrad)"/>
+  <text x="32" y="38" font-family="Sora,-apple-system,sans-serif" font-size="15" font-weight="800" fill="#FFFFFF" text-anchor="middle">IA</text>
+</svg>
