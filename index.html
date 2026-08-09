@@ -1775,8 +1775,8 @@
       </div>
 
       <div class="form-honeypot" aria-hidden="true">
-        <label for="cf-empresa">No completar este campo</label>
-        <input type="text" id="cf-empresa" name="empresa_web" tabindex="-1" autocomplete="off">
+        <label for="cf-hpx7">No completar este campo</label>
+        <input type="text" id="cf-hpx7" name="hp_field_x7" tabindex="-1" autocomplete="off">
       </div>
       <label class="checkbox-field">
         <input type="checkbox" id="cf-acepta" name="acepta_privacidad" required>
@@ -2369,7 +2369,7 @@
     contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
 
-      if (contactForm.empresa_web.value) return; // honeypot: bot detectado, no enviar
+      if (contactForm.hp_field_x7.value) return; // honeypot: bot detectado, no enviar
 
       const data = {
         tipo_formulario: activeTab,
