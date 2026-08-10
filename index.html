@@ -260,6 +260,25 @@
     .scroll-video-hero{height:100vh;}
   }
 
+  /* ---------- CLIENTES ---------- */
+  .clientes{padding:70px 0 90px;background:var(--bg);}
+  .clientes .section-head{margin-bottom:44px;}
+  .clientes-grid{
+    display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:20px;
+  }
+  .cliente-logo{
+    display:flex;align-items:center;justify-content:center;
+    background:#fff;border-radius:16px;padding:16px 26px;height:72px;
+    box-shadow:0 10px 30px rgba(0,0,0,.25);
+    transition:transform .3s var(--ease),box-shadow .3s var(--ease);
+  }
+  .cliente-logo:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.32);}
+  .cliente-logo img{max-height:100%;max-width:140px;width:auto;height:auto;object-fit:contain;display:block;}
+  @media (max-width:600px){
+    .cliente-logo{height:56px;padding:10px 18px;}
+    .cliente-logo img{max-width:100px;}
+  }
+
   /* ---------- REVEAL ---------- */
   .reveal{opacity:0;transform:translateY(36px);transition:opacity .8s var(--ease),transform .8s var(--ease);}
   .reveal.is-visible{opacity:1;transform:translateY(0);}
@@ -708,6 +727,27 @@
     </div>
     <div class="scroll-cue"><span>Scroll</span><div class="mouse"></div></div>
     <div class="scroll-progress-bar"><div class="scroll-progress-fill" id="progressFill"></div></div>
+  </div>
+</section>
+
+<!-- CLIENTES -->
+<section class="clientes" id="clientes">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" style="justify-content:center;">Confían en nosotros</span>
+      <h2>Negocios que ya trabajan con NeXo IA</h2>
+    </div>
+    <div class="clientes-grid reveal">
+      <div class="cliente-logo"><img src="assets/clientes/falabella-peru.png" alt="Saga Falabella Perú" loading="lazy"></div>
+      <div class="cliente-logo"><img src="assets/clientes/movistar.jpeg" alt="Movistar" loading="lazy"></div>
+      <div class="cliente-logo"><img src="assets/clientes/myf.jpg" alt="M&F Ingeniería en Personas" loading="lazy"></div>
+      <div class="cliente-logo"><img src="assets/clientes/perfect-dent.jpg" alt="Perfect Dent" loading="lazy"></div>
+      <div class="cliente-logo"><img src="assets/clientes/vision-fusion.svg" alt="Vision Fusion" loading="lazy"></div>
+      <div class="cliente-logo"><img src="assets/clientes/luxe-aura.webp" alt="Luxe Aura Hair" loading="lazy"></div>
+      <div class="cliente-logo"><img src="assets/clientes/meta-candy.webp" alt="Meta Candy" loading="lazy"></div>
+      <div class="cliente-logo"><img src="assets/clientes/lindai.png" alt="Lindai's Bodywork" loading="lazy"></div>
+      <div class="cliente-logo"><img src="assets/clientes/stupendastic.png" alt="Stupendastic" loading="lazy"></div>
+    </div>
   </div>
 </section>
 
