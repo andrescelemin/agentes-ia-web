@@ -52,8 +52,10 @@
   "telephone": "+573102691503",
   "sameAs": [],
   "makesOffer": [
-    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Agente IA en WhatsApp" } },
-    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Diagnóstico Digital" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Recepción IA" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Agenda IA" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "NeXo Pro" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "NeXo Growth" } },
     { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Automatizaciones n8n" } },
     { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Auditoría de Negocio Digital" } },
     { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Web Scrolling" } },
@@ -75,7 +77,7 @@
     {
       "@type": "Question",
       "name": "¿Cuánto cuesta un proyecto?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Depende del alcance. El Diagnóstico Digital arranca desde US$100 y es el primer paso que recomendamos si no sabes por dónde empezar. El Agente IA en WhatsApp, nuestro producto principal, cuesta desde US$390 de implementación más US$69 al mes. Las automatizaciones con n8n arrancan desde US$349. Para proyectos que combinan varias soluciones, cotizamos según el caso." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Depende del alcance. Recepción IA, nuestro plan de entrada, cuesta $299.000 de implementación más $49.900 al mes. Agenda IA cuesta $599.000 más $99.900 al mes. NeXo Pro cuesta $999.000 más $199.900 al mes. NeXo Growth cuesta $1.599.000 más $399.900 al mes. Todos los valores están en pesos colombianos y pueden variar cuando el proyecto requiere integraciones o desarrollos especiales." }
     },
     {
       "@type": "Question",
@@ -450,15 +452,32 @@
   .plans-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:60px;align-items:stretch;}
   .plan-card{
     background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:32px 26px;
-    display:flex;flex-direction:column;transition:transform .35s var(--ease),border-color .35s;
+    display:flex;flex-direction:column;position:relative;transition:transform .35s var(--ease),border-color .35s;
   }
   .plan-card:hover{transform:translateY(-6px);border-color:var(--border-2);}
-  .plan-card.highlight{border-color:rgba(168,85,247,.4);background:var(--gradient-soft);}
+  .plan-card.highlight{
+    border-color:rgba(168,85,247,.55);background:var(--gradient-soft);
+    box-shadow:0 20px 60px rgba(124,58,237,.18);
+  }
+  .plan-badge{
+    position:absolute;top:-14px;left:26px;
+    background:var(--gradient);color:#fff;font-family:'Sora',sans-serif;
+    font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+    padding:6px 14px;border-radius:100px;box-shadow:0 8px 20px rgba(124,58,237,.35);
+  }
   .plan-card h3{font-size:1.15rem;margin-bottom:10px;}
   .plan-card .plan-audience{color:var(--text-muted);font-size:.88rem;margin-bottom:20px;flex:1;}
-  .plan-card .plan-price{
-    font-family:'Sora',sans-serif;font-weight:800;font-size:1.5rem;margin-bottom:18px;
+  .plan-card .plan-price{margin-bottom:18px;}
+  .plan-card .plan-price .price-label{
+    display:block;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--text-dim);margin-bottom:6px;
+  }
+  .plan-card .plan-price .price-main{
+    display:block;font-family:'Sora',sans-serif;font-weight:800;font-size:1.6rem;
     background:var(--gradient);-webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .plan-card .plan-price .price-sub{
+    display:block;font-size:.88rem;font-weight:600;color:var(--text-muted);margin-top:4px;
   }
   .plan-card .plan-includes{list-style:none;margin:0 0 24px;padding:0;}
   .plan-card .plan-includes li{
@@ -469,6 +488,9 @@
     background:var(--gradient);transform:rotate(45deg);
   }
   .plan-card .btn{margin-top:auto;}
+  .plans-note{max-width:640px;margin:40px auto 0;text-align:center;}
+  .plans-note p{color:var(--text-muted);font-size:.92rem;margin-bottom:8px;}
+  .plans-note p.plans-note-sub{color:var(--text-dim);font-size:.82rem;margin-bottom:0;}
   @media (max-width:1000px){.plans-grid{grid-template-columns:repeat(2,1fr);}}
   @media (max-width:600px){.plans-grid{grid-template-columns:1fr;}}
 
@@ -843,7 +865,7 @@
 
     <div class="plan-card highlight reveal">
       <h3>Precio</h3>
-      <div class="plan-price">Desde US$390 de implementación + US$69 al mes</div>
+      <div class="plan-price">Desde $299.000 de implementación + $49.900 al mes</div>
       <ul class="plan-includes">
         <li>Precio de lanzamiento para los primeros 3 clientes</li>
         <li>Implementación en 5 a 10 días hábiles</li>
@@ -1573,71 +1595,102 @@
     </div>
     <div class="plans-grid">
 
-      <div class="plan-card reveal">
-        <h3>Diagnóstico Digital</h3>
-        <p class="plan-audience">Negocios que quieren saber qué mejorar antes de invertir en algo más grande.</p>
-        <div class="plan-price">Desde US$100</div>
-        <ul class="plan-includes">
-          <li>Análisis de tu web, redes o campañas</li>
-          <li>Hallazgos priorizados</li>
-          <li>Reporte visual y fácil de entender</li>
-        </ul>
-        <a href="https://wa.me/573102691503?text=Hola%2C%20me%20interesa%20el%20plan%20Diagn%C3%B3stico%20Digital" target="_blank" rel="noopener" class="btn btn-outline btn-block">Quiero este plan</a>
-      </div>
-
-      <!-- PAUSADO — spec conversion-v3 Bloque 5-bis: reemplazado por el plan del producto principal.
       <div class="plan-card highlight reveal">
-        <h3>Web + WhatsApp</h3>
-        <p class="plan-audience">Negocios que necesitan presencia profesional y contacto rápido con clientes.</p>
-        <div class="plan-price">Desde US$249</div>
+        <span class="plan-badge">Más elegido</span>
+        <h3>Recepción IA</h3>
+        <p class="plan-audience">Para profesionales, consultorios y pequeños negocios que quieren empezar a atender automáticamente sus consultas por WhatsApp.</p>
+        <div class="plan-price">
+          <span class="price-label">Implementación</span>
+          <span class="price-main">$299.000</span>
+          <span class="price-sub">+ $49.900 / mes</span>
+        </div>
         <ul class="plan-includes">
-          <li>Web Scrolling con animaciones</li>
-          <li>Botón de contacto por WhatsApp</li>
-          <li>Diseño responsive (celular, tablet, computador)</li>
+          <li>Agente de IA para WhatsApp</li>
+          <li>Atención automática 24/7</li>
+          <li>Entrenado con la información del negocio</li>
+          <li>Responde servicios, horarios, ubicación y preguntas frecuentes</li>
+          <li>Conversaciones naturales con clientes</li>
+          <li>Captura datos de posibles clientes</li>
+          <li>Transferencia a una persona cuando sea necesario</li>
+          <li>Soporte y mantenimiento básico</li>
         </ul>
-        <a href="https://wa.me/573102691503?text=Hola%2C%20me%20interesa%20el%20plan%20Web%20%2B%20WhatsApp" target="_blank" rel="noopener" class="btn btn-primary btn-block">Quiero este plan</a>
-      </div>
-      -->
-
-      <div class="plan-card highlight reveal">
-        <span class="eyebrow">Producto principal</span>
-        <h3>Agente IA en WhatsApp</h3>
-        <p class="plan-audience">Negocios que reciben consultas por WhatsApp y no alcanzan a responderlas todas.</p>
-        <div class="plan-price">Desde US$390 + US$69 al mes</div>
-        <ul class="plan-includes">
-          <li>Precio de lanzamiento para los primeros 3 clientes</li>
-          <li>Agente entrenado con la información real de tu negocio</li>
-          <li>Respuesta 24/7 y captura de datos de cada interesado</li>
-          <li>Agendamiento en Google Calendar con recordatorios</li>
-          <li>Mantenimiento, ajustes y soporte incluidos en la mensualidad</li>
-        </ul>
-        <a href="https://wa.me/573102691503?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20Agente%20IA%20en%20WhatsApp" target="_blank" rel="noopener" class="btn btn-primary btn-block">Quiero este plan</a>
+        <a href="https://wa.me/573102691503?text=Hola%2C%20quiero%20empezar%20con%20Recepci%C3%B3n%20IA" target="_blank" rel="noopener" class="btn btn-primary btn-block">Empezar con Recepción IA</a>
       </div>
 
       <div class="plan-card reveal">
-        <h3>Automatización Pro</h3>
-        <p class="plan-audience">Negocios que quieren captar, registrar y responder leads sin trabajo manual.</p>
-        <div class="plan-price">Desde US$349</div>
+        <h3>Agenda IA</h3>
+        <p class="plan-audience">Para negocios y consultorios que quieren convertir las conversaciones de WhatsApp directamente en citas.</p>
+        <div class="plan-price">
+          <span class="price-label">Implementación</span>
+          <span class="price-main">$599.000</span>
+          <span class="price-sub">+ $99.900 / mes</span>
+        </div>
         <ul class="plan-includes">
-          <li>Captura de leads (formulario, WhatsApp o web)</li>
-          <li>Registro automático en Sheets, Airtable o CRM</li>
-          <li>Notificaciones y respuestas automáticas</li>
+          <li>Todo lo incluido en Recepción IA</li>
+          <li>Integración con Google Calendar</li>
+          <li>Consulta de disponibilidad</li>
+          <li>Agendamiento automático de citas</li>
+          <li>Confirmación de citas</li>
+          <li>Reprogramación y cancelación</li>
+          <li>Recordatorios automáticos</li>
+          <li>Registro básico de clientes</li>
+          <li>Transferencia inteligente a atención humana</li>
         </ul>
-        <a href="https://wa.me/573102691503?text=Hola%2C%20me%20interesa%20el%20plan%20Automatizaci%C3%B3n%20Pro" target="_blank" rel="noopener" class="btn btn-outline btn-block">Quiero este plan</a>
+        <a href="https://wa.me/573102691503?text=Hola%2C%20quiero%20automatizar%20mi%20agenda%20con%20Agenda%20IA" target="_blank" rel="noopener" class="btn btn-outline btn-block">Automatizar mi agenda</a>
       </div>
 
       <div class="plan-card reveal">
-        <h3>Sistema IA Completo</h3>
-        <p class="plan-audience">Empresas con varios procesos que quieren una solución integral.</p>
-        <div class="plan-price">Cotización</div>
+        <h3>NeXo Pro</h3>
+        <p class="plan-audience">Para negocios que quieren convertir WhatsApp en un verdadero sistema comercial automatizado.</p>
+        <div class="plan-price">
+          <span class="price-label">Implementación</span>
+          <span class="price-main">$999.000</span>
+          <span class="price-sub">+ $199.900 / mes</span>
+        </div>
         <ul class="plan-includes">
-          <li>Combinación de varios servicios según tu caso</li>
-          <li>Automatizaciones, dashboards y prospección</li>
-          <li>Acompañamiento continuo</li>
+          <li>Todo lo incluido en Agenda IA</li>
+          <li>Calificación automática de leads</li>
+          <li>Identificación de intención e interés</li>
+          <li>Clasificación de oportunidades</li>
+          <li>Memoria de clientes y conversaciones</li>
+          <li>Seguimiento automático de interesados</li>
+          <li>Seguimientos 24 / 48 / 72 horas</li>
+          <li>Base de datos / CRM de contactos</li>
+          <li>Handoff inteligente a una persona</li>
+          <li>Reportes y métricas básicas</li>
+          <li>Optimización del agente</li>
         </ul>
-        <a href="https://wa.me/573102691503?text=Hola%2C%20me%20interesa%20el%20plan%20Sistema%20IA%20Completo" target="_blank" rel="noopener" class="btn btn-outline btn-block">Solicitar cotización</a>
+        <a href="https://wa.me/573102691503?text=Hola%2C%20quiero%20NeXo%20Pro" target="_blank" rel="noopener" class="btn btn-outline btn-block">Quiero NeXo Pro</a>
       </div>
 
+      <div class="plan-card reveal">
+        <h3>NeXo Growth</h3>
+        <p class="plan-audience">Para empresas que quieren automatizar atención, seguimiento, recuperación de oportunidades y crecimiento comercial.</p>
+        <div class="plan-price">
+          <span class="price-label">Implementación</span>
+          <span class="price-main">$1.599.000</span>
+          <span class="price-sub">+ $399.900 / mes</span>
+        </div>
+        <ul class="plan-includes">
+          <li>Todo lo incluido en NeXo Pro</li>
+          <li>Recuperación automática de leads</li>
+          <li>Reactivación de clientes o pacientes</li>
+          <li>Campañas segmentadas</li>
+          <li>Automatizaciones comerciales avanzadas</li>
+          <li>Integraciones con otras herramientas</li>
+          <li>CRM y gestión avanzada de contactos</li>
+          <li>Dashboards y analítica</li>
+          <li>Flujos personalizados</li>
+          <li>Optimización continua</li>
+          <li>Soporte prioritario</li>
+        </ul>
+        <a href="https://wa.me/573102691503?text=Hola%2C%20quiero%20potenciar%20mi%20negocio%20con%20NeXo%20Growth" target="_blank" rel="noopener" class="btn btn-outline btn-block">Potenciar mi negocio</a>
+      </div>
+
+    </div>
+    <div class="plans-note reveal">
+      <p>Todos los planes incluyen configuración inicial, entrenamiento y puesta en marcha del agente de IA.</p>
+      <p class="plans-note-sub">Los valores pueden variar cuando el proyecto requiere integraciones, desarrollos o volúmenes especiales.</p>
     </div>
   </div>
 </section>
@@ -1668,7 +1721,7 @@
       </details>
       <details class="faq-item">
         <summary>¿Cuánto cuesta un proyecto?<span class="icon">+</span></summary>
-        <p>Depende del alcance. El Diagnóstico Digital arranca desde US$100 y es el primer paso que recomendamos si no sabes por dónde empezar. El Agente IA en WhatsApp, nuestro producto principal, cuesta desde US$390 de implementación más US$69 al mes. Las automatizaciones con n8n arrancan desde US$349. Para proyectos que combinan varias soluciones, cotizamos según el caso.</p>
+        <p>Depende del alcance. Recepción IA, nuestro plan de entrada, cuesta $299.000 de implementación más $49.900 al mes. Agenda IA cuesta $599.000 más $99.900 al mes. NeXo Pro cuesta $999.000 más $199.900 al mes. NeXo Growth cuesta $1.599.000 más $399.900 al mes. Todos los valores están en pesos colombianos y pueden variar cuando el proyecto requiere integraciones o desarrollos especiales.</p>
       </details>
       <details class="faq-item">
         <summary>¿Cómo es el proceso de trabajo?<span class="icon">+</span></summary>
@@ -1731,8 +1784,10 @@
           <label for="cf-servicio">Servicio de interés</label>
           <select id="cf-servicio" name="servicio">
             <option value="">Selecciona una opción</option>
-            <option>Agente IA en WhatsApp</option>
-            <option>Diagnóstico Digital</option>
+            <option>Recepción IA</option>
+            <option>Agenda IA</option>
+            <option>NeXo Pro</option>
+            <option>NeXo Growth</option>
             <option>Automatizaciones n8n</option>
             <option>Auditoría de Negocio Digital</option>
             <option>Auditoría SEO</option>
@@ -2130,7 +2185,7 @@
         ]
       },
       services: {
-        bot: 'Nuestro producto principal es el Agente IA en WhatsApp: responde a tus clientes 24/7, capta sus datos y agenda citas. Desde US$390 de implementación más US$69 al mes. También hacemos automatizaciones con n8n, auditorías digitales y desarrollo web.',
+        bot: 'Nuestro plan de entrada es Recepción IA: un agente de IA que responde a tus clientes por WhatsApp 24/7, capta sus datos y agenda citas. Desde $299.000 de implementación más $49.900 al mes. También tenemos Agenda IA, NeXo Pro y NeXo Growth para negocios que quieren automatizar más procesos.',
         options: [
           { label: 'Ver todos los servicios en la web', action: 'scroll', target: '#servicios' },
           { label: 'Ver planes y precios', next: 'plans' },
@@ -2138,7 +2193,7 @@
         ]
       },
       plans: {
-        bot: 'Tenemos 4 planes:\n• Diagnóstico Digital — desde US$100\n• Agente IA en WhatsApp — desde US$390 + US$69/mes\n• Automatización Pro — desde US$349\n• Sistema IA Completo — cotización según el caso',
+        bot: 'Tenemos 4 planes:\n• Recepción IA — $299.000 + $49.900/mes\n• Agenda IA — $599.000 + $99.900/mes\n• NeXo Pro — $999.000 + $199.900/mes\n• NeXo Growth — $1.599.000 + $399.900/mes',
         options: [
           { label: 'Ver planes completos en la web', action: 'scroll', target: '#planes' },
           { label: 'Quiero que me contacten', action: 'lead' },
@@ -2156,7 +2211,7 @@
         ]
       },
       faq_precio: {
-        bot: 'El Agente IA en WhatsApp cuesta desde US$390 de implementación más US$69 al mes, precio de lanzamiento para los primeros 3 clientes. El Diagnóstico Digital arranca desde US$100. Las automatizaciones con n8n, desde US$349.',
+        bot: 'Recepción IA, nuestro plan de entrada, cuesta $299.000 de implementación más $49.900 al mes. Agenda IA cuesta $599.000 + $99.900/mes, NeXo Pro $999.000 + $199.900/mes y NeXo Growth $1.599.000 + $399.900/mes.',
         options: [{ label: '⬅ Volver a preguntas', next: 'faq' }, { label: '⬅ Volver al menú', next: 'root' }]
       },
       faq_proceso: {
