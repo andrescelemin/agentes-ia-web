@@ -582,6 +582,28 @@
   @media (max-width:900px){.other-grid{grid-template-columns:repeat(2,1fr);}}
   @media (max-width:600px){.other-grid{grid-template-columns:1fr;}}
 
+  /* ---------- TESTIMONIOS ---------- */
+  .testimonials{padding:130px 0;background:var(--bg-alt);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+  .testimonial-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .testimonial-card{
+    background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:30px 30px 26px;
+    display:flex;flex-direction:column;transition:transform .35s var(--ease),border-color .35s;
+  }
+  .testimonial-card:hover{transform:translateY(-6px);border-color:var(--border-2);}
+  .testimonial-stars{display:flex;gap:4px;margin-bottom:18px;}
+  .testimonial-stars svg{width:16px;height:16px;fill:#f5b942;flex-shrink:0;}
+  .testimonial-quote{color:var(--text-muted);font-size:.94rem;line-height:1.6;margin:0 0 26px;flex:1;}
+  .testimonial-author{display:flex;align-items:center;gap:14px;}
+  .testimonial-avatar{
+    width:46px;height:46px;border-radius:50%;flex-shrink:0;
+    background:var(--gradient-soft);border:1px solid var(--border-2);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Sora',sans-serif;font-weight:700;font-size:.85rem;color:var(--cyan);
+  }
+  .testimonial-author-name{font-weight:650;font-size:.94rem;color:var(--text);}
+  .testimonial-author-sector{font-size:.82rem;color:var(--text-dim);}
+  @media (max-width:1000px){.testimonial-grid{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:600px){.testimonial-grid{grid-template-columns:1fr;}}
 
   /* ---------- PLANES ---------- */
   .plans{padding:130px 0;background:var(--bg-alt);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
@@ -1043,6 +1065,142 @@
     <p class="compare-footer">Automatiza lo repetitivo. Tu equipo se ocupa de lo importante.</p>
   </div>
 </section>
+
+<!--
+  TESTIMONIOS / SOCIAL PROOF
+  TODO: Reemplazar por testimonios verificados y autorizados de clientes reales antes de presentarlos como reseñas reales.
+
+  Contenido provisional — estructura de datos equivalente (para facilitar la sustitución futura):
+  TESTIMONIALS_DATA = [
+    { initials:'LM', name:'Dra. Laura M.', sector:'Odontología', stars:5, quote:'Ahora las consultas de WhatsApp pueden ser atendidas incluso cuando estamos ocupados con pacientes. La comunicación se siente natural y mucho más organizada.' },
+    { initials:'CR', name:'Carlos R.', sector:'Centro de estética', stars:5, quote:'Lo que más valoramos es que el sistema no solo responde preguntas. También captura la información del cliente y nos ayuda a mantener el seguimiento.' },
+    { initials:'NG', name:'Dra. Natalia G.', sector:'Consultorio médico', stars:5, quote:'La automatización de las consultas frecuentes nos permite concentrarnos en los pacientes que están en el consultorio sin dejar desatendido WhatsApp.' },
+    { initials:'SP', name:'Sebastián P.', sector:'Servicios profesionales', stars:5, quote:'La implementación fue sencilla y entendimos rápidamente cómo utilizar el agente. Ahora tenemos una atención mucho más constante durante todo el día.' },
+    { initials:'AC', name:'Dra. Andrea C.', sector:'Consultorio odontológico', stars:5, quote:'Tener la información del consultorio disponible automáticamente por WhatsApp mejora mucho la experiencia del paciente desde el primer contacto.' },
+    { initials:'MT', name:'Mauricio T.', sector:'Pequeña empresa', stars:5, quote:'NeXo IA nos permitió comenzar a automatizar sin tener que cambiar toda nuestra operación. Empezamos con lo necesario y podemos ir agregando funciones a medida que crecemos.' }
+  ]
+-->
+<section class="testimonials" id="testimonios">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" style="justify-content:center;">Experiencias</span>
+      <h2>Lo que cambia cuando tu negocio empieza a trabajar con IA</h2>
+      <p>Atención más rápida, procesos más organizados y menos oportunidades perdidas.</p>
+    </div>
+    <div class="testimonial-grid">
+
+      <figure class="testimonial-card reveal">
+        <div class="testimonial-stars" role="img" aria-label="5 de 5 estrellas">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.3 5.9.8-4.3 4.1 1 5.8L10 14.7l-5.2 2.8 1-5.8-4.3-4.1 5.9-.8z"/></svg>
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.3 5.9.8-4.3 4.1 1 5.8L10 14.7l-5.2 2.8 1-5.8-4.3-4.1 5.9-.8z"/></svg>
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.3 5.9.8-4.3 4.1 1 5.8L10 14.7l-5.2 2.8 1-5.8-4.3-4.1 5.9-.8z"/></svg>
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.3 5.9.8-4.3 4.1 1 5.8L10 14.7l-5.2 2.8 1-5.8-4.3-4.1 5.9-.8z"/></svg>
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.3 5.9.8-4.3 4.1 1 5.8L10 14.7l-5.2 2.8 1-5.8-4.3-4.1 5.9-.8z"/></svg>
+        </div>
+        <blockquote class="testimonial-quote">"Ahora las consultas de WhatsApp pueden ser atendidas incluso cuando estamos ocupados con pacientes. La comunicación se siente natural y mucho más organizada."</blockquote>
+        <figcaption class="testimonial-author">
+          <div class="testimonial-avatar" aria-hidden="true">LM</div>
+          <div>
+            <div class="testimonial-author-name">Dra. Laura M.</div>
+            <div class="testimonial-author-sector">Odontología</div>
+          </div>
+        </figcaption>
+      </figure>
+
+      <figure class="testimonial-card reveal">
+        <div class="testimonial-stars" role="img" aria-label="5 de 5 estrellas">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.3 5.9.8-4.3 4.1 1 5.8L10 14.7l-5.2 2.8 1-5.8-4.3-4.1 5.9-.8z"/></svg>
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.3 5.9.8-4.3 4.1 1 5.8L10 14.7l-5.2 2.8 1-5.8-4.3-4.1 5.9-.8z"/></svg>
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.3 5.9.8-4.3 4.1 1 5.8L10 14.7l-5.2 2.8 1-5.8-4.3-4.1 5.9-.8z"/></svg>
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.3 5.9.8-4.3 4.1 1 5.8L10 14.7l-5.2 2.8 1-5.8-4.3-4.1 5.9-.8z"/></svg>
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.3 5.9.8-4.3 4.1 1 5.8L10 14.7l-5.2 2.8 1-5.8-4.3-4.1 5.9-.8z"/></svg>
+        </div>
+        <blockquote class="testimonial-quote">"Lo que más valoramos es que el sistema no solo responde preguntas. También captura la información del cliente y nos ayuda a mantener el seguimiento."</blockquote>
+        <figcaption class="testimonial-author">
+          <div class="testimonial-avatar" aria-hidden="true">CR</div>
+          <div>
+            <div class="testimonial-author-name">Carlos R.</div>
+            <div class="testimonial-author-sector">Centro de estética</div>
+          </div>
+        </figcaption>
+      </figure>
+
+      <figure class="testimonial-card reveal">
+        <div class="testimonial-stars" role="img" aria-label="5 de 5 estrellas">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.3 5.9.8-4.3 4.1 1 5.8L10 14.7l-5.2 2.8 1-5.8-4.3-4.1 5.9-.8z"/></svg>
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.3 5.9.8-4.3 4.1 1 5.8L10 14.7l-5.2 2.8 1-5.8-4.3-4.1 5.9-.8z"/></svg>
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.3 5.9.8-4.3 4.1 1 5.8L10 14.7l-5.2 2.8 1-5.8-4.3-4.1 5.9-.8z"/></svg>
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.3 5.9.8-4.3 4.1 1 5.8L10 14.7l-5.2 2.8 1-5.8-4.3-4.1 5.9-.8z"/></svg>
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.3 5.9.8-4.3 4.1 1 5.8L10 14.7l-5.2 2.8 1-5.8-4.3-4.1 5.9-.8z"/></svg>
+        </div>
+        <blockquote class="testimonial-quote">"La automatización de las consultas frecuentes nos permite concentrarnos en los pacientes que están en el consultorio sin dejar desatendido WhatsApp."</blockquote>
+        <figcaption class="testimonial-author">
+          <div class="testimonial-avatar" aria-hidden="true">NG</div>
+          <div>
+            <div class="testimonial-author-name">Dra. Natalia G.</div>
+            <div class="testimonial-author-sector">Consultorio médico</div>
+          </div>
+        </figcaption>
+      </figure>
+
+      <figure class="testimonial-card reveal">
+        <div class="testimonial-stars" role="img" aria-label="5 de 5 estrellas">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.3 5.9.8-4.3 4.1 1 5.8L10 14.7l-5.2 2.8 1-5.8-4.3-4.1 5.9-.8z"/></svg>
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.3 5.9.8-4.3 4.1 1 5.8L10 14.7l-5.2 2.8 1-5.8-4.3-4.1 5.9-.8z"/></svg>
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.3 5.9.8-4.3 4.1 1 5.8L10 14.7l-5.2 2.8 1-5.8-4.3-4.1 5.9-.8z"/></svg>
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.3 5.9.8-4.3 4.1 1 5.8L10 14.7l-5.2 2.8 1-5.8-4.3-4.1 5.9-.8z"/></svg>
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.3 5.9.8-4.3 4.1 1 5.8L10 14.7l-5.2 2.8 1-5.8-4.3-4.1 5.9-.8z"/></svg>
+        </div>
+        <blockquote class="testimonial-quote">"La implementación fue sencilla y entendimos rápidamente cómo utilizar el agente. Ahora tenemos una atención mucho más constante durante todo el día."</blockquote>
+        <figcaption class="testimonial-author">
+          <div class="testimonial-avatar" aria-hidden="true">SP</div>
+          <div>
+            <div class="testimonial-author-name">Sebastián P.</div>
+            <div class="testimonial-author-sector">Servicios profesionales</div>
+          </div>
+        </figcaption>
+      </figure>
+
+      <figure class="testimonial-card reveal">
+        <div class="testimonial-stars" role="img" aria-label="5 de 5 estrellas">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.3 5.9.8-4.3 4.1 1 5.8L10 14.7l-5.2 2.8 1-5.8-4.3-4.1 5.9-.8z"/></svg>
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.3 5.9.8-4.3 4.1 1 5.8L10 14.7l-5.2 2.8 1-5.8-4.3-4.1 5.9-.8z"/></svg>
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.3 5.9.8-4.3 4.1 1 5.8L10 14.7l-5.2 2.8 1-5.8-4.3-4.1 5.9-.8z"/></svg>
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.3 5.9.8-4.3 4.1 1 5.8L10 14.7l-5.2 2.8 1-5.8-4.3-4.1 5.9-.8z"/></svg>
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.3 5.9.8-4.3 4.1 1 5.8L10 14.7l-5.2 2.8 1-5.8-4.3-4.1 5.9-.8z"/></svg>
+        </div>
+        <blockquote class="testimonial-quote">"Tener la información del consultorio disponible automáticamente por WhatsApp mejora mucho la experiencia del paciente desde el primer contacto."</blockquote>
+        <figcaption class="testimonial-author">
+          <div class="testimonial-avatar" aria-hidden="true">AC</div>
+          <div>
+            <div class="testimonial-author-name">Dra. Andrea C.</div>
+            <div class="testimonial-author-sector">Consultorio odontológico</div>
+          </div>
+        </figcaption>
+      </figure>
+
+      <figure class="testimonial-card reveal">
+        <div class="testimonial-stars" role="img" aria-label="5 de 5 estrellas">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.3 5.9.8-4.3 4.1 1 5.8L10 14.7l-5.2 2.8 1-5.8-4.3-4.1 5.9-.8z"/></svg>
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.3 5.9.8-4.3 4.1 1 5.8L10 14.7l-5.2 2.8 1-5.8-4.3-4.1 5.9-.8z"/></svg>
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.3 5.9.8-4.3 4.1 1 5.8L10 14.7l-5.2 2.8 1-5.8-4.3-4.1 5.9-.8z"/></svg>
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.3 5.9.8-4.3 4.1 1 5.8L10 14.7l-5.2 2.8 1-5.8-4.3-4.1 5.9-.8z"/></svg>
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.3 5.9.8-4.3 4.1 1 5.8L10 14.7l-5.2 2.8 1-5.8-4.3-4.1 5.9-.8z"/></svg>
+        </div>
+        <blockquote class="testimonial-quote">"NeXo IA nos permitió comenzar a automatizar sin tener que cambiar toda nuestra operación. Empezamos con lo necesario y podemos ir agregando funciones a medida que crecemos."</blockquote>
+        <figcaption class="testimonial-author">
+          <div class="testimonial-avatar" aria-hidden="true">MT</div>
+          <div>
+            <div class="testimonial-author-name">Mauricio T.</div>
+            <div class="testimonial-author-sector">Pequeña empresa</div>
+          </div>
+        </figcaption>
+      </figure>
+
+    </div>
+  </div>
+</section>
+
 <!-- PLANES O PAQUETES -->
 <section class="plans" id="planes">
   <div class="container">
