@@ -33,8 +33,18 @@
 <!-- Google Search Console: descomenta y pega tu código de verificación cuando lo tengas -->
 <!-- <meta name="google-site-verification" content="TU_CODIGO_DE_VERIFICACION"> -->
 
-<!-- dataLayer inicializado temprano para GTM/GA4 (los eventos solo se envían si el visitante acepta cookies analíticas) -->
-<script>window.dataLayer = window.dataLayer || [];</script>
+<!-- Google Consent Mode v2: estado por defecto denegado, establecido antes de cargar cualquier script de medición. Los eventos solo se envían si el visitante acepta cookies analíticas. -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = window.gtag || function(){ window.dataLayer.push(arguments); };
+  gtag('consent', 'default', {
+    analytics_storage: 'denied',
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    wait_for_update: 500
+  });
+</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1773,11 +1783,11 @@
 
   // Cookie consent
   (function cookieConsent(){
-    // Rellena estos IDs cuando los tengas: mientras estén vacíos, no se carga ningún script de medición.
-    const GTM_ID = '';          // ej. 'GTM-XXXXXXX'
-    const GA_MEASUREMENT_ID = ''; // ej. 'G-XXXXXXXXXX'
-    const META_PIXEL_ID = '';   // ej. '1234567890123456'
-    const CLARITY_ID = '';      // ej. 'abcd1234ef'
+    // IDs reales de medición del sitio. GTM_ID se deja vacío a propósito: no usamos GTM, GA4 se carga directamente.
+    const GTM_ID = '';
+    const GA_MEASUREMENT_ID = 'G-FMYF58DBNF';
+    const META_PIXEL_ID = '1612251387088810';
+    const CLARITY_ID = 'ygbsvhq2xn';
 
     const STORAGE_KEY = 'cookie_consent';
     const banner = document.getElementById('cookieBanner');
@@ -1796,6 +1806,11 @@
     function openModal(){ overlay.classList.add('is-visible'); }
     function closeModal(){ overlay.classList.remove('is-visible'); }
 
+    // Protecciones idempotentes: evitan insertar el mismo script/inicializar dos veces.
+    let gaLoaded = false;
+    let metaLoaded = false;
+    let clarityLoaded = false;
+
     function loadGTM(id){
       const s = document.createElement('script');
       s.async = true;
@@ -1803,30 +1818,42 @@
       document.head.appendChild(s);
     }
     function loadGA(id){
+      if (gaLoaded) return;
+      gaLoaded = true;
       const s = document.createElement('script');
       s.async = true;
       s.src = 'https://www.googletagmanager.com/gtag/js?id=' + id;
       document.head.appendChild(s);
-      window.dataLayer = window.dataLayer || [];
-      window.gtag = function(){ window.dataLayer.push(arguments); };
+      // window.gtag ya existe (definido en el <head> para Consent Mode); no se reasigna aquí.
       window.gtag('js', new Date());
-      window.gtag('config', id);
+      window.gtag('config', id); // gtag('config') ya genera el page_view inicial: no disparar uno adicional.
     }
     function loadMetaPixel(id){
+      if (metaLoaded) return;
+      metaLoaded = true;
       /* eslint-disable */
       !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-      window.fbq('init', id);
-      window.fbq('track', 'PageView');
       /* eslint-enable */
+      window.fbq('init', id);
+      window.fbq('consent', 'grant');
+      window.fbq('track', 'PageView'); // Un solo PageView por carga de página, tras consentimiento.
     }
     function loadClarity(id){
+      if (clarityLoaded) return;
+      clarityLoaded = true;
       /* eslint-disable */
       (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src='https://www.clarity.ms/tag/'+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)})(window, document, 'clarity', 'script', id);
       /* eslint-enable */
+      if (typeof window.clarity === 'function') {
+        window.clarity('consentv2', { ad_Storage: 'denied', analytics_Storage: 'granted' });
+      }
     }
     let consentAnalytics = false;
+    // Consulta de solo lectura para el resto del código (p. ej. conversiones estándar del
+    // formulario), que vive en otro scope y no tiene acceso directo a consentAnalytics.
+    window.hasAnalyticsConsent = function(){ return consentAnalytics; };
 
-    // API compartida: dispara eventos a GTM/GA4/Meta Pixel solo si hay consentimiento analítico.
+    // API compartida: dispara eventos a GA4/Meta Pixel solo si hay consentimiento analítico.
     window.trackEvent = function(name, params){
       if (!consentAnalytics) return;
       params = params || {};
@@ -1839,10 +1866,41 @@
     function applyConsent(analytics){
       consentAnalytics = !!analytics;
       if (!analytics) return;
+      window.gtag('consent', 'update', {
+        analytics_storage: 'granted',
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied'
+      });
       if (GTM_ID) loadGTM(GTM_ID);
       if (GA_MEASUREMENT_ID) loadGA(GA_MEASUREMENT_ID);
       if (META_PIXEL_ID) loadMetaPixel(META_PIXEL_ID);
       if (CLARITY_ID) loadClarity(CLARITY_ID);
+    }
+
+    // Revoca consentimiento: actualiza Google/Meta/Clarity y, si algún tracker ya estaba
+    // cargado en esta sesión, recarga la página para garantizar que dejen de ejecutarse.
+    function revokeConsent(){
+      const hadTrackersLoaded = gaLoaded || metaLoaded || clarityLoaded;
+      consentAnalytics = false;
+
+      window.gtag && window.gtag('consent', 'update', {
+        analytics_storage: 'denied',
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied'
+      });
+      if (typeof window.fbq === 'function') {
+        window.fbq('consent', 'revoke');
+      }
+      if (typeof window.clarity === 'function') {
+        window.clarity('consentv2', { ad_Storage: 'denied', analytics_Storage: 'denied' });
+        window.clarity('consent', false);
+      }
+
+      if (hadTrackersLoaded) {
+        window.location.reload();
+      }
     }
 
     const existing = getConsent();
@@ -1869,10 +1927,15 @@
     });
     document.getElementById('cookieSavePrefs').addEventListener('click', () => {
       const analytics = analyticsToggle.checked;
+      const wasAnalytics = consentAnalytics;
       saveConsent(analytics);
       closeModal();
       hideBanner();
-      applyConsent(analytics);
+      if (analytics) {
+        applyConsent(true);
+      } else if (wasAnalytics) {
+        revokeConsent();
+      }
     });
     const openSettingsLink = document.getElementById('footerCookieSettings');
     if (openSettingsLink) {
@@ -2310,6 +2373,15 @@
         });
         if (!res.ok) throw new Error('bad response');
         window.trackEvent && window.trackEvent('FORM_SUBMIT', { origen: activeTab === 'diagnostico' ? 'formulario-diagnostico' : 'formulario-contacto' });
+        // Conversiones estándar: solo tras envío exitoso al webhook y solo con consentimiento analítico.
+        if (window.hasAnalyticsConsent && window.hasAnalyticsConsent()) {
+          if (typeof window.gtag === 'function') {
+            window.gtag('event', 'generate_lead', { method: 'website_form' });
+          }
+          if (typeof window.fbq === 'function') {
+            window.fbq('track', 'Lead', { content_name: 'Formulario NeXo IA' });
+          }
+        }
         contactForm.reset();
         const redirectParams = new URLSearchParams({
           servicio: data.servicio || '',
