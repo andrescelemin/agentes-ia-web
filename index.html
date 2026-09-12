@@ -121,6 +121,90 @@
   ]
 }
 </script>
+
+<!-- WebMCP: expose the same tools as the MCP server (/mcp) directly to
+     in-browser AI agents. Feature-detected — no-op on browsers without
+     support. See /.well-known/agent-skills/nexo-ia-consulta/SKILL.md -->
+<script>
+(function () {
+  var WHATSAPP_NUMBER = "573102691503";
+  var PLANS = [
+    { id: "recepcion-ia", name: "Recepción IA", setup_price_cop: 299000, monthly_price_cop: 49900 },
+    { id: "agenda-ia", name: "Agenda IA", setup_price_cop: 599000, monthly_price_cop: 99900 },
+    { id: "nexo-pro", name: "NeXo Pro", setup_price_cop: 999000, monthly_price_cop: 199900 },
+    { id: "nexo-growth", name: "NeXo Growth", setup_price_cop: 1599000, monthly_price_cop: 399900 }
+  ];
+
+  function getServices() {
+    return {
+      summary: "NeXo IA automatiza la atención de WhatsApp para negocios, consultorios y profesionales en Colombia: responde 24/7, captura datos de clientes, agenda citas y hace seguimiento según el plan.",
+      plans_available: PLANS.map(function (p) { return p.id; })
+    };
+  }
+
+  function getPricing() {
+    return { currency: "COP", plans: PLANS };
+  }
+
+  function startConversation(args) {
+    args = args || {};
+    var plan = null;
+    for (var i = 0; i < PLANS.length; i++) {
+      if (PLANS[i].id === args.plan_id) plan = PLANS[i];
+    }
+    var message = args.message || (plan ? "Hola, quiero empezar con " + plan.name : "Hola, quiero saber más sobre NeXo IA");
+    return { whatsapp_url: "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message), plan: plan ? plan.name : null };
+  }
+
+  var tools = [
+    {
+      name: "get_services",
+      description: "Describe qué hace NeXo IA y qué problema resuelve.",
+      inputSchema: { type: "object", properties: {} },
+      execute: function () { return getServices(); }
+    },
+    {
+      name: "get_pricing",
+      description: "Devuelve los planes y precios actuales de NeXo IA en COP.",
+      inputSchema: { type: "object", properties: {} },
+      execute: function () { return getPricing(); }
+    },
+    {
+      name: "start_conversation",
+      description: "Genera un link de WhatsApp para contactar a NeXo IA, opcionalmente sobre un plan específico.",
+      inputSchema: {
+        type: "object",
+        properties: {
+          plan_id: { type: "string", enum: PLANS.map(function (p) { return p.id; }) },
+          message: { type: "string" }
+        }
+      },
+      execute: function (args) { return startConversation(args); }
+    }
+  ];
+
+  function registerTools() {
+    if (!("modelContext" in navigator)) return;
+    var mc = navigator.modelContext;
+    try {
+      if (typeof mc.registerTool === "function") {
+        tools.forEach(function (tool) { mc.registerTool(tool); });
+      } else if (typeof mc.provideContext === "function") {
+        mc.provideContext({ tools: tools });
+      }
+    } catch (e) {
+      /* WebMCP is experimental; fail silently if the API shape differs. */
+    }
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", registerTools);
+  } else {
+    registerTools();
+  }
+})();
+</script>
+
 <style>
   :root{
     --bg:#06060c;
