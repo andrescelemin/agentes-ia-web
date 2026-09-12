@@ -1,0 +1,12 @@
+{
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+  "skills": [
+    {
+      "name": "nexo-ia-consulta",
+      "type": "skill-md",
+      "description": "Consulta servicios, planes de precios y genera contacto por WhatsApp para NeXo IA (agentes de IA para WhatsApp en Colombia). Usa el servidor MCP en /mcp.",
+      "url": "/.well-known/agent-skills/nexo-ia-consulta/SKILL.md",
+      "digest": "sha256:36f0231bf9f447b3a57405cfe8503e60b0f668756250e6896ca5be57e93c54c5"
+    }
+  ]
+}
