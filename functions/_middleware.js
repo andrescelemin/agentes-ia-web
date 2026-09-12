@@ -14,7 +14,14 @@ export async function onRequest(context) {
 
   const wantsMarkdown = accept.includes("text/markdown");
   if (!wantsMarkdown) {
-    return next();
+    const htmlResponse = await next();
+    const headers = new Headers(htmlResponse.headers);
+    headers.set("Vary", "Accept");
+    return new Response(htmlResponse.body, {
+      status: htmlResponse.status,
+      statusText: htmlResponse.statusText,
+      headers,
+    });
   }
 
   const response = await next();
@@ -30,6 +37,10 @@ export async function onRequest(context) {
   headers.set("Content-Type", "text/markdown; charset=utf-8");
   headers.set("Vary", "Accept");
   headers.set("X-Markdown-Tokens", String(estimateTokens(markdown)));
+  // Never let the edge cache a markdown response under the same cache key
+  // as the HTML response — Vary: Accept isn't reliably honored by every
+  // cache layer, and serving Markdown to a browser breaks the site.
+  headers.set("Cache-Control", "private, no-store");
 
   return new Response(markdown, {
     status: response.status,
