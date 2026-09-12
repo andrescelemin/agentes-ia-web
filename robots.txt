@@ -3,3 +3,4 @@ Content-Signal: search=yes, ai-input=yes, ai-train=no
 Allow: /
 
 Sitemap: https://www.agentes-inteligencia-artificial.online/sitemap.xml
+Agentmap: https://www.agentes-inteligencia-artificial.online/.well-known/ai-catalog.json

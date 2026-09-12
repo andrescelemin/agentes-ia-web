@@ -1,0 +1,31 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "NeXo IA",
+    "identifier": "did:web:www.agentes-inteligencia-artificial.online"
+  },
+  "entries": [
+    {
+      "identifier": "urn:air:www.agentes-inteligencia-artificial.online:server:nexo-ia-mcp",
+      "displayName": "NeXo IA MCP Server",
+      "type": "application/mcp-server-card+json",
+      "url": "https://www.agentes-inteligencia-artificial.online/.well-known/mcp/server-card.json",
+      "representativeQueries": [
+        "cuánto cuesta NeXo IA",
+        "qué planes tiene NeXo IA",
+        "cómo contacto a NeXo IA por WhatsApp",
+        "qué hace NeXo IA"
+      ]
+    },
+    {
+      "identifier": "urn:air:www.agentes-inteligencia-artificial.online:doc:llms-txt",
+      "displayName": "NeXo IA — resumen para agentes (llms.txt)",
+      "type": "text/plain",
+      "url": "https://www.agentes-inteligencia-artificial.online/llms.txt",
+      "representativeQueries": [
+        "qué es NeXo IA",
+        "resumen del sitio agentes-inteligencia-artificial.online"
+      ]
+    }
+  ]
+}
