@@ -1,0 +1,14 @@
+{
+  "serverInfo": {
+    "name": "nexo-ia-mcp",
+    "version": "1.0.0"
+  },
+  "description": "Consulta servicios, precios y forma de contacto de NeXo IA (agentes de IA para WhatsApp en Colombia).",
+  "url": "https://www.agentes-inteligencia-artificial.online/mcp",
+  "transport": {
+    "type": "streamable-http"
+  },
+  "capabilities": {
+    "tools": true
+  }
+}

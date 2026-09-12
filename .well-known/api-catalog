@@ -8,6 +8,15 @@
           "type": "text/plain"
         }
       ]
+    },
+    {
+      "anchor": "https://www.agentes-inteligencia-artificial.online/mcp",
+      "service-desc": [
+        {
+          "href": "https://www.agentes-inteligencia-artificial.online/.well-known/mcp/server-card.json",
+          "type": "application/json"
+        }
+      ]
     }
   ]
 }
