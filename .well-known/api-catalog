@@ -1,0 +1,13 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://www.agentes-inteligencia-artificial.online/",
+      "service-doc": [
+        {
+          "href": "https://www.agentes-inteligencia-artificial.online/llms.txt",
+          "type": "text/plain"
+        }
+      ]
+    }
+  ]
+}
