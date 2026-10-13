@@ -9,7 +9,7 @@ incluye cada plan, o quiera iniciar contacto con el negocio.
 
 ## Cómo usarla
 
-Conéctate al servidor MCP en `https://www.agentes-inteligencia-artificial.online/mcp`
+Conéctate al servidor MCP en `https://www.nexoiasolutions.com/mcp`
 (transporte Streamable HTTP, JSON-RPC 2.0) y llama a una de estas
 herramientas:
 

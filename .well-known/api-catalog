@@ -1,19 +1,19 @@
 {
   "linkset": [
     {
-      "anchor": "https://www.agentes-inteligencia-artificial.online/",
+      "anchor": "https://www.nexoiasolutions.com/",
       "service-doc": [
         {
-          "href": "https://www.agentes-inteligencia-artificial.online/llms.txt",
+          "href": "https://www.nexoiasolutions.com/llms.txt",
           "type": "text/plain"
         }
       ]
     },
     {
-      "anchor": "https://www.agentes-inteligencia-artificial.online/mcp",
+      "anchor": "https://www.nexoiasolutions.com/mcp",
       "service-desc": [
         {
-          "href": "https://www.agentes-inteligencia-artificial.online/.well-known/mcp/server-card.json",
+          "href": "https://www.nexoiasolutions.com/.well-known/mcp/server-card.json",
           "type": "application/json"
         }
       ]
